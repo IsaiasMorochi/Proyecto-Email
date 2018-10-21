@@ -1,0 +1,77 @@
+package Data;
+
+public class DDia extends Template{
+    private int id;
+    private String dia;
+    private String created_at;
+    private String updated_at;
+    private String deleted_at;
+
+    @Override
+    protected String registrar() {
+        return "insert into dia(dia, created_at) values("
+                +"'"+dia+ "',"
+                +"'"+created_at+ "',"
+                + ")";
+    }
+
+    @Override
+    protected String modificar() {
+        return null;
+    }
+
+    @Override
+    protected String borrar() {
+        return null;
+    }
+
+    @Override
+    protected String listado() {
+        return "select * from dia where deleted_at is null";
+    }
+
+    @Override
+    protected int cantidadAtributos() {
+        return 2;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
+    }
+
+    public String getDeleted_at() {
+        return deleted_at;
+    }
+
+    public void setDeleted_at(String deleted_at) {
+        this.deleted_at = deleted_at;
+    }
+}

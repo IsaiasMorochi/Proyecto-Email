@@ -1,0 +1,30 @@
+diff a/nbproject/private/private.xml b/nbproject/private/private.xml	(rejected hunks)
+@@ -1,4 +1,28 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
++    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
++        <group>
++<<<<<<< HEAD
++            <file>file:/E:/SAULO/DOCUMENTO/TECNO%20WEB/2018/Parcial1/correotecnoweb/src/Dato/DPedido.java</file>
++            <file>file:/E:/SAULO/DOCUMENTO/TECNO%20WEB/2018/Parcial1/correotecnoweb/src/Dato/DServicio.java</file>
++            <file>file:/E:/SAULO/DOCUMENTO/TECNO%20WEB/2018/Parcial1/correotecnoweb/src/Negocio/NPedido.java</file>
++            <file>file:/E:/SAULO/DOCUMENTO/TECNO%20WEB/2018/Parcial1/correotecnoweb/src/Dato/DPromocion.java</file>
++            <file>file:/E:/SAULO/DOCUMENTO/TECNO%20WEB/2018/Parcial1/correotecnoweb/src/Dato/DPromocionServicio.java</file>
++=======
++<<<<<<< HEAD
++            <file>file:/C:/Users/dopar/Documents/correotecnoweb/src/nucleo/procesador/Token.java</file>
++            <file>file:/C:/Users/dopar/Documents/correotecnoweb/src/Software/main.java</file>
++            <file>file:/C:/Users/dopar/Documents/correotecnoweb/src/Software/software.java</file>
++            <file>file:/C:/Users/dopar/Documents/correotecnoweb/src/Software/CorreosTecno.java</file>
++=======
++            <file>file:/C:/Users/Sandoval-PC/Desktop/Jhon/Materias/Tecnologia%20Web/correoTecnoweb/src/nucleo/procesador/Token.java</file>
++            <file>file:/C:/Users/Sandoval-PC/Desktop/Jhon/Materias/Tecnologia%20Web/correoTecnoweb/src/Software/software.java</file>
++            <file>file:/C:/Users/Sandoval-PC/Desktop/Jhon/Materias/Tecnologia%20Web/correoTecnoweb/src/Negocio/NUsuario.java</file>
++            <file>file:/C:/Users/Sandoval-PC/Desktop/Jhon/Materias/Tecnologia%20Web/correoTecnoweb/src/nucleo/procesador/LCC.java</file>
++            <file>file:/C:/Users/Sandoval-PC/Desktop/Jhon/Materias/Tecnologia%20Web/correoTecnoweb/src/nucleo/utilidades/Ayuda.java</file>
++>>>>>>> 3e1c1ee367a64e0c4bb299c015ff348c7ba867e3
++>>>>>>> 402893877dfdeaa188e52498ede4e057eda2efc3
++        </group>
++    </open-files>
+ </project-private>
