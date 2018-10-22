@@ -9,10 +9,6 @@ public class DRequisito extends Template {
     private String updated_at;
     private String deleted_at;
 
-    private DRequisito(){
-
-    }
-
     public int getId() {
         return id;
     }
@@ -65,17 +61,16 @@ public class DRequisito extends Template {
     protected String registrar() {
         return "insert into requisitos (descripcion, id_evento, created_at) values("
                 +"'"+descripcion+ "',"
-                +"'"+id_evento+ "',"
-                +id_evento+ "',"
-                +"'"+created_at+ "',"
-                + ")";
+                +id_evento+ ","
+                +"'"+created_at+ "'"
+                +")";
     }
 
     @Override
     protected String modificar() {
         return "update requisitos set "
-                +"descripcion = " +"'"+descripcion+ "',"
-                +"updated_at = " +"'"+updated_at+ "',"
+                +"descripcion = '"+descripcion+ "',"
+                +"updated_at = '"+updated_at+ "'"
                 +"where id=" +id;
     }
 

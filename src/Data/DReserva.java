@@ -1,5 +1,7 @@
 package Data;
 
+import java.util.List;
+
 
 public class DReserva extends Template {
 
@@ -7,13 +9,9 @@ public class DReserva extends Template {
     private String fecha;
     private int id_persona;
     private int id_evento;
-    private String create_at;
-    private String update_at;
-    private String delete_at;
-
-    private DReserva(){
-
-    }
+    private String created_at;
+    private String updated_at;
+    private String deleted_at;
 
     public int getId() {
         return id;
@@ -47,37 +45,38 @@ public class DReserva extends Template {
         this.id_evento = id_evento;
     }
 
-    public String getCreate_at() {
-        return create_at;
+    public String getCreated_at() {
+        return created_at;
     }
 
-    public void setCreate_at(String create_at) {
-        this.create_at = create_at;
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 
-    public String getUpdate_at() {
-        return update_at;
+    public String getUpdated_at() {
+        return updated_at;
     }
 
-    public void setUpdate_at(String update_at) {
-        this.update_at = update_at;
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
     }
 
-    public String getDelete_at() {
-        return delete_at;
+    public String getDeleted_at() {
+        return deleted_at;
     }
 
-    public void setDelete_at(String delete_at) {
-        this.delete_at = delete_at;
+    public void setDeleted_at(String deleted_at) {
+        this.deleted_at = deleted_at;
     }
+
 
     @Override
     protected String registrar() {
-        return "insert into reserva (fecha, id_persona, id_evento, create_at) values("
+        return "insert into reserva (fecha, id_persona, id_evento, created_at) values("
                 +"'"+fecha+ "',"
                 +id_persona+ ","
                 +id_evento+ ","
-                +"'"+create_at+ "',"
+                +"'"+created_at+ "'"
                 + ")";
     }
 
@@ -85,25 +84,41 @@ public class DReserva extends Template {
     protected String modificar() {
         return "update reserva set "
                 + "fecha="+"'"+fecha+"'"
-                + "update_at="+"'"+update_at+"'"
+                + "updated_at="+"'"+updated_at+"'"
                 + " where id="+id;
     }
 
     @Override
     protected String borrar() {
         return "update reserva set "
-                +"delete_at=" +"'"+delete_at+"'"
+                +"deleted_at=" +"'"+deleted_at+"'"
                 +"where id=" +id;
     }
 
     @Override
     protected String listado() {
-        return "select * from reserva where delete_at is null";
+        return "select * from reserva where deleted_at is null";
     }
 
     @Override
     protected int cantidadAtributos() {
         return 4;
+    }
+    
+     public DReserva buscar(int id) {
+        List<Object> rs =(List<Object>) buscar("select * from reserva where id="+ id);
+        if (rs!=null && !(rs.isEmpty())) {
+            DReserva objeto = new DReserva();
+            objeto.setId(Integer.valueOf(rs.get(0).toString()));
+            objeto.setFecha(rs.get(1).toString());
+            objeto.setId_persona(Integer.valueOf(rs.get(2).toString()));
+            objeto.setId_evento(Integer.valueOf(rs.get(3).toString()));
+            objeto.setCreated_at(rs.get(4).toString());
+            objeto.setUpdated_at(rs.get(5).toString());
+            objeto.setDeleted_at(rs.get(6).toString());
+            return objeto;
+        }
+        return null;
     }
 
 }

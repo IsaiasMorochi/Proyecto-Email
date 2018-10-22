@@ -10,10 +10,6 @@ public class DObjetivos extends Template {
     private String updated_at;
     private String deleted_at;
 
-    private DObjetivos(){
-
-    }
-
     public int getId() {
         return id;
     }
@@ -75,8 +71,8 @@ public class DObjetivos extends Template {
         return "insert into objetivos(nombre, descripcion, id_evento, created_at) values("
                 +"'"+nombre+ "',"
                 +"'"+descripcion+ "',"
-                +id_evento+ "',"
-                +"'"+created_at+ "',"
+                +id_evento+ ","
+                +"'"+created_at+ "'"
                 + ")";
     }
 
@@ -85,14 +81,14 @@ public class DObjetivos extends Template {
         return "update objetivos set "
                 +"nombre = " +"'"+nombre+ "',"
                 +"descripcion = " +"'"+descripcion+ "',"
-                +"updated_at = " +"'"+updated_at+ "',"
+                +"updated_at = " +"'"+updated_at+ "'"
                 +"where id=" +id;
     }
 
     @Override
     protected String borrar() {
         return "update objetivos set "
-                +"deleted_at=" +"'"+deleted_at+"'"
+                +"deleted_at='"+ deleted_at +"'"
                 +"where id=" +id;
     }
 

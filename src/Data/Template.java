@@ -1,9 +1,4 @@
 package Data;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import Data.Connections;
 
@@ -11,10 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Antonio saulo
- */
+
 public abstract class Template {
     
     public int autoincrement=0;

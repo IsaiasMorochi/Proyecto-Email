@@ -8,29 +8,76 @@ public class DDetalle_Contenido extends Template{
     private String updated_at;
     private String deleted_at;
 
+    public int getId() {
+		return id;
+	}
 
-    @Override
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getId_contenido() {
+		return id_contenido;
+	}
+
+	public void setId_contenido(int id_contenido) {
+		this.id_contenido = id_contenido;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public String getCreated_at() {
+		return created_at;
+	}
+
+	public void setCreated_at(String created_at) {
+		this.created_at = created_at;
+	}
+
+	public String getUpdated_at() {
+		return updated_at;
+	}
+
+	public void setUpdated_at(String updated_at) {
+		this.updated_at = updated_at;
+	}
+
+	public String getDeleted_at() {
+		return deleted_at;
+	}
+
+	public void setDeleted_at(String deleted_at) {
+		this.deleted_at = deleted_at;
+	}
+
+	@Override
     protected String registrar() {
         return "insert into detalle_contenido(id_contenido, descripcion, created_at) values("
-                +"'"+id_contenido+ "',"
-                +"'"+descripcion+ "',"
-                +"'"+created_at+ "',"
+                + "'"+ id_contenido + "',"
+                + "'"+ descripcion + "',"
+                + "'"+ created_at + "'"
                 + ")";
     }
 
     @Override
     protected String modificar() {
         return "update detalle_contenido set "
-                + "descripcion='"+descripcion+"',"
-                + "updated_at='"+updated_at+"',"
-                + " where id="+id;
+                + "descripcion='"+ descripcion +"',"
+                + "updated_at='"+ updated_at +"'"
+                + "where id="+id;
     }
 
     @Override
     protected String borrar() {
         return "update detalle_contenido set "
-                + "deleted_at='"+deleted_at+"',"
-                + " where id="+id;
+                + "deleted_at='"+ deleted_at +"'"
+                + "where id="+id;
     }
 
     @Override
@@ -41,53 +88,5 @@ public class DDetalle_Contenido extends Template{
     @Override
     protected int cantidadAtributos() {
         return 3;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId_contenido() {
-        return id_contenido;
-    }
-
-    public void setId_contenido(int id_contenido) {
-        this.id_contenido = id_contenido;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getCreated_at() {
-        return created_at;
-    }
-
-    public void setCreated_at(String created_at) {
-        this.created_at = created_at;
-    }
-
-    public String getUpdated_at() {
-        return updated_at;
-    }
-
-    public void setUpdated_at(String updated_at) {
-        this.updated_at = updated_at;
-    }
-
-    public String getDeleted_at() {
-        return deleted_at;
-    }
-
-    public void setDeleted_at(String deleted_at) {
-        this.deleted_at = deleted_at;
     }
 }

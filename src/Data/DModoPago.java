@@ -9,10 +9,6 @@ public class DModoPago extends Template {
     private String updated_at;
     private String deleted_at;
 
-    private DModoPago(){
-
-    }
-
     public int getId() {
         return id;
     }
@@ -66,23 +62,23 @@ public class DModoPago extends Template {
         return "insert into disertante(descripcion, id_evento, created_at) values("
                 +"'"+descripcion+ "',"
                 +id_evento+ "',"
-                +"'"+created_at+ "',"
-                + ")";
+                +"'"+created_at+ "'"
+                +")";
     }
 
     @Override
     protected String modificar() {
         return "update modo_pago set "
                 +"descripcion = " +"'"+descripcion+ "',"
-                +"updated_at = " +"'"+updated_at+ "',"
-                + " where id=" +id;
+                +"updated_at = " +"'"+updated_at+ "'"
+                +"where id=" +id;
     }
 
     @Override
     protected String borrar() {
         return "update modo_pago set "
                 +"deleted_at=" +"'"+deleted_at+"'"
-                + " where id=" +id;
+                +"where id=" +id;
     }
 
     @Override
