@@ -5,38 +5,38 @@ import java.util.Date;
 import java.util.List;
 
 import Data.DDetalla_Venta;
+import Data.DDetalle_Contenido;
+import Data.Template;
 import Dato.DUsuario;
 import nucleo.utilidades.Utils;
 
-public class NDetalle_Venta {
+public class NDetalle_Contenido {
 
-	private DDetalla_Venta detalle;
 
-	public NDetalle_Venta() {
-		this.detalle = DDetalla_Venta.getInstance();
+	private DDetalle_Contenido detalle;
+
+	public NDetalle_Contenido() {
+		this.detalle = DDetalle_Contenido.getInstance();
 	}
 	
-	public DDetalla_Venta getDetalle_Venta() {
+	public DDetalle_Contenido getDetalle_Contenido() {
 		return detalle;
 	}
 
-	public boolean registrar(int id_venta, int id_persona, int id_usuario, int id_evento){
-		this.detalle.setId_venta(id_venta);
-		this.detalle.setId_persona(id_persona);
-		this.detalle.setId_usuario(id_usuario);
-		this.detalle.setId_evento(id_evento);
+	public boolean registrar(int id_contenido, String descripcion){
+		this.detalle.setId_contenido(id_contenido);
+		this.detalle.setDescripcion(descripcion);
 		this.detalle.setCreated_at(Utils.dateToString(new Date()));
 		
 		return this.detalle.insertar();
 	}
 	
-	public boolean modificar(int id, int id_venta, int id_persona, int id_usuario, int id_evento) {
+	public boolean modificar(int id, int id_contenido, String descripcion) {
 		this.detalle.setId(id);
-		this.detalle.setId_venta(id_venta);
-		this.detalle.setId_persona(id_persona);
-		this.detalle.setId_usuario(id_usuario);
-		this.detalle.setId_evento(id_evento);
+		this.detalle.setId_contenido(id_contenido);
+		this.detalle.setDescripcion(descripcion);
 		this.detalle.setUpdated_at(Utils.dateToString(new Date()));
+		
 		return this.detalle.actualizar();
     }
 	
@@ -51,17 +51,15 @@ public class NDetalle_Venta {
 //	    return false;
 	}
 	
-	private List<DDetalla_Venta> listar() {
+	private List<DDetalle_Contenido> listar() {
 	        List<Object> lista = (List<Object>) this.detalle.listar();
-	        List<DDetalla_Venta> listaServicio= new ArrayList<>();
+	        List<DDetalle_Contenido> listaServicio= new ArrayList<>();
 	        for (Object objecto : lista) {
 	            List<Object> objetoX = (List<Object>) objecto;
-	            DDetalla_Venta objectY = DDetalla_Venta.getInstance();
+	            DDetalle_Contenido objectY = DDetalle_Contenido.getInstance();
 	            objectY.setId(Integer.valueOf(objetoX.get(0).toString()));
-	            objectY.setId_venta(Integer.valueOf(objetoX.get(1).toString()));
-	            objectY.setId_persona(Integer.valueOf(objetoX.get(2).toString()));
-	            objectY.setId_usuario(Integer.valueOf(objetoX.get(3).toString()));
-	            objectY.setId_evento(Integer.valueOf(objetoX.get(4).toString()));
+	            objectY.setId_contenido(Integer.valueOf(objetoX.get(1).toString()));
+	            objectY.setDescripcion(objetoX.get(2).toString());
 	            
 	            listaServicio.add(objectY);
 	        }
@@ -69,15 +67,13 @@ public class NDetalle_Venta {
 	 }
 	 
 	public String Mostrar() {
-        List<DDetalla_Venta> listarObjetos = this.listar();
-        String resultado = "Dias\n\n";
-        for (DDetalla_Venta objetoX : listarObjetos) {
+        List<DDetalle_Contenido> listarObjetos = this.listar();
+        String resultado = "Detalle de Contenidos\n\n";
+        for (DDetalle_Contenido objetoX : listarObjetos) {
             resultado = resultado +
                     "Codigo: " + objetoX.getId()+
-                    "\nID Venta: " + objetoX.getId_venta() +
-                    "\nID Persona: " + objetoX.getId_persona() +
-                    "\nID Usuario: " + objetoX.getId_usuario() +
-                    "\nID Evento: " + objetoX.getId_evento() 
+                    "\nID Contenido: " + objetoX.getId_contenido() +
+                    "\nDescripcion: " + objetoX.getDescripcion()                  
                     ;
             if (!objetoX.getDeleted_at().equals(null)) {
                 resultado = resultado + 
@@ -91,5 +87,4 @@ public class NDetalle_Venta {
         }
         return resultado;
     }
-
 }

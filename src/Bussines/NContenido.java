@@ -5,10 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import Data.DContenido;
-import Data.DEvento;
 import Dato.DUsuario;
-import Software.Template.TemplateMail;
-import nucleo.procesador.Anacom;
 import nucleo.utilidades.Utils;
 
 public class NContenido {
@@ -31,9 +28,8 @@ public class NContenido {
 		return this.contenido.insertar();
 	}
 	
-	public boolean modificar(int id, int id_evento, String titulo) {
+	public boolean modificar(int id, String titulo) {
 		this.contenido.setId(id);
-		this.contenido.setId_evento(id_evento);
 		this.contenido.setTitulo(titulo);
 		this.contenido.setUpdated_at(Utils.dateToString(new Date()));
 		
