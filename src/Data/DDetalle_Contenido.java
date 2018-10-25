@@ -1,12 +1,24 @@
 package Data;
 
-public class DDetalle_Contenido extends Template{
+public class DDetalle_Contenido extends Template {
+	
     private int id;
     private int id_contenido;
     private String descripcion;
     private String created_at;
     private String updated_at;
     private String deleted_at;
+    
+    //create an object of SingleObject
+  	private static DDetalle_Contenido instance = new DDetalle_Contenido();
+
+  	//make the constructor private so that this class cannot be instantiated
+  	public DDetalle_Contenido(){}
+
+  	//Get the only object available
+  	public static DDetalle_Contenido getInstance(){
+  		return instance;
+  	}	
 
     public int getId() {
 		return id;
@@ -82,7 +94,7 @@ public class DDetalle_Contenido extends Template{
 
     @Override
     protected String listado() {
-        return "select * from detalle_contenido where deleted_at is null";
+        return "select id, descripcion from detalle_contenido where deleted_at is null";
     }
 
     @Override

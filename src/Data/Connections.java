@@ -10,7 +10,8 @@ import java.sql.DriverManager;
 
 public class Connections {
 
-     private static final String URL = "jdbc:postgresql://mail.ficct.uagrm.edu.bo:5432/db_grupo03sa";
+    private static final String URL = "jdbc:postgresql://mail.ficct.uagrm.edu.bo:5432/db_grupo03sa";
+//    private static final String URL = "jdbc:postgresql://localhost/db_grupo03sa";
     private static final String CLASE_CONEXION = "org.postgresql.Driver";
     private static final String USERNAME = "grupo03sa";
     private static final String PASSWORD = "grupo03grupo03";

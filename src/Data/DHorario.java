@@ -11,7 +11,18 @@ public class DHorario extends Template {
     private String created_at;
     private String updated_at;
     private String deleted_at;
-    
+
+    //create an object of SingleObject
+  	private static DHorario instance = new DHorario();
+
+  	//make the constructor private so that this class cannot be instantiated
+  	public DHorario(){}
+
+  	//Get the only object available
+  	public static DHorario getInstance(){
+  		return instance;
+  	}	
+
     public int getId() {
 		return id;
 	}

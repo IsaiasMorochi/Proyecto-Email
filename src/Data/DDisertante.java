@@ -10,6 +10,17 @@ public class DDisertante extends Template {
     private String created_at;
     private String updated_at;
     private String deleted_at;
+    
+    //create an object of SingleObject
+  	private static DDisertante instance = new DDisertante();
+
+  	//make the constructor private so that this class cannot be instantiated
+  	public DDisertante(){}
+
+  	//Get the only object available
+  	public static DDisertante getInstance(){
+  		return instance;
+  	}	
 
     public int getId() {
 		return id;

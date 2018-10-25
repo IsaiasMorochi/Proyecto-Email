@@ -7,6 +7,17 @@ public class DDia extends Template{
     private String updated_at;
     private String deleted_at;
     
+	//create an object of SingleObject
+	private static DDia instance = new DDia();
+
+    //make the constructor private so that this class cannot be instantiated
+    public DDia(){}
+
+    //Get the only object available
+    public static DDia getInstance(){
+      return instance;
+    }	
+    
     public int getId() {
 		return id;
 	}
@@ -46,6 +57,12 @@ public class DDia extends Template{
 	public void setDeleted_at(String deleted_at) {
 		this.deleted_at = deleted_at;
 	}
+	
+	@Override
+	public String toString() {
+		return "DDia [id=" + id + ", dia=" + dia + ", created_at=" + created_at + ", updated_at=" + updated_at
+				+ ", deleted_at=" + deleted_at + "]";
+	}
 
 	@Override
     protected String registrar() {
@@ -67,7 +84,7 @@ public class DDia extends Template{
 
     @Override
     protected String listado() {
-        return "select * from dia where deleted_at is null";
+        return "select id, dia from dia where deleted_at is null";
     }
 
     @Override

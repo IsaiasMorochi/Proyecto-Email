@@ -9,7 +9,17 @@ public class DUsuario extends Template{
     private String updated_at;
     private String deleted_at;
     
-    
+    //create an object of SingleObject
+  	private static DUsuario instance = new DUsuario();
+
+  	//make the constructor private so that this class cannot be instantiated
+  	public DUsuario(){}
+
+  	//Get the only object available
+  	public static DUsuario getInstance(){
+  		return instance;
+  	}	
+
     public int getId() {
 		return id;
 	}

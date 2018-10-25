@@ -20,10 +20,7 @@ import javax.mail.Store;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.search.FlagTerm;
 
-/**
- *
- * @author saulo
- */
+
 public class ClientePOP {
 
     public static String[] readMail() {

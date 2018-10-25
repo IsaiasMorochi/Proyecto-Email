@@ -1,12 +1,24 @@
 package Data;
 
-public class DContenido extends Template{
+public class DContenido extends Template {
+	
     private int id;
     private int id_evento;
     private String titulo;
     private String created_at;
     private String updated_at;
     private String deleted_at;
+    
+    //create an object of SingleObject
+  	private static DContenido instance = new DContenido();
+
+  	//make the constructor private so that this class cannot be instantiated
+  	public DContenido(){}
+
+  	//Get the only object available
+  	public static DContenido getInstance(){
+  		return instance;
+  	}	
     
     public int getId() {
 		return id;

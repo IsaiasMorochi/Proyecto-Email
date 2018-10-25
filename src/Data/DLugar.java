@@ -7,6 +7,17 @@ public class DLugar extends Template {
     private String created_at;
     private String updated_at;
     private String deleted_at;
+    
+    //create an object of SingleObject
+  	private static DLugar instance = new DLugar();
+
+  	//make the constructor private so that this class cannot be instantiated
+  	public DLugar(){}
+
+  	//Get the only object available
+  	public static DLugar getInstance(){
+  		return instance;
+  	}	
 
     public int getId() {
 		return id;
@@ -49,6 +60,12 @@ public class DLugar extends Template {
 	}
 
 	@Override
+	public String toString() {
+		return "DLugar [id=" + id + ", descripcion=" + descripcion + ", created_at=" + created_at + ", updated_at="
+				+ updated_at + ", deleted_at=" + deleted_at + "]";
+	}
+
+	@Override
     protected String registrar() {
         return "insert into lugar(descripcion, created_at) values("
                 +"'"+descripcion+ "',"
@@ -73,7 +90,7 @@ public class DLugar extends Template {
 
     @Override
     protected String listado() {
-        return "select * from lugar where deleted_at is null";
+        return "select id, descripcion from lugar where deleted_at is null";
     }
 
     @Override

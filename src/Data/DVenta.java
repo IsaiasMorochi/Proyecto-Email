@@ -8,6 +8,16 @@ public class DVenta extends Template {
     private String updated_at;
     private String deleted_at;
 
+    //create an object of SingleObject
+  	private static DVenta instance = new DVenta();
+
+  	//make the constructor private so that this class cannot be instantiated
+  	public DVenta(){}
+
+  	//Get the only object available
+  	public static DVenta getInstance(){
+  		return instance;
+  	}	
     
     public int getId() {
 		return id;

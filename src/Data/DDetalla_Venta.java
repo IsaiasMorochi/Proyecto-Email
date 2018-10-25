@@ -11,7 +11,19 @@ public class DDetalla_Venta extends Template {
     private String nro_comprobante;
     private String created_at;
     private String updated_at;
-    private String deleted_at;    
+    private String deleted_at; 
+    
+    //create an object of SingleObject
+  	private static DDetalla_Venta instance = new DDetalla_Venta();
+
+  	//make the constructor private so that this class cannot be instantiated
+  	public DDetalla_Venta(){}
+
+  	//Get the only object available
+  	public static DDetalla_Venta getInstance(){
+  		return instance;
+  	}	
+
 
     public int getId() {
 		return id;

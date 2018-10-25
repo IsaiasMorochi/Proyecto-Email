@@ -27,10 +27,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-/**
- *
- * @author saulo
- */
+
 public class ClienteSMTP {
 
     private static final int PORT = 25; // SMTP

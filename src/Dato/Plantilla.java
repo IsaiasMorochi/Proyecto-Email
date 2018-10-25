@@ -14,10 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Antonio saulo
- */
+
 public abstract class Plantilla {
     
     public int autoincrement=0;
@@ -35,7 +32,7 @@ public abstract class Plantilla {
         try {
             Connection conn = Conexion.getConnection();
             PreparedStatement st = conn.prepareStatement(consulta,Statement.RETURN_GENERATED_KEYS);              
-           resultado = !st.execute();          
+            resultado = !st.execute();          
             ResultSet auto = st.getGeneratedKeys();
             if (auto.next() && auto.isFirst()) {
                 autoincrement = auto.getInt(1);

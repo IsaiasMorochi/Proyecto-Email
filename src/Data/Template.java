@@ -16,7 +16,6 @@ public abstract class Template {
     protected abstract String borrar();
     protected abstract String listado();
     protected abstract int cantidadAtributos();
-
     
     public boolean consultar(String consulta){
 //        consulta = "insert into usuario(id_persona, correo,password,created_at) values(1,'correo@gmail.com','pass','12-05-2018')";
@@ -33,6 +32,7 @@ public abstract class Template {
             return resultado;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            System.out.println("Error en Template consultar capa Datos");
             return resultado;
         }
      
@@ -53,6 +53,7 @@ public abstract class Template {
             }
             return lista;
         } catch (SQLException e) {
+        	System.out.println("Error en Template listar capa Datos");
             return null;
         }
     }
@@ -72,6 +73,7 @@ public abstract class Template {
             }
             return lista;
         } catch (SQLException e) {
+        	System.out.println("Error en Template buscar capa Datos");
             return null;
         }
     }
@@ -96,6 +98,7 @@ public abstract class Template {
             result = st.executeQuery(consulta);
             //st.close();
         } catch (SQLException e) {
+        	System.out.println("error en Template consultarDatos capa Datos");
             System.out.println(e);            
         }
         return result;

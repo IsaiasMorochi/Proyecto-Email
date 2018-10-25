@@ -5,10 +5,6 @@
  */
 package nucleo.procesador;
 
-/**
- *
- * @author David
- */
 public class Cinta {
     public static final char EOF = 0;
     public static final char EOLN = 10;

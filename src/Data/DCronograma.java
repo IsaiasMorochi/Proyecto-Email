@@ -1,11 +1,23 @@
 package Data;
 
-public class DCronograma extends Template{
+public class DCronograma extends Template {
+	
     private int id;
     private int id_evento;
     private String created_at;
     private String updated_at;
     private String deleted_at;
+    
+    //create an object of SingleObject
+  	private static DCronograma instance = new DCronograma();
+
+  	//make the constructor private so that this class cannot be instantiated
+  	public DCronograma(){}
+
+  	//Get the only object available
+  	public static DCronograma getInstance(){
+  		return instance;
+  	}	
 
     public int getId() {
 		return id;

@@ -7,6 +7,7 @@ import nucleo.utilidades.Utils;
 import java.util.Date;
 
 public class NPersona {
+	
     private DPersona personaModel;
     private DUsuario usuarioModel;
 

@@ -12,6 +12,17 @@ public class DReserva extends Template {
     private String created_at;
     private String updated_at;
     private String deleted_at;
+    
+    //create an object of SingleObject
+  	private static DReserva instance = new DReserva();
+
+  	//make the constructor private so that this class cannot be instantiated
+  	public DReserva(){}
+
+  	//Get the only object available
+  	public static DReserva getInstance(){
+  		return instance;
+  	}	
 
     public int getId() {
         return id;

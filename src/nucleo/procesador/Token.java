@@ -5,10 +5,7 @@
  */
 package nucleo.procesador;
 
-/**
- *
- * @author saulo
- */
+
 public class Token {
 
     public static final int NUM = 0; // Numero Valor
@@ -29,7 +26,22 @@ public class Token {
     public static final int MODIFICARUSUARIO = 101;
     public static final int ELIMINARUSUARIO = 102;
     public static final int LISTARUSUARIOS = 103;
+    
+    
+    public static final int INSERTARLUGAR = 200;
+    public static final int MODIFICARLUGAR = 201;
+    public static final int ELIMINARLUGAR = 202;
+    public static final int LISTARLUGARES = 203;
+    
+    public static final int INSERTARDIA = 204;
+    
+    public static final int INSERTAREVENTO = 205;
+    public static final int MODIFICAREVENTO = 206;
+    public static final int ELIMINAREVENTO = 207;
+    public static final int LISTAREVENTOS = 208;
+    
 
+  
     private int nombre;
     private int atributo;
     private String toStr;

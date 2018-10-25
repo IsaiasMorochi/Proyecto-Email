@@ -12,6 +12,17 @@ public class DPersona extends Template {
     private String created_at;
     private String updated_at;
     private String deleted_at;
+    
+    //create an object of SingleObject
+  	private static DPersona instance = new DPersona();
+
+  	//make the constructor private so that this class cannot be instantiated
+  	public DPersona(){}
+
+  	//Get the only object available
+  	public static DPersona getInstance(){
+  		return instance;
+  	}	
 
     public int getId() {
 		return id;

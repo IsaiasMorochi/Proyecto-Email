@@ -12,7 +12,17 @@ public class DEvento extends Template {
     private String updated_at;
     private String deleted_at;
     
+    //create an object of SingleObject
+  	private static DEvento instance = new DEvento();
 
+  	//make the constructor private so that this class cannot be instantiated
+  	public DEvento(){}
+
+  	//Get the only object available
+  	public static DEvento getInstance(){
+  		return instance;
+  	}	
+    
     public int getId() {
 		return id;
 	}

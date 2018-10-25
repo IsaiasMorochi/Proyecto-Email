@@ -11,10 +11,7 @@ import nucleo.utilidades.Constantes;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author saulo
- */
+
 public class CorreosTecno extends javax.swing.JFrame {
 
     /**
@@ -77,7 +74,7 @@ public class CorreosTecno extends javax.swing.JFrame {
             System.out.println(mensaje[0] + "\n\r" + mensaje[1] + "\n\r");
             try {
 //                new software().processMessage(mensaje[0],mensaje[1],mensaje[2],mensaje[3]);
-new software().processMessage(mensaje[0],mensaje[1],"","");
+            	new software().processMessage(mensaje[0],mensaje[1],"","");
             } catch (Exception e) {
                 System.out.println("Ocurrio una excepcion");
                 System.out.println(e);

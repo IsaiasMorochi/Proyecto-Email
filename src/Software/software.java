@@ -5,6 +5,7 @@
  */
 package Software;
 
+import Bussines.NLugar;
 import Bussines.NPersona;
 import Data.DPersona;
 import Negocio.NProforma;
@@ -18,6 +19,9 @@ import Negocio.NPromocion;
 import Negocio.NServicio;
 import Negocio.NUsuario;
 import Negocio.NZona;
+import Software.Template.MailDia;
+import Software.Template.MailEvento;
+import Software.Template.MailLugar;
 import nucleo.procesador.Anacom;
 import nucleo.procesador.Checker;
 import nucleo.procesador.Cinta;
@@ -32,13 +36,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- *
- * @author Saulo
- */
+
 public class software {
 
     NUsuario nu = new NUsuario();
+    
+    MailLugar mail_lugar = new MailLugar(); 
+    MailDia mail_dia = new MailDia();
+    MailEvento mail_evento = new MailEvento();
+   
 
     public void processMessage(String content, String destinatario, String url, String tipo) {
 
@@ -48,6 +54,7 @@ public class software {
 
         // Verificar Orden
         checker.Expresion();
+ 
         if (checker.errorFlag) {
             // Enviar Correo de Error
             ClienteSMTP.sendMail(destinatario, "Error de Comando",
@@ -64,7 +71,7 @@ public class software {
 
         if (token.getNombre() == Token.HELP) {
             // Mostrar Ayudas
-            ClienteSMTP.sendMail(destinatario, "Ayudas - Foto Studio OnLine\n el formato es COMANDO[\"texto\",numero,...]", Ayuda.HELP_GLOBAL);
+            ClienteSMTP.sendMail(destinatario, "Ayudas - Marketing\n el formato es COMANDO[\"texto\",numero,...]", Ayuda.HELP_GLOBAL);
             //System.out.println(Ayuda.HELP_GLOBAL);
             return;
         }
@@ -72,6 +79,34 @@ public class software {
         switch (token.getAtributo()) {
             case Token.INSERTARUSUARIO:
                 insertarUsuario(anacom, destinatario);
+                break;
+                
+            case Token.INSERTARLUGAR:
+            	mail_lugar.create(anacom, destinatario, Ayuda.HELP_LISTARUSUARIOS);
+                break;
+            case Token.MODIFICARLUGAR:
+            	mail_lugar.edit(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);              
+                break;
+            case Token.ELIMINARLUGAR:
+            	mail_lugar.remove(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);              
+                break;
+            case Token.LISTARLUGARES:
+            	mail_lugar.findAll(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);              
+                break;
+            case Token.INSERTARDIA:
+            	mail_dia.create(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);              
+                break;
+            case Token.INSERTAREVENTO:
+            	mail_evento.create(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);              
+                break;
+            case Token.MODIFICAREVENTO:  
+            	mail_evento.edit(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);          
+                break;
+            case Token.ELIMINAREVENTO:  
+            	mail_evento.remove(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);          
+                break;
+            case Token.LISTAREVENTOS:  
+            	mail_evento.findAll(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);          
                 break;
 
             default:
@@ -87,6 +122,11 @@ public class software {
             Token.MODIFICARUSUARIO,
             Token.ELIMINARUSUARIO,
             Token.LISTARUSUARIOS};
+        	
+        int[] lugar = {
+        	Token.INSERTARLUGAR};
+        
+        
 //        int[] evento = {
 //            Token.INSERTAREVENTO,
 //            Token.MODIFICAREVENTO,
@@ -178,6 +218,7 @@ public class software {
     }
 
     private void insertarUsuario(Anacom anacom, String correoDest) {
+
         anacom.Avanzar();
         Token token = anacom.Preanalisis();
         if (token.getNombre() == Token.HELP) {
@@ -224,6 +265,8 @@ public class software {
         }else{
             System.out.println("Error al registrar");
         }
+        
     }
-
+    
+   
 }

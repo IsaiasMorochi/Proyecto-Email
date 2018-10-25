@@ -5,10 +5,7 @@
  */
 package nucleo.procesador;
 
-/**
- *
- * @author David
- */
+
 public class Anacom {
 
     private Cinta M;
