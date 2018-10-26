@@ -31,12 +31,11 @@ public class NDisertante {
 		return this.disertante.insertar();
 	}
 	
-	public boolean modificar(int id, String nombre, String foto, String nacionalidad, int id_evento) {
+	public boolean modificar(int id, String nombre, String foto, String nacionalidad) {
 		this.disertante.setId(id);
 		this.disertante.setNombre(nombre);
 		this.disertante.setFoto(foto);
 		this.disertante.setNacionalidad(nacionalidad);
-		this.disertante.setId_evento(id_evento);
 		this.disertante.setUpdated_at(Utils.dateToString(new Date()));
 		
 		return this.disertante.actualizar();
@@ -72,13 +71,13 @@ public class NDisertante {
 	 
 	public String Mostrar() {
         List<DDisertante> listarObjetos = this.listar();
-        String resultado = "Dias\n\n";
+        String resultado = "Disertante\n\n";
         for (DDisertante objetoX : listarObjetos) {
             resultado = resultado +
                     "Codigo: " + objetoX.getId() +
-                    "\nID Nombre: " + objetoX.getNombre() +
-                    "\nID Foto: " + objetoX.getFoto() +
-                    "\nID Nacionalidad: " + objetoX.getNacionalidad() +
+                    "\nNombre: " + objetoX.getNombre() +
+                    "\nFoto: " + objetoX.getFoto() +
+                    "\nNacionalidad: " + objetoX.getNacionalidad() +
                     "\nID Evento: " + objetoX.getId_evento()
                     ;
             if (!objetoX.getDeleted_at().equals(null)) {

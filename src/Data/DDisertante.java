@@ -117,7 +117,7 @@ public class DDisertante extends Template {
 
     @Override
     protected String listado() {
-        return "select * from disertante where deleted_at is null";
+        return "select nombre, foto, nacionalidad, id_evento from disertante where deleted_at is null";
     }
 
     @Override

@@ -33,7 +33,6 @@ public class NDetalle_Contenido {
 	
 	public boolean modificar(int id, int id_contenido, String descripcion) {
 		this.detalle.setId(id);
-		this.detalle.setId_contenido(id_contenido);
 		this.detalle.setDescripcion(descripcion);
 		this.detalle.setUpdated_at(Utils.dateToString(new Date()));
 		
