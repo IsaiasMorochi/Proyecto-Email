@@ -69,6 +69,11 @@ public class DModoPago extends Template {
     }
 
     @Override
+	public String toString() {
+		return "DModoPago [descripcion=" + descripcion + ", id_evento=" + id_evento + "]";
+	}
+
+	@Override
     protected String registrar() {
         return "insert into disertante(descripcion, id_evento, created_at) values("
                 +"'"+descripcion+ "',"

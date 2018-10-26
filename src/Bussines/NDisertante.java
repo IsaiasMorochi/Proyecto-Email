@@ -6,7 +6,8 @@ import java.util.List;
 
 import Data.DDetalla_Venta;
 import Data.DDisertante;
-import Dato.DUsuario;
+import Data.DPersona;
+
 import nucleo.utilidades.Utils;
 
 public class NDisertante {
@@ -21,28 +22,30 @@ public class NDisertante {
 		return disertante;
 	}
 
-	public boolean registrar(String nombre, String foto, String nacionalidad, int id_evento){
+	public boolean registrar(String nombre, String foto, String nacionalidad, String descripcion, int id_evento){
 		this.disertante.setNombre(nombre);
 		this.disertante.setFoto(foto);
 		this.disertante.setNacionalidad(nacionalidad);
+		this.disertante.setDescripcion(descripcion);
 		this.disertante.setId_evento(id_evento);
 		this.disertante.setCreated_at(Utils.dateToString(new Date()));
 		
 		return this.disertante.insertar();
 	}
 	
-	public boolean modificar(int id, String nombre, String foto, String nacionalidad) {
+	public boolean modificar(int id, String nombre, String foto, String nacionalidad, String descripcion) {
 		this.disertante.setId(id);
 		this.disertante.setNombre(nombre);
 		this.disertante.setFoto(foto);
 		this.disertante.setNacionalidad(nacionalidad);
+		this.disertante.setDescripcion(descripcion);
 		this.disertante.setUpdated_at(Utils.dateToString(new Date()));
 		
 		return this.disertante.actualizar();
     }
 	
 	public boolean eliminar(int id, String correo ){
-		DUsuario usuario = new DUsuario();
+		DPersona usuario = new DPersona();
 	    usuario = usuario.buscarPorCorreo(correo);
 //	        if (usuario.getTipo()== 3) {
 	            this.disertante.setId(id);
@@ -80,15 +83,15 @@ public class NDisertante {
                     "\nNacionalidad: " + objetoX.getNacionalidad() +
                     "\nID Evento: " + objetoX.getId_evento()
                     ;
-            if (!objetoX.getDeleted_at().equals(null)) {
-                resultado = resultado + 
-                        "\nEstado: Habilitada"+
-                        "\n------------------------------------------------------\n";
-            }else{
-                resultado = resultado + 
-                        "\nEstado: No Habilitada"+
-                        "\n------------------------------------------------------\n";
-            }
+//            if (!objetoX.getDeleted_at().equals(null)) {
+//                resultado = resultado + 
+//                        "\nEstado: Habilitada"+
+//                        "\n------------------------------------------------------\n";
+//            }else{
+//                resultado = resultado + 
+//                        "\nEstado: No Habilitada"+
+//                        "\n------------------------------------------------------\n";
+//            }
         }
         return resultado;
     }

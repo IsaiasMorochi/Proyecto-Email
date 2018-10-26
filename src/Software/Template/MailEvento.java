@@ -25,7 +25,7 @@ public class MailEvento extends TemplateMail {
 		anacom.Avanzar();
 		char tipo = (Herramientas.quitarComillas(anacom.Preanalisis().getToStr())).charAt(0);
 	
-		return e.registrar(titulo,fecha_inicio,fecha_fin, costo, tipo);
+		return e.registrar(titulo, fecha_inicio, fecha_fin, costo, tipo);
 	}
 
 	@Override
@@ -65,17 +65,17 @@ public class MailEvento extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Evento registrado exitosamente con id: " + e.getEvento().toString() : "No se pudo registrar el evento" + e.getEvento().toString();
+		return (sw) ? "Evento registrado exitosamente con id: " + e.getEvento().autoincrement + e.getEvento().toString() : "No se pudo registrar el evento";
 	}
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Evento modificado exitosamente con id: " + e.getEvento().toString() : "No se pudo modificar el evento" + e.getEvento().toString() ;
+		return (sw) ? "Evento modificado exitosamente con id: " + e.getEvento().autoincrement + e.getEvento().toString() : "No se pudo modificar el evento";
 	}
 
 	@Override
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Evento eliminado exitosamente con id: " + e.getEvento().toString() : "No se pudo eliminar el evento" + e.getEvento().toString();
+		return (sw) ? "Evento eliminado exitosamente con id: " + e.getEvento().autoincrement + e.getEvento().toString() : "No se pudo eliminar el evento";
 	}
 
 	@Override

@@ -80,8 +80,12 @@ public class DReserva extends Template {
         this.deleted_at = deleted_at;
     }
 
-
     @Override
+	public String toString() {
+		return "DReserva [fecha=" + fecha + ", id_persona=" + id_persona + ", id_evento=" + id_evento + "]";
+	}
+
+	@Override
     protected String registrar() {
         return "insert into reserva (fecha, id_persona, id_evento, created_at) values("
                 +"'"+fecha+ "',"

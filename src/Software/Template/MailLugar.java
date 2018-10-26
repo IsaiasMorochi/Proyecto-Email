@@ -42,17 +42,17 @@ public class MailLugar extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Lugar registrado exitosamente con id: " + l.getLugar() : "No se pudo registrar el lugar" ;
+		return (sw) ? "Lugar registrado exitosamente con id: " + l.getLugar().autoincrement + l.getLugar().toString() : "No se pudo registrar el lugar" ;
 	}
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Lugar modificado exitosamente con id edit: " + l.getLugar() : "No se pudo modificar el lugar" ;
+		return (sw) ? "Lugar modificado exitosamente con id edit: " + l.getLugar() + l.getLugar().toString() : "No se pudo modificar el lugar" ;
 	}
 
 	@Override
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Lugar eliminado exitosamente con id delete: " + l.getLugar() : "No se pudo eliminar el lugar" + l.getLugar() ;
+		return (sw) ? "Lugar eliminado exitosamente con id delete: " + l.getLugar() + l.getLugar().toString() : "No se pudo eliminar el lugar" + l.getLugar() ;
 	}
 
 	@Override

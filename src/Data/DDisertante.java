@@ -6,6 +6,7 @@ public class DDisertante extends Template {
     private String nombre;
     private String foto;
     private String nacionalidad;
+    private String descripcion;
     private int id_evento;
     private String created_at;
     private String updated_at;
@@ -22,7 +23,7 @@ public class DDisertante extends Template {
   		return instance;
   	}	
 
-    public int getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -52,6 +53,14 @@ public class DDisertante extends Template {
 
 	public void setNacionalidad(String nacionalidad) {
 		this.nacionalidad = nacionalidad;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public int getId_evento() {
@@ -86,15 +95,26 @@ public class DDisertante extends Template {
 		this.deleted_at = deleted_at;
 	}
 
+	public static void setInstance(DDisertante instance) {
+		DDisertante.instance = instance;
+	}	
+
+	@Override
+	public String toString() {
+		return "DDisertante [nombre=" + nombre + ", foto=" + foto + ", nacionalidad=" + nacionalidad + ", descripcion="
+				+ descripcion + ", id_evento=" + id_evento + "]";
+	}
+
 	@Override
     protected String registrar() {
-        return "insert into disertante(nombre, foto, nacionalidad, id_evento, created_at) values("
+        return "insert into disertante(nombre, foto, nacionalidad, descripcion, id_evento, created_at) values("
                 +"'"+nombre+ "',"
                 +"'"+foto+ "',"
                 +"'"+nacionalidad+ "',"
+                +"'"+descripcion+ "',"
                 +id_evento+ ","
                 +"'"+created_at+ "'"
-                + ")";
+                + ")";                                  
     }
 
     @Override
@@ -103,6 +123,7 @@ public class DDisertante extends Template {
                 + "nombre = '"+ nombre +"',"
                 + "foto = '"+ foto +"',"
                 + "nacionalidad = '"+ nacionalidad +"',"
+                + "descripcion = '"+ descripcion +"',"
                 + "updated_at = '"+ updated_at +"'"
                 + "where id ="+ id 
                 + ")";
@@ -117,7 +138,7 @@ public class DDisertante extends Template {
 
     @Override
     protected String listado() {
-        return "select nombre, foto, nacionalidad, id_evento from disertante where deleted_at is null";
+        return "select * where deleted_at is null";
     }
 
     @Override

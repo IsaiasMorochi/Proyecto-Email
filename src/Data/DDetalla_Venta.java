@@ -105,6 +105,13 @@ public class DDetalla_Venta extends Template {
 		}
 
 		@Override
+		public String toString() {
+			return "DDetalla_Venta [id_venta=" + id_venta + ", id_persona=" + id_persona + ", id_usuario=" + id_usuario
+					+ ", id_evento=" + id_evento + ", fecha_comprobante=" + fecha_comprobante + ", nro_comprobante="
+					+ nro_comprobante + "]";
+		}
+
+		@Override
 	    protected String registrar() {
 	        return "insert into detalle_venta(id_venta, id_persona, id_usuario, id_evento, fecha_comprobante, nro_comprobante, created_at) values("
 	                + id_venta+ "',"

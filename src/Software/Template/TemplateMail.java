@@ -96,7 +96,7 @@ public abstract class TemplateMail {
             return;
         }else{
         	System.out.println();
-            ClienteSMTP.sendMail(email, "Listado con exito", this.messageFindAll(true) + this.listar());	
+            ClienteSMTP.sendMail(email, "Listado con exito", this.messageFindAll(true) + lista);	
         }                 
 	}
 	

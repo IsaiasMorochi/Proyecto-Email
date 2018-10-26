@@ -8,11 +8,11 @@ public class NReserva {
 	
 	private DReserva reserva;
 	
-	 public NReserva() {
-		 this.reserva = DReserva.getInstance();
-	 }
-	 
-	 public DReserva getReserva() {
+	public NReserva() {
+		this.reserva = DReserva.getInstance();
+	}
+
+	public DReserva getReserva() {
 		return reserva;
 	}
 

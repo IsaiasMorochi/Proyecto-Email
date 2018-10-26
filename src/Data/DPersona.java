@@ -1,5 +1,7 @@
 package Data;
 
+import java.util.List;
+
 public class DPersona extends Template {
 	
     private int id;
@@ -105,6 +107,12 @@ public class DPersona extends Template {
 	}
 
 	@Override
+	public String toString() {
+		return "DPersona [nombre=" + nombre + ", telefono=" + telefono + ", nacionalidad=" + nacionalidad + ", ci=" + ci
+				+ ", direccion=" + direccion + ", tipo=" + tipo + "]";
+	}
+
+	@Override
     protected String registrar() {
         return "insert into persona(nombre, telefono, nacionalidad, direccion, created_at) values("
                 +"'"+nombre+ "',"
@@ -143,4 +151,40 @@ public class DPersona extends Template {
     protected int cantidadAtributos() {
         return 6;
     }
+    
+    public DPersona buscar(int id) {
+        List<Object> usuario =(List<Object>) buscar("select * from persona where id="+id);
+        DPersona p = new DPersona();
+        
+        p.setId(Integer.valueOf(usuario.get(0).toString()));
+        p.setNombre(usuario.get(1).toString());
+        p.setTelefono(usuario.get(2).toString());
+        p.setNacionalidad(usuario.get(3).toString());
+        p.setCi(usuario.get(4).toString());
+        p.setTipo(usuario.get(5).toString());
+        p.setDireccion(usuario.get(6).toString());
+         
+        return p;
+    }
+    
+    public DPersona buscarPorCorreo(String correo) {
+        List<Object> usuario =(List<Object>) buscar("select id from usuario where correo='"+correo+"'");
+        DPersona p = DPersona.getInstance();
+        if (usuario==null || usuario.size()==0) {
+            return null;
+        }
+        p.setId(Integer.valueOf(usuario.get(0).toString()));
+        p.setNombre(usuario.get(1).toString());
+        p.setTelefono(usuario.get(2).toString());
+        p.setNacionalidad(usuario.get(3).toString());
+        p.setCi(usuario.get(4).toString());
+        p.setDireccion(usuario.get(5).toString());
+        p.setDireccion(usuario.get(6).toString());
+        
+        return p;
+    }
+
+    
+    
+    
 }

@@ -5,7 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 import Data.DLugar;
-import Dato.DUsuario;
+import Data.DPersona;
+
 import nucleo.utilidades.Utils;
 
 public class NLugar {
@@ -30,7 +31,7 @@ public class NLugar {
     }
 	
 	public boolean eliminar(int id, String correo ){
-		DUsuario usuario = new DUsuario();
+		DPersona usuario = new DPersona();
 	    usuario = usuario.buscarPorCorreo(correo);
 //	        if (usuario.getTipo()== 3) {
 	            this.lugar.setDeleted_at(Utils.dateToString(new Date()));

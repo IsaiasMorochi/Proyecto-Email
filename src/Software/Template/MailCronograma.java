@@ -11,7 +11,7 @@ public class MailCronograma extends TemplateMail {
 	public boolean insertar(Anacom anacom, String correo) {
 		anacom.Avanzar();
 		int id_evento = anacom.Preanalisis().getAtributo();
-		
+		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 		return d.registrar(id_evento);
 	}
 
@@ -36,17 +36,17 @@ public class MailCronograma extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Cronograma registrado exitosamente con id: " + d.getCronograma().toString() : "No se pudo registrar el cronograma";
+		return (sw) ? "Cronograma registrado exitosamente con id: " + d.getCronograma().autoincrement + d.getCronograma().toString() : "No se pudo registrar el cronograma";
 	}
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Cronograma modificado exitosamente con id: " + d.getCronograma().toString() : "No se pudo modificar el cronograma";
+		return (sw) ? "Cronograma modificado exitosamente con id: " + d.getCronograma().autoincrement + d.getCronograma().toString() : "No se pudo modificar el cronograma";
 	}
 
-	@Override
+	@Override                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Cronograma eliminado exitosamente con id: " + d.getCronograma().toString() : "No se pudo eliminar el cronograma";
+		return (sw) ? "Cronograma eliminado exitosamente con id: " + d.getCronograma().autoincrement  + d.getCronograma().toString() : "No se pudo eliminar el cronograma";
 	}
 
 	@Override

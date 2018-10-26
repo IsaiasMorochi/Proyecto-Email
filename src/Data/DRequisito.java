@@ -68,7 +68,13 @@ public class DRequisito extends Template {
         this.deleted_at = deleted_at;
     }
 
+    
     @Override
+	public String toString() {
+		return "DRequisito [descripcion=" + descripcion + ", id_evento=" + id_evento + "]";
+	}
+
+	@Override
     protected String registrar() {
         return "insert into requisitos (descripcion, id_evento, created_at) values("
                 +"'"+descripcion+ "',"

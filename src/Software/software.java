@@ -5,36 +5,28 @@
  */
 package Software;
 
-import Bussines.NLugar;
-import Bussines.NPersona;
+
+import com.sun.org.apache.xml.internal.security.utils.HelperNodeList;
+
+import Bussines.NUsuario;
 import Data.DPersona;
-import Negocio.NProforma;
-import Dato.DDetallePedido;
-import Dato.DPedido;
-import Dato.DUsuario;
-import Negocio.NEstadistica;
-import Negocio.NEvento;
-import Negocio.NPedido;
-import Negocio.NPromocion;
-import Negocio.NServicio;
-import Negocio.NUsuario;
-import Negocio.NZona;
+import Software.Template.MailContenido;
+import Software.Template.MailCronograma;
+import Software.Template.MailDetalle_Contenido;
 import Software.Template.MailDia;
+import Software.Template.MailDisertante;
 import Software.Template.MailEvento;
+import Software.Template.MailHorario;
 import Software.Template.MailLugar;
+import Software.Template.MailObjetivos;
+import Software.Template.MailReserva;
 import nucleo.procesador.Anacom;
 import nucleo.procesador.Checker;
 import nucleo.procesador.Cinta;
 import nucleo.procesador.Token;
 import nucleo.protocolos.ClienteSMTP;
 import nucleo.utilidades.Ayuda;
-import nucleo.utilidades.Herramientas;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 public class software {
@@ -44,6 +36,13 @@ public class software {
     MailLugar mail_lugar = new MailLugar(); 
     MailDia mail_dia = new MailDia();
     MailEvento mail_evento = new MailEvento();
+    MailReserva mail_reserva = new MailReserva();
+    MailCronograma mail_cronograma = new MailCronograma();
+    MailDisertante mail_disertante = new MailDisertante();
+    MailContenido mail_contenido = new MailContenido();
+    MailDetalle_Contenido mail_detallecontenido = new MailDetalle_Contenido();
+    MailObjetivos mail_objetivos = new MailObjetivos();
+    MailHorario mail_horario = new MailHorario();
    
 
     public void processMessage(String content, String destinatario, String url, String tipo) {
@@ -78,54 +77,124 @@ public class software {
 
         switch (token.getAtributo()) {
             case Token.INSERTARUSUARIO:
-                insertarUsuario(anacom, destinatario);
+//                insertarUsuario(anacom, destinatario);
                 break;
-                
-            case Token.INSERTARLUGAR:
-            	mail_lugar.create(anacom, destinatario, Ayuda.HELP_LISTARUSUARIOS);
-                break;
-            case Token.MODIFICARLUGAR:
-            	mail_lugar.edit(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);              
-                break;
-            case Token.ELIMINARLUGAR:
-            	mail_lugar.remove(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);              
-                break;
-            case Token.LISTARLUGARES:
-            	mail_lugar.findAll(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);              
-                break;
-            case Token.INSERTARDIA:
-            	mail_dia.create(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);              
-                break;
+     
             case Token.INSERTAREVENTO:
-            	mail_evento.create(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);              
+            	mail_evento.create(anacom, destinatario, Ayuda.HELP_GLOBAL);              
                 break;
             case Token.MODIFICAREVENTO:  
-            	mail_evento.edit(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);          
+            	mail_evento.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);          
                 break;
             case Token.ELIMINAREVENTO:  
-            	mail_evento.remove(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);          
+            	mail_evento.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);          
                 break;
             case Token.LISTAREVENTOS:  
-            	mail_evento.findAll(anacom, destinatario, Ayuda.HELP_AGREGARFOTOS);          
+            	mail_evento.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);          
                 break;
+                
+            case Token.INSERTARCRONOGRAMA:
+                mail_cronograma.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.ELIMINARCRONOGRAMA:
+            	mail_cronograma.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+                
+                
+            case Token.INSERTARDISERTANTE:
+                mail_disertante.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.MODIFICARDISERTANTE:
+                mail_disertante.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.ELIMINARDISERTANTE:
+                mail_disertante.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.LISTARDISERTANTES:
+                mail_disertante.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+                
+                
+            case Token.INSERTARCONTENIDO:
+                mail_contenido.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.LISTARCONTENIDO:
+                mail_contenido.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.INSERTARDETALLECONTENIDO:
+            	mail_detallecontenido.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.LISTARDETALLECONTENIDO:
+            	mail_detallecontenido.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+             
+                
+            case Token.INSERTAROBJETIVO:
+            	mail_objetivos.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.MODIFICAROBJETIVO:
+            	mail_objetivos.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.ELIMINAROBJETIVO:
+            	mail_objetivos.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.LISTAROBJETIVOS:
+            	mail_objetivos.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+                
+            case Token.INSERTARHORARIO:
+            	mail_horario.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.MODIFICARHORARIO:
+            	mail_horario.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.ELIMINARHORARIO:
+            	mail_horario.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.LISTARHORARIOS:
+            	mail_horario.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+   
+                
+            case Token.INSERTARLUGAR:
+            	mail_lugar.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.MODIFICARLUGAR:
+            	mail_lugar.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);              
+                break;
+            case Token.ELIMINARLUGAR:
+            	mail_lugar.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);              
+                break;
+            case Token.LISTARLUGARES:
+            	mail_lugar.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);              
+                break;
+                
+                
+            case Token.INSERTARDIA:
+            	mail_dia.create(anacom, destinatario, Ayuda.HELP_GLOBAL);              
+                break;
+                
+                
+                
+            case Token.INSERTARRESERVA:
+                mail_reserva.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+           
 
             default:
                 break;
         }
     }
 
-    private boolean verificarPermisos(String destinatario, int token) {
-        boolean b = false;
-
-        int[] usuario = {
-            Token.INSERTARUSUARIO,
-            Token.MODIFICARUSUARIO,
-            Token.ELIMINARUSUARIO,
-            Token.LISTARUSUARIOS};
-        	
-        int[] lugar = {
-        	Token.INSERTARLUGAR};
-        
+//    private boolean verificarPermisos(String destinatario, int token) {
+//        boolean b = false;
+//
+//        int[] usuario = {
+//            Token.INSERTARUSUARIO,
+//            Token.MODIFICARUSUARIO,
+//            Token.ELIMINARUSUARIO,
+//            Token.LISTARUSUARIOS};
+//        	       
         
 //        int[] evento = {
 //            Token.INSERTAREVENTO,
@@ -169,41 +238,41 @@ public class software {
 //            Token.QUITARSERVICIOPROFORMA};
 //        int[] reporte = {Token.MOSTRARESTADISTICA};
         
-        if(token == Token.INSERTARUSUARIO){
-            return true;
-        }
+//        if(token == Token.INSERTARUSUARIO){
+//            return true;
+//        }
         
-        DUsuario u = nu.obtenerUsuarioPorCorreo(destinatario);
-        if(u == null){
-            ClienteSMTP.sendMail(destinatario, "Verificacion de permisos", "Usted no se encuentra registrado en el sistema");
-            return false;
-        }
-        int tipo = u.getTipo();
-        System.out.println("Usuario tipo:"+tipo);
-        switch (tipo) {
-            case 1:
-                b = buscarComando(usuario, token);
-//                if (!b) {
-//                    b = buscarComando(evento, token);
-//                }
-//                if (!b) {
-//                    b = buscarComando(pedido, token);
-//                }
-//                if (!b) {
-//                    b = buscarComando(proforma, token);
-//                }
-                break;
-            case 2:
-//                if (token == Token.AGREGARFOTOS) {
-//                    b = true;
-//                }
-                break;
-            case 3:
-                b = true;
-                break;
-        }
-        return b;
-    }
+//        DPersona u = nu.obtenerUsuarioPorCorreo(destinatario);
+//        if(u == null){
+//            ClienteSMTP.sendMail(destinatario, "Verificacion de permisos", "Usted no se encuentra registrado en el sistema");
+//            return false;
+//        }
+//        int tipo = u.getTipo();
+//        System.out.println("Usuario tipo:"+tipo);
+//        switch (tipo) {
+//            case 1:
+//                b = buscarComando(usuario, token);
+////                if (!b) {
+////                    b = buscarComando(evento, token);
+////                }
+////                if (!b) {
+////                    b = buscarComando(pedido, token);
+////                }
+////                if (!b) {
+////                    b = buscarComando(proforma, token);
+////                }
+//                break;
+//            case 2:
+////                if (token == Token.AGREGARFOTOS) {
+////                    b = true;
+////                }
+//                break;
+//            case 3:
+//                b = true;
+//                break;
+//        }
+//        return b;
+//    }
 
     private boolean buscarComando(int[] array, int valor) {
         boolean b = false;
@@ -216,57 +285,6 @@ public class software {
         }
         return b;
     }
-
-    private void insertarUsuario(Anacom anacom, String correoDest) {
-
-        anacom.Avanzar();
-        Token token = anacom.Preanalisis();
-        if (token.getNombre() == Token.HELP) {
-            ClienteSMTP.sendMail(correoDest, "Ayudas - Foto Studio OnLine", Ayuda.HELP_INSERTARUSUARIO);
-            System.out.println(Ayuda.HELP_INSERTARUSUARIO);
-            return;
-        }
-        anacom.Avanzar();
-        String nombre = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-        anacom.Avanzar();
-        anacom.Avanzar();
-        String telefono = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-        anacom.Avanzar();
-        anacom.Avanzar();
-        String nacionalidad = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-        anacom.Avanzar();
-        anacom.Avanzar();
-        String direccion = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-        anacom.Avanzar();
-        anacom.Avanzar();
-        String correo = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-        anacom.Avanzar();
-        anacom.Avanzar();
-        String password = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-        anacom.Avanzar();
-        anacom.Avanzar();
-        String tipo = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-        NPersona nPersona = new NPersona();
-        Boolean respuesta = false;
-        switch (tipo) {
-            case "A":
-                respuesta = nPersona.registrar(nombre, telefono, nacionalidad, direccion, correo, password, tipo);
-                break;
-            case "B":
-                respuesta = nPersona.registrar(nombre, telefono, nacionalidad, direccion, correo, password, tipo);
-                break;
-            case "C":
-                respuesta = nPersona.registrar(nombre, telefono, nacionalidad, direccion, correo, password, tipo);
-                break;
-        }
-        if(respuesta) {
-            System.out.println("Se acaba de registrar un usuario exitosamentes");
-            ClienteSMTP.sendMail(correoDest, "Registro de usuario", "correcto");
-        }else{
-            System.out.println("Error al registrar");
-        }
-        
-    }
-    
+   
    
 }

@@ -61,8 +61,7 @@ public class DLugar extends Template {
 
 	@Override
 	public String toString() {
-		return "DLugar [id=" + id + ", descripcion=" + descripcion + ", created_at=" + created_at + ", updated_at="
-				+ updated_at + ", deleted_at=" + deleted_at + "]";
+		return "DLugar [descripcion=" + descripcion + "]";
 	}
 
 	@Override

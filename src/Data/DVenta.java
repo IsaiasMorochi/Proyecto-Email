@@ -60,6 +60,11 @@ public class DVenta extends Template {
 	}
 
 	@Override
+	public String toString() {
+		return "DVenta [fecha=" + fecha + "]";
+	}
+
+	@Override
     protected String registrar() {
         return "insert into venta(fecha, created_at) values("
                 +"'"+fecha+ "',"

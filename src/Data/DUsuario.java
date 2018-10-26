@@ -1,5 +1,7 @@
 package Data;
 
+import java.util.List;
+
 public class DUsuario extends Template{
     private int id;
     private int id_persona;
@@ -76,6 +78,12 @@ public class DUsuario extends Template{
 		this.deleted_at = deleted_at;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "DUsuario [id_persona=" + id_persona + ", correo=" + correo + ", password=" + password + "]";
+	}
+
 	@Override
     protected String registrar() {
         return "insert into usuario(id_persona, correo,password,created_at) values("
@@ -111,5 +119,5 @@ public class DUsuario extends Template{
     protected int cantidadAtributos() {
         return 4;
     }
-
+    
 }

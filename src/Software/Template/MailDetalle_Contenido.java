@@ -26,12 +26,9 @@ public class MailDetalle_Contenido extends TemplateMail {
 		int id =  anacom.Preanalisis().getAtributo();
 		anacom.Avanzar();
 		anacom.Avanzar();
-		int id_contenido =  anacom.Preanalisis().getAtributo();
-		anacom.Avanzar();
-		anacom.Avanzar();
 		String descripcion = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 		
-		return d.modificar(id, id_contenido, descripcion);
+		return d.modificar(id, descripcion);
 	}
 
 	@Override
@@ -49,17 +46,17 @@ public class MailDetalle_Contenido extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Detalle de contenido registrado exitosamente con id: " + d.getDetalle_Contenido().toString() : "No se pudo registrar el detalle de contenido" ;
+		return (sw) ? "Detalle de contenido registrado exitosamente con id: " + d.getDetalle_Contenido().autoincrement + d.getDetalle_Contenido().toString() : "No se pudo registrar el detalle de contenido" ;
 	}
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Detalle de contenido modificado exitosamente con id: " + d.getDetalle_Contenido().toString() : "No se pudo modificar el Detalle de contenido" ;
+		return (sw) ? "Detalle de contenido modificado exitosamente con id: " + d.getDetalle_Contenido().autoincrement + d.getDetalle_Contenido().toString() : "No se pudo modificar el Detalle de contenido" ;
 	}
 
 	@Override
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Detalle de contenido eliminado exitosamente con id: " + d.getDetalle_Contenido().toString() : "No se pudo eliminar el Detalle de contenido";
+		return (sw) ? "Detalle de contenido eliminado exitosamente con id: " + d.getDetalle_Contenido().autoincrement + d.getDetalle_Contenido().toString() : "No se pudo eliminar el Detalle de contenido";
 	}
 
 	@Override

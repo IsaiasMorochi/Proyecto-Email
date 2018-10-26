@@ -45,17 +45,17 @@ public class MailContenido extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Contenido registrado exitosamente con id: " + d.getconContenido().toString() : "No se pudo registrar el contenido";
+		return (sw) ? "Contenido registrado exitosamente con id: " + d.getconContenido().autoincrement + d.getconContenido().toString(): "No se pudo registrar el contenido";
 	}
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Contenido modificado exitosamente con id: " + d.getconContenido().toString() : "No se pudo modificar el contenido";
+		return (sw) ? "Contenido modificado exitosamente con id: " + d.getconContenido().autoincrement  + d.getconContenido().toString() : "No se pudo modificar el contenido";
 	}
 
 	@Override
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Contenido eliminado exitosamente con id: " + d.getconContenido().toString() : "No se pudo eliminar el contenido";
+		return (sw) ? "Contenido eliminado exitosamente con id: " + d.getconContenido().autoincrement   + d.getconContenido().toString() : "No se pudo eliminar el contenido";
 	}
 
 	@Override

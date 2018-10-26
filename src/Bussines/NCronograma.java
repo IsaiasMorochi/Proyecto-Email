@@ -5,7 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 import Data.DCronograma;
-import Dato.DUsuario;
+import Data.DPersona;
+
 import nucleo.utilidades.Utils;
 
 public class NCronograma {
@@ -33,7 +34,7 @@ private DCronograma cronograma;
     }
 	
 	public boolean eliminar(int id, String correo ){
-		DUsuario usuario = new DUsuario();
+		DPersona usuario = new DPersona();
 	    usuario = usuario.buscarPorCorreo(correo);
 //	        if (usuario.getTipo()== 3) {
 	            this.cronograma.setDeleted_at(Utils.dateToString(new Date()));

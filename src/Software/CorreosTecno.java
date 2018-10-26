@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Software;
 
 import nucleo.protocolos.ClientePOP;
@@ -17,7 +13,6 @@ public class CorreosTecno extends javax.swing.JFrame {
     /**
      * Creates new form CorreosTecno
      */
-    // Hilo
     HiloCorreo myThread;
 
     public CorreosTecno() {
@@ -36,7 +31,7 @@ public class CorreosTecno extends javax.swing.JFrame {
             System.out.println("Se ha iniciado el proceso");
             while (estado) {
                 // Preguntar si hay mail
-                if (ClientePOP.verifyInbox()) {
+               if (ClientePOP.verifyInbox()) {
                     String content[] = ClientePOP.readMail();
                     if (content != null) {
                         System.out.println("-------------------------------------------");
@@ -70,7 +65,8 @@ public class CorreosTecno extends javax.swing.JFrame {
 
         @Override
         public void run() {
-//            System.out.println(mensaje[0] + "\n\r" + mensaje[1] + "\n\r" + mensaje[2] + "\n\r" + mensaje[3]);
+//            System.out.println(mensaje[0] + "\n\r" + mensaje[1] + "\n\r" + mensaje[2] + "\n\r" + mensaje[3]);     
+//            mensaje[1]="icode295@gmail.com";
             System.out.println(mensaje[0] + "\n\r" + mensaje[1] + "\n\r");
             try {
 //                new software().processMessage(mensaje[0],mensaje[1],mensaje[2],mensaje[3]);

@@ -26,21 +26,77 @@ public class Token {
     public static final int MODIFICARUSUARIO = 101;
     public static final int ELIMINARUSUARIO = 102;
     public static final int LISTARUSUARIOS = 103;
-    
-    
-    public static final int INSERTARLUGAR = 200;
-    public static final int MODIFICARLUGAR = 201;
-    public static final int ELIMINARLUGAR = 202;
-    public static final int LISTARLUGARES = 203;
+
+
+
     
     public static final int INSERTARDIA = 204;
     
+    
+    /**
+     * EVENTO
+     */
     public static final int INSERTAREVENTO = 205;
     public static final int MODIFICAREVENTO = 206;
     public static final int ELIMINAREVENTO = 207;
     public static final int LISTAREVENTOS = 208;
     
-
+    /**
+     * CONTENIDO
+     */
+    public static final int INSERTARCONTENIDO = 209;
+    public static final int MODIFICARCONTENIDO = 210;
+    public static final int ELIMINARCONTENIDO = 211;
+    public static final int LISTARCONTENIDO = 212;
+    
+    public static final int INSERTARDETALLECONTENIDO = 213;
+    public static final int MODIFICARDETALLECONTENIDO = 214;
+    public static final int ELIMINARDETALLECONTENIDO = 215;
+    public static final int LISTARDETALLECONTENIDO = 216;
+    
+    /**
+     * DISERTANTE
+     */
+    public static final int INSERTARDISERTANTE = 217;
+    public static final int MODIFICARDISERTANTE = 218;
+    public static final int ELIMINARDISERTANTE = 219;
+    public static final int LISTARDISERTANTES = 220;
+    
+    /**
+     * CRONOGRAMA
+     */
+    public static final int INSERTARCRONOGRAMA = 221;
+    public static final int ELIMINARCRONOGRAMA = 222;
+        
+    /**
+     * OBJETIVOS
+     */
+    public static final int INSERTAROBJETIVO = 223;
+    public static final int MODIFICAROBJETIVO = 224;
+    public static final int ELIMINAROBJETIVO = 225;  
+    public static final int LISTAROBJETIVOS = 226;
+            
+    /**
+     * LUGAR
+     */
+    public static final int INSERTARLUGAR = 227;
+    public static final int MODIFICARLUGAR = 228;
+    public static final int ELIMINARLUGAR = 229;
+    public static final int LISTARLUGARES = 230;
+    
+    /**
+     * RESERVA
+     */
+    public static final int INSERTARRESERVA = 231;
+    
+    /**
+     * HORARIO
+     */
+    public static final int INSERTARHORARIO = 232;
+    public static final int MODIFICARHORARIO = 233;
+    public static final int ELIMINARHORARIO = 234;
+    public static final int LISTARHORARIOS = 235;
+    
   
     private int nombre;
     private int atributo;

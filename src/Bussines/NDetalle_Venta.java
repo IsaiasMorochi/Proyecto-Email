@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import Data.DDetalla_Venta;
-import Dato.DUsuario;
+import Data.DPersona;
 import nucleo.utilidades.Utils;
 
 public class NDetalle_Venta {
@@ -41,7 +41,7 @@ public class NDetalle_Venta {
     }
 	
 	public boolean eliminar(int id, String correo ){
-		DUsuario usuario = new DUsuario();
+		DPersona usuario = new DPersona();
 	    usuario = usuario.buscarPorCorreo(correo);
 //	        if (usuario.getTipo()== 3) {
 	            this.detalle.setId(id);

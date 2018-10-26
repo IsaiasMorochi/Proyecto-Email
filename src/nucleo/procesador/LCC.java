@@ -20,14 +20,57 @@ public class LCC {
         "ELIMINARUSUARIO",
         "LISTARUSUARIOS",
         
+        
+        
+        "INSERTAREVENTO",
+        "MODIFICAREVENTO",
+        "ELIMINAREVENTO",
+        "LISTAREVENTOS",
+        
+        
+        "INSERTARCONTENIDO",
+        "MODIFICARCONTENIDO",
+        "ELIMINARCONTENIDO",
+        "LISTARCONTENIDO",
+        
+        "INSERTARDETALLECONTENIDO",
+        "MODIFICARDETALLECONTENIDO",
+        "ELIMINARDETALLECONTENIDO",
+        "LISTARDETALLECONTENIDO",
+        
+        
+        "INSERTARDISERTANTE",
+        "MODIFICARDISERTANTE",
+        "ELIMINARDISERTANTE",
+        "LISTARDISERTANTES",
+        
+        
+      
+        "INSERTAROBJETIVO",
+        "MODIFICAROBJETIVO",
+        "ELIMINAROBJETIVO",
+        "LISTAROBJETIVOS",
+        
+        
+        
         "INSERTARLUGAR",
         "MODIFICARLUGAR",
         "ELIMINARLUGAR",
         "LISTARLUGARES",
         
+        
         "INSERTARDIA",
         
-        "INSERTAREVENTO"
+        "INSERTARRESERVA",
+        
+        "INSERTARCRONOGRAMA",
+        "ELIMINARCRONOGRAMA",
+        
+        "INSERTARHORARIO",
+        "MODIFICARHORARIO",
+        "ELIMINARHORARIO",
+        "LISTARHORARIOS"
+
     ));
 
     private static final LinkedList<Token> tokens = new LinkedList<>(Arrays.asList(
@@ -38,20 +81,57 @@ public class LCC {
         new Token(Token.FUNC, Token.MODIFICARUSUARIO, "MODIFICARUSUARIO"),
         new Token(Token.FUNC, Token.ELIMINARUSUARIO, "ELIMINARUSUARIO"),
         new Token(Token.FUNC, Token.LISTARUSUARIOS, "LISTARUSUARIOS"),
+
+
+        
+        new Token(Token.FUNC, Token.INSERTAREVENTO, "INSERTAREVENTO"),     
+        new Token(Token.FUNC, Token.MODIFICAREVENTO, "MODIFICAREVENTO"),    
+        new Token(Token.FUNC, Token.ELIMINAREVENTO, "ELIMINAREVENTO"),    
+        new Token(Token.FUNC, Token.LISTAREVENTOS, "LISTAREVENTOS"),
+        
+        
+        new Token(Token.FUNC, Token.INSERTARCONTENIDO , "INSERTARCONTENIDO"),
+        new Token(Token.FUNC, Token.MODIFICARCONTENIDO, "MODIFICARCONTENIDO"),
+        new Token(Token.FUNC, Token.ELIMINARCONTENIDO, "ELIMINARCONTENIDO"),
+        new Token(Token.FUNC, Token.LISTARCONTENIDO, "LISTARCONTENIDO"),
+        
+        new Token(Token.FUNC, Token.INSERTARDETALLECONTENIDO, "INSERTARDETALLECONTENIDO"),
+        new Token(Token.FUNC, Token.MODIFICARDETALLECONTENIDO, "MODIFICARDETALLECONTENIDO"),
+        new Token(Token.FUNC, Token.ELIMINARDETALLECONTENIDO, "ELIMINARDETALLECONTENIDO"),
+        new Token(Token.FUNC, Token.LISTARDETALLECONTENIDO, "LISTARDETALLECONTENIDO"),
+        
+
+        new Token(Token.FUNC, Token.INSERTARDISERTANTE, "INSERTARDISERTANTE"),
+        new Token(Token.FUNC, Token.MODIFICARDISERTANTE, "MODIFICARDISERTANTE"),
+        new Token(Token.FUNC, Token.ELIMINARDISERTANTE, "ELIMINARDISERTANTE"),
+        new Token(Token.FUNC, Token.LISTARDISERTANTES, "LISTARDISERTANTES"),
+        
+        new Token(Token.FUNC, Token.INSERTAROBJETIVO, "INSERTAROBJETIVO"),
+        new Token(Token.FUNC, Token.MODIFICAROBJETIVO, "MODIFICAROBJETIVO"),
+        new Token(Token.FUNC, Token.ELIMINAROBJETIVO, "ELIMINAROBJETIVO"),
+        new Token(Token.FUNC, Token.LISTAROBJETIVOS, "LISTAROBJETIVOS"),
+        
         
         new Token(Token.FUNC, Token.INSERTARLUGAR, "INSERTARLUGAR"),
         new Token(Token.FUNC, Token.MODIFICARLUGAR, "MODIFICARLUGAR"),
         new Token(Token.FUNC, Token.ELIMINARLUGAR, "ELIMINARLUGAR"),
         new Token(Token.FUNC, Token.LISTARLUGARES, "LISTARLUGARES"),
         
+        
+        
         new Token(Token.FUNC, Token.INSERTARDIA, "INSERTARDIA"),
-        
-        new Token(Token.FUNC, Token.INSERTAREVENTO, "INSERTAREVENTO"),     
-        new Token(Token.FUNC, Token.MODIFICAREVENTO, "MODIFICAREVENTO"),    
-        new Token(Token.FUNC, Token.ELIMINAREVENTO, "ELIMINAREVENTO"),    
-        new Token(Token.FUNC, Token.LISTAREVENTOS, "LISTAREVENTOS")    
-        
-        
+
+        new Token(Token.FUNC, Token.INSERTARRESERVA, "INSERTARRESERVA"),
+
+       
+        new Token(Token.FUNC, Token.INSERTARCRONOGRAMA, "INSERTARCRONOGRAMA"),
+        new Token(Token.FUNC, Token.ELIMINARCRONOGRAMA, "ELIMINARCRONOGRAMA"),
+      
+        new Token(Token.FUNC, Token.INSERTARHORARIO, "INSERTARHORARIO"),
+        new Token(Token.FUNC, Token.MODIFICARHORARIO, "MODIFICARHORARIO"),
+        new Token(Token.FUNC, Token.ELIMINARHORARIO, "ELIMINARHORARIO"),
+        new Token(Token.FUNC, Token.LISTARHORARIOS, "LISTARHORARIOS")
+
     ));
 
     public static Token estaEnLCC(String lexema) {

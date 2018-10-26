@@ -58,6 +58,11 @@ public class DCronograma extends Template {
 	public void setDeleted_at(String deleted_at) {
 		this.deleted_at = deleted_at;
 	}
+	
+	@Override
+	public String toString() {
+		return "DCronograma [id_evento=" + id_evento + "]";
+	}
 
 	@Override
     protected String registrar() {
@@ -69,12 +74,9 @@ public class DCronograma extends Template {
 
     @Override
     protected String modificar() {
-        return "update cronograma set "
-                + "id_evento='"+id_evento+"',"
-                + "updated_at='"+updated_at+"'"
-                + " where id="+id;
+        return null;
     }
-
+   
     @Override
     protected String borrar() {
         return "update cronograma set "

@@ -51,10 +51,10 @@ public class ClientePOP {
             System.out.println("SUBJECT: " + messages[0].getSubject());
             resultado[0] = messages[0].getSubject();
             String dest = messages[0].getFrom()[0].toString();
-//            int a = dest.indexOf("<");
-//            int b = dest.indexOf(">");
-//            resultado[1] = dest.substring(a+1, b);
-              resultado[1] = dest;
+            int a = dest.indexOf("<");
+            int b = dest.indexOf(">");
+            resultado[1] = dest.substring(a+1, b);
+//            resultado[1] = dest;
             String file = getTextFromMessage(messages[0]);
             if (!file.isEmpty()) {
                 String str[] = file.split("---");

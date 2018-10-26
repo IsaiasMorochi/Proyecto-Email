@@ -78,6 +78,11 @@ public class DObjetivos extends Template {
     }
 
     @Override
+	public String toString() {
+		return "DObjetivos [nombre=" + nombre + ", descripcion=" + descripcion + ", id_evento=" + id_evento + "]";
+	}
+
+	@Override
     protected String registrar() {
         return "insert into objetivos(nombre, descripcion, id_evento, created_at) values("
                 +"'"+nombre+ "',"

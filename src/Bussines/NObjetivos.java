@@ -5,32 +5,34 @@ import java.util.Date;
 import java.util.List;
 
 import Data.DDetalle_Contenido;
+import Data.DObjetivos;
 import Data.DPersona;
-
 import nucleo.utilidades.Utils;
 
-public class NDetalle_Contenido {
+public class NObjetivos {
+	
+	private DObjetivos detalle;
 
-	private DDetalle_Contenido detalle;
-
-	public NDetalle_Contenido() {
-		this.detalle = DDetalle_Contenido.getInstance();
+	public NObjetivos() {
+		this.detalle = DObjetivos.getInstance();
 	}
 	
-	public DDetalle_Contenido getDetalle_Contenido() {
+	public DObjetivos getObjetivos() {
 		return detalle;
 	}
 
-	public boolean registrar(int id_contenido, String descripcion){
-		this.detalle.setId_contenido(id_contenido);
+	public boolean registrar(String nombre, String descripcion, int id_evento){
+		this.detalle.setNombre(nombre);
 		this.detalle.setDescripcion(descripcion);
+		this.detalle.setId_evento(id_evento);
 		this.detalle.setCreated_at(Utils.dateToString(new Date()));
 		
 		return this.detalle.insertar();
 	}
 	
-	public boolean modificar(int id, String descripcion) {
+	public boolean modificar(int id, String nombre, String descripcion) {
 		this.detalle.setId(id);
+		this.detalle.setNombre(nombre);
 		this.detalle.setDescripcion(descripcion);
 		this.detalle.setUpdated_at(Utils.dateToString(new Date()));
 		
@@ -48,16 +50,17 @@ public class NDetalle_Contenido {
 //	    return false;
 	}
 	
-	private List<DDetalle_Contenido> listar() {
+	private List<DObjetivos> listar() {
         List<Object> lista = (List<Object>) this.detalle.listar();
-        List<DDetalle_Contenido> listaServicio= new ArrayList<>();
+        List<DObjetivos> listaServicio= new ArrayList<>();
         for (Object objecto : lista) {
             List<Object> objetoX = (List<Object>) objecto;
-            DDetalle_Contenido objectY = new DDetalle_Contenido();
+            DObjetivos objectY = new DObjetivos();
             
             objectY.setId(Integer.valueOf(objetoX.get(0).toString()));
-            objectY.setId_contenido(Integer.valueOf(objetoX.get(1).toString()));
+            objectY.setNombre(objetoX.get(1).toString());
             objectY.setDescripcion(objetoX.get(2).toString());
+            objectY.setId_evento(Integer.valueOf(objetoX.get(3).toString()));
             
             listaServicio.add(objectY);
         }
@@ -65,13 +68,14 @@ public class NDetalle_Contenido {
 	 }
 	 
 	public String Mostrar() {
-        List<DDetalle_Contenido> listarObjetos = this.listar();
-        String resultado = "Detalle de Contenido\n\n";
-        for (DDetalle_Contenido objetoX : listarObjetos) {
+        List<DObjetivos> listarObjetos = this.listar();
+        String resultado = "Listado de Objetivos\n\n";
+        for (DObjetivos objetoX : listarObjetos) {
             resultado = resultado +
                     "Codigo: " + objetoX.getId()+
-                    "\nID Contenido: " + objetoX.getId_contenido() +
+                    "\nNombre: " + objetoX.getNombre() +
                     "\nDescripcion: " + objetoX.getDescripcion() +
+                    "\nID Evento: " + objetoX.getId_evento() + 
                     "\n\n"
                     ;
 //            if (!objetoX.getDeleted_at().equals(null)) {
@@ -86,4 +90,5 @@ public class NDetalle_Contenido {
         }
         return resultado;
     }
+
 }

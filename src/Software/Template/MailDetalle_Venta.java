@@ -57,17 +57,17 @@ public class MailDetalle_Venta extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Detalle de venta registrado exitosamente con id: " + d.getDetalle_Venta().toString() : "No se pudo registrar el detalle de venta" ;
+		return (sw) ? "Detalle de venta registrado exitosamente con id: " + d.getDetalle_Venta().autoincrement + d.getDetalle_Venta().toString() : "No se pudo registrar el detalle de venta" ;
 	}
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "detalle de venta modificado exitosamente con id: " + d.getDetalle_Venta().toString() : "No se pudo modificar el detalle de venta" ;
+		return (sw) ? "detalle de venta modificado exitosamente con id: " + d.getDetalle_Venta().autoincrement + d.getDetalle_Venta().toString() : "No se pudo modificar el detalle de venta" ;
 	}
 
 	@Override
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Detalle de venta eliminado exitosamente con id: " + d.getDetalle_Venta().toString() : "No se pudo eliminar el detalle de venta";
+		return (sw) ? "Detalle de venta eliminado exitosamente con id: " + d.getDetalle_Venta().autoincrement + d.getDetalle_Venta().toString() : "No se pudo eliminar el detalle de venta";
 	}
 
 	@Override

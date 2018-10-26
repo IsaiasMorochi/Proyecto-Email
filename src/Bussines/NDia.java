@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import Data.DDia;
-import Dato.DUsuario;
+import Data.DPersona;
+
 import nucleo.utilidades.Utils;
 
 public class NDia {
@@ -32,7 +33,7 @@ public class NDia {
     }
 	
 	public boolean eliminar(int id, String correo ){
-		DUsuario usuario = new DUsuario();
+		DPersona usuario = new DPersona();
 	    usuario = usuario.buscarPorCorreo(correo);
 //	        if (usuario.getTipo()== 3) {
 	            this.dia.setDeleted_at(Utils.dateToString(new Date()));

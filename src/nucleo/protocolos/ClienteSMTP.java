@@ -12,9 +12,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Properties;
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.activation.FileDataSource;
+
+//import javax.activation.DataHandler;
+//import javax.activation.DataSource;
+//import javax.activation.FileDataSource;
+
+
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -26,6 +29,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+
 
 
 public class ClienteSMTP {
@@ -102,6 +106,7 @@ public class ClienteSMTP {
         return lines;
     }
 
+/**
     public static void sendMailWithFile(String correoDestino, String path, String contenido, String subject) {
         String to = correoDestino;
         String from = "grupo05sc@ficct.uagrm.edu.bo";
@@ -111,7 +116,7 @@ public class ClienteSMTP {
         String host = "virtual.fcet.uagrm.edu.bo";
         Properties props = new Properties();
         //props.put("mail.smtp.auth", "true");
-        // props.put("mail.smtp.starttls.enable", "true");
+        //props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", host);
         props.put("mail.smtp.port", "25");
         // Get the Session object.
@@ -141,8 +146,8 @@ public class ClienteSMTP {
             // Part two is attachment
             messageBodyPart = new MimeBodyPart();
             //String filename = "archivos/imagenes/video.mkv";
-            DataSource source = new FileDataSource(path);
-            messageBodyPart.setDataHandler(new DataHandler(source));
+            DataSource source = (DataSource) new FileDataSource(path);
+            messageBodyPart.setDataHandler(new DataHandler((javax.activation.DataSource) source));
             messageBodyPart.setFileName(new File(path).getName());
             messageBodyPart.setDisposition(Part.ATTACHMENT);
             messageBodyPart.setHeader("Content-Transfer-Encoding", "base64");
@@ -156,7 +161,8 @@ public class ClienteSMTP {
             e.printStackTrace();
         }
     }
-    
+
+
     public static void sendMailWithFiles(String correoDestino, List<String> rutas, String contenido, String subject) {
         String to = correoDestino;
         String from = "grupo03sa@ficct.uagrm.edu.bo";
@@ -166,7 +172,7 @@ public class ClienteSMTP {
 //        String host = "virtual.fcet.uagrm.edu.bo";
         Properties props = new Properties();
         //props.put("mail.smtp.auth", "true");
-        // props.put("mail.smtp.starttls.enable", "true");
+        //props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", host);
         props.put("mail.smtp.port", "25");
         // Get the Session object.
@@ -213,6 +219,7 @@ public class ClienteSMTP {
             e.printStackTrace();
         }
     }
+**/
 
     public static void sendMailHTML(String correoDestino, String contenido, String subject) {
         String to = correoDestino;
@@ -251,5 +258,6 @@ public class ClienteSMTP {
             e.printStackTrace();
         }
     }
+
 
 }

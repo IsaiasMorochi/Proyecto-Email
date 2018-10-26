@@ -69,6 +69,11 @@ public class DContenido extends Template {
 	}
 
 	@Override
+	public String toString() {
+		return "DContenido [id_evento=" + id_evento + ", titulo=" + titulo + "]";
+	}
+
+	@Override
     protected String registrar() {
         return "insert into contenido(id_evento, titulo, created_at) values("
                 +id_evento+ ","

@@ -96,6 +96,12 @@ public class DEvento extends Template {
 	}
 
 	@Override
+	public String toString() {
+		return "DEvento [titulo=" + titulo + ", fecha_inicio=" + fecha_inicio + ", fecha_fin=" + fecha_fin + ", costo="
+				+ costo + ", tipo=" + tipo + "]";
+	}
+
+	@Override
     protected String registrar() {
         return "insert into evento(titulo, fecha_inicio, fecha_fin, costo, tipo, created_at) values("
                 +"'"+titulo+ "',"

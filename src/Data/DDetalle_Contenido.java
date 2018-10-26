@@ -68,10 +68,16 @@ public class DDetalle_Contenido extends Template {
 		this.deleted_at = deleted_at;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "DDetalle_Contenido [id_contenido=" + id_contenido + ", descripcion=" + descripcion + "]";
+	}
+
 	@Override
     protected String registrar() {
         return "insert into detalle_contenido(id_contenido, descripcion, created_at) values("
-                + "'"+ id_contenido + "',"
+                + id_contenido + ","
                 + "'"+ descripcion + "',"
                 + "'"+ created_at + "'"
                 + ")";
@@ -94,7 +100,7 @@ public class DDetalle_Contenido extends Template {
 
     @Override
     protected String listado() {
-        return "select id, descripcion from detalle_contenido where deleted_at is null";
+        return "select * from detalle_contenido where deleted_at is null";
     }
 
     @Override

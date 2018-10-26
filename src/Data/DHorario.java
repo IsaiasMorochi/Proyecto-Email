@@ -95,13 +95,20 @@ public class DHorario extends Template {
 		this.deleted_at = deleted_at;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "DHorario [id_cronograma=" + id_cronograma + ", id_dia=" + id_dia + ", id_lugar=" + id_lugar
+				+ ", inicio=" + inicio + ", fin=" + fin + "]";
+	}
+
 	@Override
     protected String registrar() {
         return "insert into horario(id_cronograma, id_dia, id_lugar, inicio, fin, created_at) values("
                 +id_cronograma+ ","
                 +id_dia+ ","
                 +id_lugar+ ","
-                +"'"+inicio+","
+                +"'"+inicio+"',"
                 +"'"+fin+"',"
                 +"'"+created_at+"'"
                 +")";
