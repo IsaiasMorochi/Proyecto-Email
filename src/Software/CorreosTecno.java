@@ -17,7 +17,7 @@ public class CorreosTecno extends javax.swing.JFrame {
 
     public CorreosTecno() {
         initComponents();
-        this.setTitle("Correos Tecno");
+        this.setTitle("Correos Tecnologia Web");
         this.setLocationRelativeTo(null);
         btnCancelar.setEnabled(false);
     }

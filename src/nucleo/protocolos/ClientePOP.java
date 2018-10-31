@@ -24,18 +24,18 @@ import javax.mail.search.FlagTerm;
 public class ClientePOP {
 
     public static String[] readMail() {
-        // mail server info
-        String host = "mail.ficct.uagrm.edu.bo";
-//        String host = "virtual.fcet.uagrm.edu.bo";
-        String user = "grupo03sa";
-        String password = "grupo03grupo03";
+
+//        String host = "mail.ficct.uagrm.edu.bo";
+//        String user = "grupo03sa";
+//        String password = "grupo03grupo03";
+
         String resultado[] = new String[4];
         try {
             // connect to my pop3 inbox in read-only mode
             Properties properties = System.getProperties();
             Session session = Session.getDefaultInstance(properties);
             Store store = session.getStore("pop3");
-            store.connect(host, user, password);
+            store.connect(Constantes.MAIL_SERVER_HOST, Constantes.MAIL_USER, Constantes.MAIL_PASSWORD);
             Folder inbox = store.getFolder("inbox");
             inbox.open(Folder.READ_WRITE);
 
@@ -45,7 +45,7 @@ public class ClientePOP {
             Message messages[] = inbox.search(unseenFlagTerm);
 
             if (messages.length == 0) {
-                System.out.println("No messages found.");
+                System.out.println("No se han encontrado mensajes.");
                 return null;
             }
             System.out.println("SUBJECT: " + messages[0].getSubject());
@@ -160,19 +160,18 @@ public class ClientePOP {
 
         try {
             // Estableciendo Connections Socket
-            Socket socket = new Socket("mail.ficct.uagrm.edu.bo", 110);
-//            Socket socket = new Socket("virtual.fcet.uagrm.edu.bo", 110);
+            Socket socket = new Socket(Constantes.MAIL_SERVER_HOST, 110);
             reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer = new DataOutputStream(socket.getOutputStream());
 
             if (socket != null && reader != null && writer != null) {
                 reader.readLine();
                 // Autenticando Usuario
-                command = "USER " + "grupo03sa" + "\r\n";
+                command = "USER " + Constantes.MAIL_USER + "\r\n";
                 writer.writeBytes(command);
                 reader.readLine();
 
-                command = "PASS " + "grupo03grupo03" + "\r\n";
+                command = "PASS " + Constantes.MAIL_PASSWORD + "\r\n";
                 writer.writeBytes(command);
                 reader.readLine();
 

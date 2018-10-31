@@ -77,7 +77,7 @@ public class DModoPago extends Template {
     protected String registrar() {
         return "insert into disertante(descripcion, id_evento, created_at) values("
                 +"'"+descripcion+ "',"
-                +id_evento+ "',"
+                +id_evento+ ","
                 +"'"+created_at+ "'"
                 +")";
     }

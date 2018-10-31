@@ -6,7 +6,7 @@ import nucleo.utilidades.Herramientas;
 
 public class MailContenido extends TemplateMail {
 	
-	NContenido d = new NContenido();
+	private NContenido d = new NContenido();
 
 	@Override
 	public boolean insertar(Anacom anacom, String correo) {

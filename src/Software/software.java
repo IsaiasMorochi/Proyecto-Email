@@ -6,7 +6,7 @@
 package Software;
 
 
-import com.sun.org.apache.xml.internal.security.utils.HelperNodeList;
+//import com.sun.org.apache.xml.internal.security.utils.HelperNodeList;
 
 import Bussines.NUsuario;
 import Data.DPersona;
@@ -64,7 +64,7 @@ public class software {
             return;
         }
 
-//         Si todo va bien, procesar el Comando
+//      Si todo va bien, procesar el Comando
         anacom.Init();
         Token token = anacom.Preanalisis();
 
@@ -285,6 +285,4 @@ public class software {
         }
         return b;
     }
-   
-   
 }
