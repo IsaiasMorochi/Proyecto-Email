@@ -221,8 +221,8 @@ public class ClienteSMTP {
     }
 **/
 
-    public static void sendMailHTML(String correoDestino, String contenido, String subject) {
-        String to = correoDestino;
+    public static void sendMailHTML(String toMail, String subject, String content) {
+        String to = toMail;
         String from = Constantes.MAIL_USERMAIL;
         final String username = Constantes.MAIL_USER;//change accordingly
         final String password = Constantes.MAIL_PASSWORD;//change accordingly
@@ -250,7 +250,7 @@ public class ClienteSMTP {
             // Set Subject: header field
 
             // Create the message part
-            message.setContent(contenido, "text/html");
+            message.setContent(content, "text/html");
             message.setSubject(subject);
             Transport.send(message);
             System.out.println("Se ha enviado un correo de respuesta");

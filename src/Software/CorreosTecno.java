@@ -7,7 +7,6 @@ import nucleo.utilidades.Constantes;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class CorreosTecno extends javax.swing.JFrame {
 
     /**

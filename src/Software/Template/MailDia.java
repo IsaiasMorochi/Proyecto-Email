@@ -12,6 +12,7 @@ public class MailDia extends TemplateMail {
 	public boolean insertar(Anacom anacom, String correo) {
 		anacom.Avanzar();
 		String dia = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+		
 		return d.registrar(dia);
 	}
 
@@ -30,6 +31,7 @@ public class MailDia extends TemplateMail {
 	public boolean eliminar(Anacom anacom, String correo) {
 		anacom.Avanzar();
         int id = anacom.Preanalisis().getAtributo();
+        
 		return d.eliminar(id, correo);
 	}
 
@@ -40,17 +42,17 @@ public class MailDia extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Lugar registrado exitosamente con id: " + d.getDia().toString() : "No se pudo registrar el dia" ;
+		return (sw) ? "Lugar registrado exitosamente con id: " + d.getDia().autoincrement + ", " + d.getDia().toString() : "No se pudo registrar el dia";
 	}
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Dia modificado exitosamente con id: " + d.getDia().toString() : "No se pudo modificar el dia" ;
+		return (sw) ? "Dia modificado exitosamente con id: " + d.getDia().autoincrement + ", " +  d.getDia().toString() : "No se pudo modificar el dia";
 	}
 
 	@Override
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Dia eliminado exitosamente con id: " + d.getDia().toString() : "No se pudo eliminar el dia" + d.getDia().toString();
+		return (sw) ? "Dia eliminado exitosamente con id: " + d.getDia().autoincrement + ", " +  d.getDia().toString() : "No se pudo eliminar el dia";
 	}
 
 	@Override

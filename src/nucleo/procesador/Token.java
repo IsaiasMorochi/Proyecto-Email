@@ -22,16 +22,19 @@ public class Token {
     public static final int HELP = 11;
     public static final int HELPGLOBAL = 12;
 
-    public static final int INSERTARUSUARIO = 100;
-    public static final int MODIFICARUSUARIO = 101;
-    public static final int ELIMINARUSUARIO = 102;
-    public static final int LISTARUSUARIOS = 103;
-
-
-
     
+    /**
+     * Usuarios
+     */
+    public static final int INSERTARUSUARIO = 200;
+    public static final int MODIFICARUSUARIO = 201;
+    public static final int ELIMINARUSUARIO = 202;
+    public static final int LISTARUSUARIOS = 203;
+    
+    /**
+     * Dia
+     */
     public static final int INSERTARDIA = 204;
-    
     
     /**
      * EVENTO
@@ -49,6 +52,9 @@ public class Token {
     public static final int ELIMINARCONTENIDO = 211;
     public static final int LISTARCONTENIDO = 212;
     
+    /**
+     * DETALLE CONTENIDO
+     */
     public static final int INSERTARDETALLECONTENIDO = 213;
     public static final int MODIFICARDETALLECONTENIDO = 214;
     public static final int ELIMINARDETALLECONTENIDO = 215;
@@ -97,6 +103,39 @@ public class Token {
     public static final int ELIMINARHORARIO = 234;
     public static final int LISTARHORARIOS = 235;
     
+//    
+    /**
+     * Venta
+     */
+    public static final int INSERTARVENTA = 236;
+    
+    /**
+     * Detalle Venta
+     */
+    public static final int INSERTARDETALLEVENTA = 237;
+    public static final int MODIFICARDETALLEVENTA = 238;
+    public static final int ELIMINARDETALLEVENTA = 239;
+    public static final int LISTARDETALLEVENTAS = 240;
+    
+    /**
+     * Modo de Pago
+     */
+    public static final int INSERTARMODOPAGO = 241;
+    public static final int MODIFICARMODOPAGO = 242;
+    public static final int ELIMINARMODOPAGO = 243;
+    public static final int LISTARMODOPAGOS = 244;
+    
+    /**
+     * Requisitos
+     */
+    public static final int INSERTARREQUISITO = 245;
+    public static final int MODIFICARREQUISITO = 246;
+    public static final int ELIMINARREQUISITO = 247;
+    public static final int LISTARREQUISITOS = 248;
+    
+    public static final int REPORTE = 249;
+    
+  
   
     private int nombre;
     private int atributo;

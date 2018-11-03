@@ -5,10 +5,6 @@
  */
 package nucleo.procesador;
 
-/**
- *
- * @author David
- */
 public class Checker {
 
     private Anacom anacom;

@@ -23,13 +23,16 @@ public abstract class TemplateMail {
         }
         
         boolean sw = this.insertar(anacom, email);
+        System.out.println(sw);
         
         if (sw) {
 	         System.out.println(this.messageCreate(sw));
-	         ClienteSMTP.sendMail(email, "Registro con exito", this.messageCreate(sw));
+//	         ClienteSMTP.sendMail(email, "REGISTRO CON EXITO", this.messageCreate(sw));
+	         ClienteSMTP.sendMailHTML(email, "REGISTRO CON EXITO", "<h2>" + this.messageCreate(sw) + "</h2>");
         }else{
         	System.out.println(this.messageCreate(sw));
-            ClienteSMTP.sendMail(email, "Registro sin exito", this.messageCreate(sw));	
+//            ClienteSMTP.sendMail(email, "REGISTRO SIN EXITO", this.messageCreate(sw));
+            ClienteSMTP.sendMailHTML(email, "REGISTRO SIN EXITO", "<h2>" + this.messageCreate(sw) + "</h2>");
             return;
         }
     }

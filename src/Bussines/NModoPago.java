@@ -3,10 +3,8 @@ package Bussines;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import Data.DModoPago;
 import Data.DPersona;
-import Data.DRequisito;
 import nucleo.utilidades.Utils;
 
 public class NModoPago {

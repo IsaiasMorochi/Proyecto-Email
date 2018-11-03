@@ -18,12 +18,11 @@ public abstract class Template {
     protected abstract int cantidadAtributos();
     
     public boolean consultar(String consulta){
-//        consulta = "insert into usuario(id_persona, correo,password,created_at) values(1,'correo@gmail.com','pass','12-05-2018')";
       boolean  resultado =true;
         try {
             Connection conn = Connections.getConnection();
             PreparedStatement st = conn.prepareStatement(consulta,Statement.RETURN_GENERATED_KEYS);
-           resultado = !st.execute();          
+            resultado = !st.execute();          
             ResultSet auto = st.getGeneratedKeys();
             if (auto.next() && auto.isFirst()) {
                 autoincrement = auto.getInt(1);
@@ -33,9 +32,8 @@ public abstract class Template {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             System.out.println("Error en Template consultar capa Datos");
-            return resultado;
+            return false;
         }
-     
     }
     
     public List<Object> listar(){

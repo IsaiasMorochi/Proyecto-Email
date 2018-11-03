@@ -24,11 +24,6 @@ import javax.mail.search.FlagTerm;
 public class ClientePOP {
 
     public static String[] readMail() {
-
-//        String host = "mail.ficct.uagrm.edu.bo";
-//        String user = "grupo03sa";
-//        String password = "grupo03grupo03";
-
         String resultado[] = new String[4];
         try {
             // connect to my pop3 inbox in read-only mode

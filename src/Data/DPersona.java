@@ -114,11 +114,13 @@ public class DPersona extends Template {
 
 	@Override
     protected String registrar() {
-        return "insert into persona(nombre, telefono, nacionalidad, direccion, created_at) values("
+        return "insert into persona(nombre, telefono, nacionalidad, ci, direccion, tipo, created_at) values("
                 +"'"+nombre+ "',"
                 +"'"+telefono+ "',"
                 +"'"+nacionalidad+ "',"
+                +"'"+ci+ "',"
                 +"'"+direccion+"',"
+                +"'"+tipo+"',"
                 +"'"+created_at+"'"
                 + ")";
     }
@@ -131,15 +133,16 @@ public class DPersona extends Template {
                 + "nacionalidad='"+nacionalidad+"',"
                 + "ci='"+ci+"',"
                 + "direccion='"+direccion+"',"
+                + "tipo='"+tipo+"',"
                 + "updated_at='"+updated_at+"'"
-                + " where id="+id;
+                + "where id="+id;
     }
 
     @Override
     protected String borrar() {
         return "update persona set "
                 + "deleted_at="+ deleted_at +"'"
-                + " where id="+id;
+                + "where id="+id;
     }
 
     @Override
@@ -170,10 +173,12 @@ public class DPersona extends Template {
     public DPersona buscarPorCorreo(String correo) {
         List<Object> usuario =(List<Object>) buscar("select id from usuario where correo='"+correo+"'");
         DPersona p = DPersona.getInstance();
+        DUsuario u = DUsuario.getInstance();
         if (usuario==null || usuario.size()==0) {
             return null;
         }
         p.setId(Integer.valueOf(usuario.get(0).toString()));
+       
         p.setNombre(usuario.get(1).toString());
         p.setTelefono(usuario.get(2).toString());
         p.setNacionalidad(usuario.get(3).toString());

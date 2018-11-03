@@ -1,5 +1,7 @@
 package Data;
 
+import java.sql.ResultSet;
+
 public class DEvento extends Template {
 	
     private int id;
@@ -141,5 +143,21 @@ public class DEvento extends Template {
     protected int cantidadAtributos() {
         return 6;
     }
-
+    
+    public ResultSet obtenerReporte(){
+        String consulta = " select p.nombre as nombre, COUNT(dv.id_persona) as Cantidad "
+                + " from evento e, detalle_venta dv, persona p"
+                + " where e.id = dv.id_evento and dv.id_persona = p.id"
+                + " group by p.nombre ";
+        return consultarDatos(consulta);
+    }
+    
+    public ResultSet obtenerEstadistica(){
+        String consulta = " select p.nombre as nombre, SUM(dv.id_persona) as Total "
+                + " from evento e, detalle_venta dv, persona p"
+                + " where e.id = dv.id_evento and dv.id_persona = p.id"
+                + " group by p.nombre ";
+        return consultarDatos(consulta);
+    }
+    
 }
