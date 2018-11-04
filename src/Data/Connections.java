@@ -8,13 +8,20 @@ package Data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import nucleo.utilidades.Constantes;
+
 public class Connections {
 
 //    private static final String URL = "jdbc:postgresql://mail.ficct.uagrm.edu.bo:5432/db_grupo03sa";
-    private static final String URL = "jdbc:postgresql://virtual.fcet.uagrm.edu.bo:5432/db_grupo03sa";
-    private static final String CLASE_CONEXION = "org.postgresql.Driver";
-    private static final String USERNAME = "grupo03sa";
-    private static final String PASSWORD = "grupo03grupo03";
+//    private static final String URL = "jdbc:postgresql://virtual.fcet.uagrm.edu.bo:5432/db_grupo03sa";
+//    private static final String CLASE_CONEXION = "org.postgresql.Driver";
+//    private static final String USERNAME = "grupo03sa";
+//    private static final String PASSWORD = "grupo03grupo03";
+    
+    private static final String URL = Constantes.URL;
+    private static final String CLASE_CONEXION = Constantes.CLASE_CONEXION;
+    private static final String USERNAME = Constantes.USERNAME;
+    private static final String PASSWORD = Constantes.PASSWORD;
 
     
     private static java.sql.Connection conexion = null;

@@ -65,6 +65,7 @@ public class ClientePOP {
         }
         return resultado;
     }
+  
 
     private static String getTextFromMessage(Message message) throws MessagingException, IOException {
         String result = "";
