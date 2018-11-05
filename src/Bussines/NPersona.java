@@ -41,12 +41,12 @@ public class NPersona {
         return false;
     }
     
-	public boolean modificar(int id, String tipo) {
-		 personaModel.setId(id);
-	     personaModel.setTipo(tipo); 
-		 personaModel.setUpdated_at(Utils.dateToString(new Date()));
-		
-		return this.personaModel.actualizar();
+    public boolean modificar(int id, String tipo) {
+         this.personaModel.setId(id);
+         this.personaModel.setTipo(tipo); 
+         this.personaModel.setUpdated_at(Utils.dateToString(new Date()));
+
+    return this.personaModel.actualizar();
     }    
     
 	public boolean eliminar(int id, String correo ){
@@ -70,9 +70,9 @@ public class NPersona {
             objectY.setId(Integer.valueOf(objetoX.get(0).toString()));
             objectY.setNombre(objetoX.get(1).toString());
             objectY.setTelefono(objetoX.get(2).toString());
-            objectY.setCi(objetoX.get(2).toString());
-            objectY.setNacionalidad(objetoX.get(3).toString());
-            objectY.setDireccion(objetoX.get(4).toString());
+            objectY.setCi(objetoX.get(3).toString());
+            objectY.setNacionalidad(objetoX.get(4).toString());
+            objectY.setDireccion(objetoX.get(5).toString());
                         
             listaServicio.add(objectY);
         }

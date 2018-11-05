@@ -31,7 +31,7 @@ public class MailObjetivos extends TemplateMail {
 		String nombre = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 		anacom.Avanzar();
 		anacom.Avanzar();
-	    String descripcion = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+                String descripcion = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 	   	    
 	    return d.modificar(id, nombre, descripcion);
 	}
