@@ -5,18 +5,7 @@
  */
 package Software;
 
-import Dato.DCliente;
-import Dato.DFotografo;
-import Dato.DPersonal;
-import Dato.DUsuario;
-import Dato.DZona;
-import Negocio.NEvento;
-import Negocio.NPedido;
-import Negocio.NProforma;
-import Negocio.NPromocion;
-import Negocio.NServicio;
-import Negocio.NUsuario;
-import Negocio.NZona;
+
 
 
 /**
@@ -33,7 +22,7 @@ public class main {
         
 //        NServicio s = new NServicio();
 //        System.out.println(s.mostrarLista());
-        System.out.println("hello");
+//        System.out.println("hello");
        //// "SANDOVAL KK"
         
         
@@ -54,7 +43,7 @@ public class main {
         //cliente.enviarConGMail(destinatario, asunto, cuerpo+cuerpo+cuerpo+cuerpo+cuerpo);
         //cliente.sendMailWithFile(destinatario, "https://www.chiquipedia.com/imagenes/imagenes-flores19.jpg", contenido, asunto);
         //cliente.sendMail(destinatario, asunto, cuerpo);
-        //software s =  new software();
+        //ProcesadorMensaje s =  new ProcesadorMensaje();
         //s.processMessage(contenido, destinatario, cuerpo, cuerpo);
         /*String esta=new String();
         try {
@@ -191,7 +180,7 @@ s.registrar("servicio 2", "descripcion del servicio 2", 455, 132);
 //            System.out.println("todo ok");
 //        }
         //System.out.println(Ayuda.HELP_GLOBAL);
-        //software sof=new software();
+        //ProcesadorMensaje sof=new ProcesadorMensaje();
         //System.out.println(Ayuda.HELP_GLOBAL);
         //prueba cliente
     }

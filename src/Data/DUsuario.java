@@ -86,7 +86,7 @@ public class DUsuario extends Template{
 
 	@Override
     protected String registrar() {
-        return "insert into usuario(id_persona, correo,password,created_at) values("
+        return "insert into usuario(id_persona, correo, password, created_at) values("
                 +id_persona+ ","
                 +"'"+correo+ "',"
                 +"'"+password+ "',"

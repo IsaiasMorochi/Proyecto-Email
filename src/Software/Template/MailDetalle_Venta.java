@@ -1,26 +1,34 @@
 package Software.Template;
 
 import Bussines.NDetalle_Venta;
-import nucleo.procesador.Anacom;
+import Nucleo.procesador.Anacom;
+import Nucleo.utilidades.Herramientas;
 
 public class MailDetalle_Venta extends TemplateMail {
 	
-	NDetalle_Venta d = new NDetalle_Venta();
+	private NDetalle_Venta d = new NDetalle_Venta();
+
 	@Override
 	public boolean insertar(Anacom anacom, String correo) {
 		anacom.Avanzar();
-		int id_venta = anacom.Preanalisis().getAtributo();
-		anacom.Avanzar();
-		anacom.Avanzar();
-		int id_persona = anacom.Preanalisis().getAtributo();
+		int id_evento = anacom.Preanalisis().getAtributo();
 		anacom.Avanzar();
 		anacom.Avanzar();
 		int id_usuario = anacom.Preanalisis().getAtributo();
 		anacom.Avanzar();
 		anacom.Avanzar();
-		int id_evento = anacom.Preanalisis().getAtributo();
-		
-		return d.registrar(id_venta, id_persona, id_usuario, id_evento);
+		int id_persona = anacom.Preanalisis().getAtributo();
+		anacom.Avanzar();
+		anacom.Avanzar();
+		int id_venta = anacom.Preanalisis().getAtributo();
+		anacom.Avanzar();
+		anacom.Avanzar();
+		String nro_comprobante = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+		anacom.Avanzar();
+		anacom.Avanzar();
+		String fecha_comprobante = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+
+		return this.d.registrar(id_evento, id_usuario, id_persona, id_venta, nro_comprobante, fecha_comprobante);
 	}
 
 	@Override
@@ -29,30 +37,24 @@ public class MailDetalle_Venta extends TemplateMail {
 		int id = anacom.Preanalisis().getAtributo();
 		anacom.Avanzar();
 		anacom.Avanzar();
-		int id_venta = anacom.Preanalisis().getAtributo();
+		String nro_comprobante = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 		anacom.Avanzar();
 		anacom.Avanzar();
-		int id_persona = anacom.Preanalisis().getAtributo();
-		anacom.Avanzar();
-		anacom.Avanzar();
-		int id_usuario = anacom.Preanalisis().getAtributo();
-		anacom.Avanzar();
-		anacom.Avanzar();
-		int id_evento = anacom.Preanalisis().getAtributo();
-		
-		return d.modificar(id, id_venta, id_persona, id_usuario, id_evento);
+		String fecha_comprobante = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+
+		return this.d.modificar(id,fecha_comprobante, nro_comprobante );
 	}
 
 	@Override
 	public boolean eliminar(Anacom anacom, String correo) {
 		anacom.Avanzar();
         int id = anacom.Preanalisis().getAtributo();
-		return d.eliminar(id, correo);
+		return this.d.eliminar(id, correo);
 	}
 
 	@Override
 	public String listar() {
-		return d.Mostrar();
+		return this.d.Mostrar();
 	}
 
 	@Override

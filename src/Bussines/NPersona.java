@@ -1,9 +1,8 @@
 package Bussines;
 
 import Data.DPersona;
-import Data.DRequisito;
 import Data.DUsuario;
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -39,7 +38,7 @@ public class NPersona {
             
             return usuarioModel.insertar();
         }
-        return Boolean.FALSE;
+        return false;
     }
     
 	public boolean modificar(int id, String nombre, String telefono, String nacionalidad, String ci, String direccion, String tipo) {

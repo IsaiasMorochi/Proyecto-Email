@@ -103,6 +103,7 @@ CREATE TABLE modo_pago(
 CREATE TABLE cronograma(  
 	id bigserial NOT NULL,
 	id_evento integer NOT NULL,
+	titulo character varying(254),
 
 	created_at character varying(14),
 	updated_at character varying(14),
@@ -139,7 +140,7 @@ CREATE TABLE lugar(
 
 CREATE TABLE horario(  
 	id bigserial NOT NULL,
-	id_cronograma integer NOT NULL,
+	id_evento integer NOT NULL,
 	id_dia integer NOT NULL,
 	id_lugar integer NOT NULL,
 	inicio character varying(15) NOT NULL,
@@ -150,7 +151,7 @@ CREATE TABLE horario(
 	deleted_at character varying(14),
 
 	PRIMARY KEY(id),
-	FOREIGN KEY (id_cronograma) REFERENCES cronograma (id) MATCH SIMPLE ON UPDATE RESTRICT ON DELETE RESTRICT,
+	FOREIGN KEY (id_evento) REFERENCES evento (id) MATCH SIMPLE ON UPDATE RESTRICT ON DELETE RESTRICT,
 	FOREIGN KEY (id_dia) REFERENCES dia (id) MATCH SIMPLE ON UPDATE RESTRICT ON DELETE RESTRICT,
 	FOREIGN KEY (id_lugar) REFERENCES lugar (id) MATCH SIMPLE ON UPDATE RESTRICT ON DELETE RESTRICT
 );
@@ -184,10 +185,8 @@ CREATE TABLE detalle_contenido(
 CREATE TABLE disertante(  
 	id bigserial NOT NULL,
 	id_evento integer NOT NULL,
-	nombre character varying(100) NOT NULL,
-	foto character varying(4096),
-	nacionalidad character varying(20),
-	descripcion character varying(512) NOT NULL,
+	nombre character varying(254) NOT NULL,
+	descripcion character varying(1024) NOT NULL,
 
 	created_at character varying(14),
 	updated_at character varying(14),
@@ -199,7 +198,6 @@ CREATE TABLE disertante(
 
 CREATE TABLE venta(  
 	id bigserial NOT NULL,
-	id_evento integer NOT NULL,
 	fecha character varying(20) NOT NULL,
 
 	created_at character varying(14),

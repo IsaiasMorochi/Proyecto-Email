@@ -1,8 +1,8 @@
 package Software.Template;
 
 import Bussines.NHorario;
-import nucleo.procesador.Anacom;
-import nucleo.utilidades.Herramientas;
+import Nucleo.procesador.Anacom;
+import Nucleo.utilidades.Herramientas;
 
 public class MailHorario extends TemplateMail {
 
@@ -11,7 +11,7 @@ public class MailHorario extends TemplateMail {
 	@Override
 	public boolean insertar(Anacom anacom, String correo) {
 		anacom.Avanzar();
-		int id_cronograma = anacom.Preanalisis().getAtributo();
+		int id_evento = anacom.Preanalisis().getAtributo();
 		anacom.Avanzar();
 		anacom.Avanzar();
 		int id_dia =  anacom.Preanalisis().getAtributo();
@@ -25,7 +25,7 @@ public class MailHorario extends TemplateMail {
 		anacom.Avanzar();
 		String fin = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 		
-		return h.registrar(id_cronograma, id_dia, id_lugar, inicio, fin);	
+		return h.registrar(id_evento, id_dia, id_lugar, inicio, fin);
 	}
 
 	@Override

@@ -2,7 +2,7 @@ package Bussines;
 
 import java.util.Date;
 import Data.DReserva;
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NReserva {
 	
@@ -22,7 +22,7 @@ public class NReserva {
 		 reserva.setId_evento(id_evento);
 		 reserva.setCreated_at(Utils.dateToString(new Date()));
 		 
-		 return reserva.insertar();
+		 return this.reserva.insertar();
 	 }
 
 }

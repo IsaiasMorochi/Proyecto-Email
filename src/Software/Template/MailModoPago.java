@@ -1,8 +1,8 @@
 package Software.Template;
 
 import Bussines.NModoPago;
-import nucleo.procesador.Anacom;
-import nucleo.utilidades.Herramientas;
+import Nucleo.procesador.Anacom;
+import Nucleo.utilidades.Herramientas;
 
 public class MailModoPago extends TemplateMail {
 
@@ -11,12 +11,12 @@ public class MailModoPago extends TemplateMail {
 	@Override
 	public boolean insertar(Anacom anacom, String correo) {
 		anacom.Avanzar();
-		String descripcion =  Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-		anacom.Avanzar();
-		anacom.Avanzar();
 		int id_evento = anacom.Preanalisis().getAtributo();
-		
-		return obj.registrar(descripcion, id_evento);
+		anacom.Avanzar();
+		anacom.Avanzar();
+		String descripcion =  Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+
+		return this.obj.registrar(id_evento, descripcion);
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class MailModoPago extends TemplateMail {
 		anacom.Avanzar();
 		String descripcion = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 		
-		return obj.modificar(id, descripcion);
+		return this.obj.modificar(id, descripcion);
 	}
 
 	@Override
@@ -35,12 +35,12 @@ public class MailModoPago extends TemplateMail {
 		anacom.Avanzar();
 		int id = anacom.Preanalisis().getAtributo();
 		
-		return obj.eliminar(id, correo);
+		return this.obj.eliminar(id, correo);
 	}
 
 	@Override
 	public String listar() {
-		return obj.Mostrar();
+		return this.obj.Mostrar();
 	}
 
 	@Override

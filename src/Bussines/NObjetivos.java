@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import Data.DDetalle_Contenido;
 import Data.DObjetivos;
 import Data.DPersona;
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NObjetivos {
 	
@@ -22,9 +21,9 @@ public class NObjetivos {
 	}
 
 	public boolean registrar(String nombre, String descripcion, int id_evento){
+		this.detalle.setId_evento(id_evento);
 		this.detalle.setNombre(nombre);
 		this.detalle.setDescripcion(descripcion);
-		this.detalle.setId_evento(id_evento);
 		this.detalle.setCreated_at(Utils.dateToString(new Date()));
 		
 		return this.detalle.insertar();

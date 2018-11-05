@@ -21,31 +21,31 @@ import Software.Template.MailReportes;
 import Software.Template.MailRequisito;
 import Software.Template.MailReserva;
 import Software.Template.MailVenta;
-import nucleo.procesador.Anacom;
-import nucleo.procesador.Checker;
-import nucleo.procesador.Cinta;
-import nucleo.procesador.Token;
-import nucleo.protocolos.ClienteSMTP;
-import nucleo.utilidades.Ayuda;
+import Nucleo.procesador.Anacom;
+import Nucleo.procesador.Checker;
+import Nucleo.procesador.Cinta;
+import Nucleo.procesador.Token;
+import Nucleo.protocolos.ClienteSMTP;
+import Nucleo.utilidades.Ayuda;
 
-public class software {
+public class ProcesadorMensaje {
 	
-    MailPersona mail_persona = new MailPersona();
-    MailLugar mail_lugar = new MailLugar(); 
-    MailDia mail_dia = new MailDia();
-    MailEvento mail_evento = new MailEvento();
-    MailReserva mail_reserva = new MailReserva();
-    MailCronograma mail_cronograma = new MailCronograma();
-    MailDisertante mail_disertante = new MailDisertante();
-    MailContenido mail_contenido = new MailContenido();
-    MailDetalle_Contenido mail_detallecontenido = new MailDetalle_Contenido();
-    MailObjetivos mail_objetivos = new MailObjetivos();
-    MailHorario mail_horario = new MailHorario();
-    MailVenta mail_venta = new MailVenta();
-    MailDetalle_Venta mail_detalleVenta = new MailDetalle_Venta();
-    MailModoPago mail_modoPago = new MailModoPago();
-    MailRequisito mail_requisito = new MailRequisito();
-    MailReportes mail_reporte = new MailReportes();
+    private MailPersona mail_persona = new MailPersona();
+    private MailLugar mail_lugar = new MailLugar();
+    private MailDia mail_dia = new MailDia();
+    private MailEvento mail_evento = new MailEvento();
+    private MailReserva mail_reserva = new MailReserva();
+    private MailCronograma mail_cronograma = new MailCronograma();
+    private MailDisertante mail_disertante = new MailDisertante();
+    private MailContenido mail_contenido = new MailContenido();
+    private MailDetalle_Contenido mail_detallecontenido = new MailDetalle_Contenido();
+    private MailObjetivos mail_objetivos = new MailObjetivos();
+    private MailHorario mail_horario = new MailHorario();
+    private MailVenta mail_venta = new MailVenta();
+    private MailDetalle_Venta mail_detalleVenta = new MailDetalle_Venta();
+    private MailModoPago mail_modoPago = new MailModoPago();
+    private MailRequisito mail_requisito = new MailRequisito();
+    private MailReportes mail_reporte = new MailReportes();
    
 
     public void processMessage(String content, String destinatario, String url, String tipo) {
@@ -59,7 +59,7 @@ public class software {
  
         if (checker.errorFlag) {
             // Enviar Correo de Error
-            ClienteSMTP.sendMail(destinatario, "Error de Comando",
+            ClienteSMTP.sendMail(destinatario, "ERROR DE COMANDO",
                     "El comando introducido es incorrecto, trate consultando las ayudas con el comando HELP"
             );
             System.out.println("El comando introducido es incorrecto, trate consultando las ayudas con el comando HELP");
@@ -212,20 +212,20 @@ public class software {
              	mail_detalleVenta.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARDETALLEVENTAS:
-            	mail_detalleVenta.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+            	this.mail_detalleVenta.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
             	break;  
             	
             case Token.INSERTARMODOPAGO:
-            	mail_modoPago.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+            	this.mail_modoPago.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
             	break;
             case Token.MODIFICARMODOPAGO:
-            	mail_modoPago.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
+            	this.mail_modoPago.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARMODOPAGO:
-            	mail_modoPago.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
+            	this.mail_modoPago.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARMODOPAGOS:
-            	mail_modoPago.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+            	this.mail_modoPago.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;      
                 
             case Token.INSERTARREQUISITO:

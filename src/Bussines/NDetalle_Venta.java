@@ -6,7 +6,7 @@ import java.util.List;
 
 import Data.DDetalla_Venta;
 import Data.DPersona;
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NDetalle_Venta {
 
@@ -20,23 +20,24 @@ public class NDetalle_Venta {
 		return detalle;
 	}
 
-	public boolean registrar(int id_venta, int id_persona, int id_usuario, int id_evento){
-		this.detalle.setId_venta(id_venta);
-		this.detalle.setId_persona(id_persona);
-		this.detalle.setId_usuario(id_usuario);
+	public boolean registrar(int id_evento, int id_usuario, int id_persona, int id_venta, String nro_comprobante, String fecha_comprobante){
 		this.detalle.setId_evento(id_evento);
+		this.detalle.setId_usuario(id_usuario);
+		this.detalle.setId_persona(id_persona);
+		this.detalle.setId_venta(id_venta);
+		this.detalle.setNro_comprobante(nro_comprobante);
+		this.detalle.setFecha_comprobante(fecha_comprobante);
 		this.detalle.setCreated_at(Utils.dateToString(new Date()));
 		
 		return this.detalle.insertar();
 	}
 	
-	public boolean modificar(int id, int id_venta, int id_persona, int id_usuario, int id_evento) {
+	public boolean modificar(int id, String nro_comprobante,String fecha_comprobante) {
 		this.detalle.setId(id);
-		this.detalle.setId_venta(id_venta);
-		this.detalle.setId_persona(id_persona);
-		this.detalle.setId_usuario(id_usuario);
-		this.detalle.setId_evento(id_evento);
+		this.detalle.setNro_comprobante(nro_comprobante);
+		this.detalle.setFecha_comprobante(fecha_comprobante);
 		this.detalle.setUpdated_at(Utils.dateToString(new Date()));
+
 		return this.detalle.actualizar();
     }
 	
@@ -62,6 +63,8 @@ public class NDetalle_Venta {
 	            objectY.setId_persona(Integer.valueOf(objetoX.get(2).toString()));
 	            objectY.setId_usuario(Integer.valueOf(objetoX.get(3).toString()));
 	            objectY.setId_evento(Integer.valueOf(objetoX.get(4).toString()));
+	            objectY.setFecha_comprobante(objetoX.get(5).toString());
+				objectY.setNro_comprobante(objetoX.get(6).toString());
 	            
 	            listaServicio.add(objectY);
 	        }
@@ -77,17 +80,20 @@ public class NDetalle_Venta {
                     "\nID Venta: " + objetoX.getId_venta() +
                     "\nID Persona: " + objetoX.getId_persona() +
                     "\nID Usuario: " + objetoX.getId_usuario() +
-                    "\nID Evento: " + objetoX.getId_evento() 
+                    "\nID Evento: " + objetoX.getId_evento() +
+					"\nFecha Comprobante: " + objetoX.getFecha_comprobante() +
+					"\nNro Comprobante: " + objetoX.getNro_comprobante() +
+					"\n\n"
                     ;
-            if (!objetoX.getDeleted_at().equals(null)) {
-                resultado = resultado + 
-                        "\nEstado: Habilitada"+
-                        "\n------------------------------------------------------\n";
-            }else{
-                resultado = resultado + 
-                        "\nEstado: No Habilitada"+
-                        "\n------------------------------------------------------\n";
-            }
+//            if (!objetoX.getDeleted_at().equals(null)) {
+//                resultado = resultado +
+//                        "\nEstado: Habilitada"+
+//                        "\n------------------------------------------------------\n";
+//            }else{
+//                resultado = resultado +
+//                        "\nEstado: No Habilitada"+
+//                        "\n------------------------------------------------------\n";
+//            }
         }
         return resultado;
     }

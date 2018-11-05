@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="correotecnoweb" options="--add-exports=java.corba/com.sun.corba.se.impl.orbutil=ALL-UNNAMED --add-modules=java.corba" />
-    </option>
+  <component name="CompilerConfiguration">
+    <option name="USE_RELEASE_OPTION" value="false" />
   </component>
 </project>

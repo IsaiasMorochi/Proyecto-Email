@@ -4,6 +4,7 @@ public class DCronograma extends Template {
 	
     private int id;
     private int id_evento;
+    private String titulo;
     private String created_at;
     private String updated_at;
     private String deleted_at;
@@ -33,6 +34,14 @@ public class DCronograma extends Template {
 
 	public void setId_evento(int id_evento) {
 		this.id_evento = id_evento;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public String getCreated_at() {
@@ -66,15 +75,19 @@ public class DCronograma extends Template {
 
 	@Override
     protected String registrar() {
-        return "insert into cronograma(id_evento, created_at) values("
+        return "insert into cronograma (id_evento, titulo, created_at) values("
                 + id_evento+ ","
+				+ "'"+titulo+ "',"
                 + "'"+created_at+ "'"
                 + ")";
     }
 
     @Override
     protected String modificar() {
-        return null;
+		return "update cronograma set "
+				+ "titulo='"+titulo+"'"
+				+ "updated_at='"+updated_at+"'"
+				+ "where id="+id;
     }
    
     @Override

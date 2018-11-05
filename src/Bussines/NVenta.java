@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import Data.DPersona;
-import Data.DRequisito;
 import Data.DVenta;
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NVenta {
 

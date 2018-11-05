@@ -1,12 +1,12 @@
 package Software.Template;
 
 import Bussines.NLugar;
-import nucleo.procesador.Anacom;
-import nucleo.utilidades.Herramientas;
+import Nucleo.procesador.Anacom;
+import Nucleo.utilidades.Herramientas;
 
 public class MailLugar extends TemplateMail {
 	
-	NLugar l = new NLugar();
+	private NLugar l = new NLugar();
 
 	@Override
 	public boolean insertar(Anacom anacom, String correo) {
@@ -32,12 +32,12 @@ public class MailLugar extends TemplateMail {
 	public boolean eliminar(Anacom anacom, String correo) {
 		anacom.Avanzar();
         int id = anacom.Preanalisis().getAtributo();
-		return l.eliminar(id, correo);
+		return this.l.eliminar(id, correo);
 	}
 
 	@Override
 	public String listar() {
-		return l.Mostrar();
+		return this.l.Mostrar();
 	}
 
 	@Override
@@ -47,12 +47,12 @@ public class MailLugar extends TemplateMail {
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Lugar modificado exitosamente con id edit: " + l.getLugar() + l.getLugar().toString() : "No se pudo modificar el lugar" ;
+		return (sw) ? "Lugar modificado exitosamente con id edit: " + l.getLugar().autoincrement + ", " + l.getLugar().toString() : "No se pudo modificar el lugar" ;
 	}
 
 	@Override
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Lugar eliminado exitosamente con id delete: " + l.getLugar() + l.getLugar().toString() : "No se pudo eliminar el lugar" + l.getLugar() ;
+		return (sw) ? "Lugar eliminado exitosamente con id delete: " + l.getLugar().autoincrement  : "No se pudo eliminar el lugar" + l.getLugar() ;
 	}
 
 	@Override

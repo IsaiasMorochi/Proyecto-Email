@@ -6,7 +6,7 @@ import java.util.List;
 
 import Data.DPersona;
 import Data.DRequisito;
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NRequisito {	
 
@@ -20,9 +20,9 @@ public class NRequisito {
 		return obj;
 	}
 
-	public boolean registrar(String descripcion, int id_evento){
-		this.obj.setDescripcion(descripcion);
+	public boolean registrar(int id_evento, String descripcion){
 		this.obj.setId_evento(id_evento);
+		this.obj.setDescripcion(descripcion);
 		this.obj.setCreated_at(Utils.dateToString(new Date()));
 		
 		return this.obj.insertar();

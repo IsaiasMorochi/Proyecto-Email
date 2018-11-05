@@ -5,10 +5,9 @@
  */
 package Data;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 
-import nucleo.utilidades.Constantes;
+import Nucleo.utilidades.Constantes;
 
 public class Connections {
 

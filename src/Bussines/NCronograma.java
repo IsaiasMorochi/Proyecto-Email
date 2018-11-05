@@ -7,7 +7,7 @@ import java.util.List;
 import Data.DCronograma;
 import Data.DPersona;
 
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NCronograma {
 	
@@ -21,15 +21,18 @@ private DCronograma cronograma;
 	    return cronograma;
 	}
 	
-	public boolean registrar(int id_evento){
+	public boolean registrar(int id_evento, String titulo){
 		this.cronograma.setId_evento(id_evento);
+		this.cronograma.setTitulo(titulo);
 		this.cronograma.setCreated_at(Utils.dateToString(new Date()));
 		return this.cronograma.insertar();
 	}
 	
-	public boolean modificar(int id, int id_evento) {
+	public boolean modificar(int id, String titulo) {
 		this.cronograma.setId(id);
-		this.cronograma.setId_evento(id_evento);
+		this.cronograma.setTitulo(titulo);
+		this.cronograma.setUpdated_at(Utils.dateToString(new Date()));
+
 		return this.cronograma.actualizar();
     }
 	
@@ -52,7 +55,8 @@ private DCronograma cronograma;
 	            DCronograma objetoY = DCronograma.getInstance();
 	            objetoY.setId(Integer.valueOf(objetoX.get(0).toString()));
 	            objetoY.setId_evento(Integer.valueOf(objetoX.get(1).toString()));
-	            objetoY.setCreated_at(objetoX.get(2).toString());
+	            objetoY.setTitulo(objetoX.get(2).toString());
+
 	            listaServicio.add(objetoY);
 	        }
 	        return listaServicio;
@@ -64,17 +68,19 @@ private DCronograma cronograma;
         for (DCronograma objetoX : listarObjetos) {
             resultado = resultado +
                     "Codigo: " + objetoX.getId()+
-                    "\nID Evento: " + objetoX.getId_evento();
+                    "\nID Evento: " + objetoX.getId_evento() +
+					"\nTitulo: " + objetoX.getTitulo() +
+					"\n\n"
                     ;
-            if (!objetoX.getDeleted_at().equals(null)) {
-                resultado = resultado + 
-                        "\nEstado: Habilitada"+
-                        "\n------------------------------------------------------\n";
-            }else{
-                resultado = resultado + 
-                        "\nEstado: No Habilitada"+
-                        "\n------------------------------------------------------\n";
-            }
+//            if (!objetoX.getDeleted_at().equals(null)) {
+//                resultado = resultado +
+//                        "\nEstado: Habilitada"+
+//                        "\n------------------------------------------------------\n";
+//            }else{
+//                resultado = resultado +
+//                        "\nEstado: No Habilitada"+
+//                        "\n------------------------------------------------------\n";
+//            }
         }
         return resultado;
     }

@@ -1,12 +1,12 @@
 package Software.Template;
 
 import Bussines.NEvento;
-import nucleo.procesador.Anacom;
-import nucleo.utilidades.Herramientas;
+import Nucleo.procesador.Anacom;
+import Nucleo.utilidades.Herramientas;
 
 public class MailEvento extends TemplateMail {
 	
-	NEvento e = new NEvento();
+	private NEvento e = new NEvento();
 
 	@Override
 	public boolean insertar(Anacom anacom, String correo) {
@@ -25,7 +25,7 @@ public class MailEvento extends TemplateMail {
 		anacom.Avanzar();
 		char tipo = (Herramientas.quitarComillas(anacom.Preanalisis().getToStr())).charAt(0);
 	
-		return e.registrar(titulo, fecha_inicio, fecha_fin, costo, tipo);
+		return this.e.registrar(titulo, fecha_inicio, fecha_fin, costo, tipo);
 	}
 
 	@Override
@@ -48,19 +48,19 @@ public class MailEvento extends TemplateMail {
 		anacom.Avanzar();
 		char tipo = (Herramientas.quitarComillas(anacom.Preanalisis().getToStr())).charAt(0);
 	
-		return e.modificar(id, titulo, fecha_inicio, fecha_fin, costo, tipo); 
+		return this.e.modificar(id, titulo, fecha_inicio, fecha_fin, costo, tipo);
 	}
 
 	@Override
 	public boolean eliminar(Anacom anacom, String correo) {
 		anacom.Avanzar();
         int id = anacom.Preanalisis().getAtributo();
-		return e.eliminar(id, correo);
+		return this.e.eliminar(id, correo);
 	}
 
 	@Override
 	public String listar() {
-		return e.Mostrar();
+		return this.e.Mostrar();
 	}
 
 	@Override

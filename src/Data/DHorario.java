@@ -3,7 +3,7 @@ package Data;
 public class DHorario extends Template {
 	
     private int id;
-    private int id_cronograma;
+    private int id_evento;
     private int id_dia;
     private int id_lugar;
     private String inicio;
@@ -31,12 +31,12 @@ public class DHorario extends Template {
 		this.id = id;
 	}
 
-	public int getId_cronograma() {
-		return id_cronograma;
+	public int getId_evento() {
+		return id_evento;
 	}
 
-	public void setId_cronograma(int id_cronograma) {
-		this.id_cronograma = id_cronograma;
+	public void setId_evento(int id_evento) {
+		this.id_evento = id_evento;
 	}
 
 	public int getId_dia() {
@@ -95,17 +95,21 @@ public class DHorario extends Template {
 		this.deleted_at = deleted_at;
 	}
 
-	
 	@Override
 	public String toString() {
-		return "DHorario [id_cronograma=" + id_cronograma + ", id_dia=" + id_dia + ", id_lugar=" + id_lugar
-				+ ", inicio=" + inicio + ", fin=" + fin + "]";
+		return "DHorario{" +
+				", id_evento=" + id_evento +
+				", id_dia=" + id_dia +
+				", id_lugar=" + id_lugar +
+				", inicio='" + inicio + '\'' +
+				", fin='" + fin + '\'' +
+				'}';
 	}
 
 	@Override
     protected String registrar() {
-        return "insert into horario(id_cronograma, id_dia, id_lugar, inicio, fin, created_at) values("
-                +id_cronograma+ ","
+        return "insert into horario(id_evento, id_dia, id_lugar, inicio, fin, created_at) values("
+                +id_evento+ ","
                 +id_dia+ ","
                 +id_lugar+ ","
                 +"'"+inicio+"',"

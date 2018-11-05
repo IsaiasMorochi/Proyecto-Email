@@ -3,8 +3,8 @@ package Data;
 public class DModoPago extends Template {
 
     private int id;
-    private String descripcion;
     private int id_evento;
+    private String descripcion;
     private String created_at;
     private String updated_at;
     private String deleted_at;
@@ -75,9 +75,9 @@ public class DModoPago extends Template {
 
 	@Override
     protected String registrar() {
-        return "insert into disertante(descripcion, id_evento, created_at) values("
-                +"'"+descripcion+ "',"
+        return "insert into modo_pago (id_evento, descripcion, created_at) values("
                 +id_evento+ ","
+                +"'"+descripcion+ "',"
                 +"'"+created_at+ "'"
                 +")";
     }

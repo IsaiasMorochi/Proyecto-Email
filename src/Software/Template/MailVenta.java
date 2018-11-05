@@ -1,8 +1,8 @@
 package Software.Template;
 
 import Bussines.NVenta;
-import nucleo.procesador.Anacom;
-import nucleo.utilidades.Herramientas;
+import Nucleo.procesador.Anacom;
+import Nucleo.utilidades.Herramientas;
 
 public class MailVenta extends TemplateMail {
 

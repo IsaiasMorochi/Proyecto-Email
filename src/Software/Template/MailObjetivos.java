@@ -1,25 +1,25 @@
 package Software.Template;
 
 import Bussines.NObjetivos;
-import nucleo.procesador.Anacom;
-import nucleo.utilidades.Herramientas;
+import Nucleo.procesador.Anacom;
+import Nucleo.utilidades.Herramientas;
 
 public class MailObjetivos extends TemplateMail {
 
-	NObjetivos d = new NObjetivos();
+	private NObjetivos d = new NObjetivos();
 	
 	@Override
 	public boolean insertar(Anacom anacom, String correo) {
+		anacom.Avanzar();
+		int id_evento = anacom.Preanalisis().getAtributo();
+		anacom.Avanzar();
 		anacom.Avanzar();
 		String nombre = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 		anacom.Avanzar();
 		anacom.Avanzar();
 	    String descripcion = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-	    anacom.Avanzar();
-	    anacom.Avanzar();
-	    int id_evento = anacom.Preanalisis().getAtributo();
-	    
-	    return d.registrar(nombre, descripcion, id_evento);
+
+	    return this.d.registrar(nombre, descripcion, id_evento);
 	}
 
 	@Override

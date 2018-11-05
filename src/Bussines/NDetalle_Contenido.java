@@ -7,7 +7,7 @@ import java.util.List;
 import Data.DDetalle_Contenido;
 import Data.DPersona;
 
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NDetalle_Contenido {
 

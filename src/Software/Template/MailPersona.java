@@ -1,8 +1,8 @@
 package Software.Template;
 
 import Bussines.NPersona;
-import nucleo.procesador.Anacom;
-import nucleo.utilidades.Herramientas;
+import Nucleo.procesador.Anacom;
+import Nucleo.utilidades.Herramientas;
 
 public class MailPersona extends TemplateMail {
 
@@ -33,11 +33,8 @@ public class MailPersona extends TemplateMail {
 		anacom.Avanzar();
 		anacom.Avanzar();
 		String password = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-		anacom.Avanzar();
-		anacom.Avanzar();
-		
 	
-		return obj.registrar(nombre, telefono, nacionalidad, ci, tipo, direccion, correou, password);	            
+		return this.obj.registrar(nombre, telefono, nacionalidad, ci, direccion, tipo, correo, password);
 	}
 
 	@Override
@@ -63,7 +60,7 @@ public class MailPersona extends TemplateMail {
 		anacom.Avanzar();
 		String tipo = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 		
-		return obj.modificar(id, nombre, telefono, nacionalidad, ci, direccion, tipo);
+		return this.obj.modificar(id, nombre, telefono, nacionalidad, ci, direccion, tipo);
 	}
 
 	@Override
@@ -71,12 +68,12 @@ public class MailPersona extends TemplateMail {
 		anacom.Avanzar();
 		int id = anacom.Preanalisis().getAtributo();
 		
-		return obj.eliminar(id, correo);
+		return this.obj.eliminar(id, correo);
 	}
 
 	@Override
 	public String listar() {
-		return obj.Mostrar();
+		return this.obj.Mostrar();
 	}
 
 	@Override

@@ -84,10 +84,10 @@ public class DObjetivos extends Template {
 
 	@Override
     protected String registrar() {
-        return "insert into objetivos(nombre, descripcion, id_evento, created_at) values("
+        return "insert into objetivos(id_evento, nombre, descripcion, created_at) values("
+                +id_evento+ ","
                 +"'"+nombre+ "',"
                 +"'"+descripcion+ "',"
-                +id_evento+ ","
                 +"'"+created_at+ "'"
                 + ")";
     }

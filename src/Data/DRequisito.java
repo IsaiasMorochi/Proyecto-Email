@@ -76,9 +76,9 @@ public class DRequisito extends Template {
 
 	@Override
     protected String registrar() {
-        return "insert into requisitos (descripcion, id_evento, created_at) values("
-                +"'"+descripcion+ "',"
+        return "insert into requisitos (id_evento, descripcion, created_at) values("
                 +id_evento+ ","
+                +"'"+descripcion+ "',"
                 +"'"+created_at+ "'"
                 +")";
     }

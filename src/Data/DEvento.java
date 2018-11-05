@@ -145,18 +145,18 @@ public class DEvento extends Template {
     }
     
     public ResultSet obtenerReporte(){
-        String consulta = " select p.nombre as nombre, COUNT(dv.id_persona) as Cantidad "
+        String consulta = " select p.nombre as nombre, e.titulo as programa, COUNT(dv.id_persona) as Cantidad "
                 + " from evento e, detalle_venta dv, persona p"
                 + " where e.id = dv.id_evento and dv.id_persona = p.id"
-                + " group by p.nombre ";
+                + " group by p.nombre, e.titulo";
         return consultarDatos(consulta);
     }
     
     public ResultSet obtenerEstadistica(){
-        String consulta = " select p.nombre as nombre, SUM(dv.id_persona) as Total "
-                + " from evento e, detalle_venta dv, persona p"
-                + " where e.id = dv.id_evento and dv.id_persona = p.id"
-                + " group by p.nombre ";
+        String consulta = " select p.nombre as nombre, SUM(r.id_persona) as Total"
+                + " from evento e, reserva r, persona p"
+                + " where e.id = r.id_evento and r.id_persona = p.id"
+                + "group by p.nombre";
         return consultarDatos(consulta);
     }
     

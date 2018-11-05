@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import Data.DDetalla_Venta;
 import Data.DDisertante;
 import Data.DPersona;
 
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NDisertante {
 	
@@ -22,22 +21,18 @@ public class NDisertante {
 		return disertante;
 	}
 
-	public boolean registrar(String nombre, String foto, String nacionalidad, String descripcion, int id_evento){
-		this.disertante.setNombre(nombre);
-		this.disertante.setFoto(foto);
-		this.disertante.setNacionalidad(nacionalidad);
-		this.disertante.setDescripcion(descripcion);
+	public boolean registrar(int id_evento, String nombre, String descripcion){
 		this.disertante.setId_evento(id_evento);
+		this.disertante.setNombre(nombre);
+		this.disertante.setDescripcion(descripcion);
 		this.disertante.setCreated_at(Utils.dateToString(new Date()));
 		
 		return this.disertante.insertar();
 	}
 	
-	public boolean modificar(int id, String nombre, String foto, String nacionalidad, String descripcion) {
+	public boolean modificar(int id, String nombre, String descripcion) {
 		this.disertante.setId(id);
 		this.disertante.setNombre(nombre);
-		this.disertante.setFoto(foto);
-		this.disertante.setNacionalidad(nacionalidad);
 		this.disertante.setDescripcion(descripcion);
 		this.disertante.setUpdated_at(Utils.dateToString(new Date()));
 		
@@ -63,9 +58,8 @@ public class NDisertante {
 	            DDisertante objectY = DDisertante.getInstance();
 	            objectY.setId(Integer.valueOf(objetoX.get(0).toString()));
 	            objectY.setNombre(objetoX.get(1).toString());
-	            objectY.setFoto(objetoX.get(2).toString());
-	            objectY.setNacionalidad(objetoX.get(3).toString());
-	            objectY.setId_evento(Integer.valueOf(objetoX.get(4).toString()));
+	            objectY.setDescripcion(objetoX.get(2).toString());
+	            objectY.setId_evento(Integer.valueOf(objetoX.get(3).toString()));
 	            
 	            listaServicio.add(objectY);
 	        }
@@ -79,8 +73,7 @@ public class NDisertante {
             resultado = resultado +
                     "Codigo: " + objetoX.getId() +
                     "\nNombre: " + objetoX.getNombre() +
-                    "\nFoto: " + objetoX.getFoto() +
-                    "\nNacionalidad: " + objetoX.getNacionalidad() +
+					"\nDescripcion: " + objetoX.getNombre() +
                     "\nID Evento: " + objetoX.getId_evento()
                     ;
 //            if (!objetoX.getDeleted_at().equals(null)) {

@@ -7,7 +7,7 @@ import java.util.List;
 import Data.DLugar;
 import Data.DPersona;
 
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NLugar {
 	
@@ -60,7 +60,8 @@ public class NLugar {
         for (DLugar objetoX : listaLugar) {
             resultado = resultado +
                     "Codigo: " + objetoX.getId()+
-                    "\nDescripcion: " + objetoX.getDescripcion();
+                    "\nDescripcion: " + objetoX.getDescripcion() +
+					"\n\n"
                     ;
 //            if (!objetoX.getDeleted_at().equals(null)) {
 //                resultado = resultado + 

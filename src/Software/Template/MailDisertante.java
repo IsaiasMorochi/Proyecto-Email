@@ -1,8 +1,8 @@
 package Software.Template;
 
 import Bussines.NDisertante;
-import nucleo.procesador.Anacom;
-import nucleo.utilidades.Herramientas;
+import Nucleo.procesador.Anacom;
+import Nucleo.utilidades.Herramientas;
 
 public class MailDisertante extends TemplateMail {
 
@@ -11,21 +11,15 @@ public class MailDisertante extends TemplateMail {
 	@Override
 	public boolean insertar(Anacom anacom, String correo) {
 		anacom.Avanzar();
+		int id_evento = anacom.Preanalisis().getAtributo();
+		anacom.Avanzar();
+		anacom.Avanzar();
 		String nombre = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());	
 		anacom.Avanzar();
 		anacom.Avanzar();
-	    String foto = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());	
-	    anacom.Avanzar();
-	    anacom.Avanzar();
-	    String nacionalidad = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());	
-	    anacom.Avanzar();
-	    anacom.Avanzar();
 	    String descripcion = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());	
-	    anacom.Avanzar();
-	    anacom.Avanzar();
-	    int id_evento = anacom.Preanalisis().getAtributo();
-	    
-	    return d.registrar(nombre, foto, nacionalidad, descripcion, id_evento);
+
+	    return this.d.registrar(id_evento, nombre, descripcion);
 	}
 
 	@Override
@@ -37,15 +31,9 @@ public class MailDisertante extends TemplateMail {
 		String nombre = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());	
 		anacom.Avanzar();
 		anacom.Avanzar();
-	    String foto = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());	
-	    anacom.Avanzar();
-	    anacom.Avanzar();
-	    String nacionalidad = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());	
-	    anacom.Avanzar();
-	    anacom.Avanzar();
 	    String descripcion = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());	
 	   
-		return d.modificar(id, nombre, foto, nacionalidad, descripcion);
+		return this.d.modificar(id, nombre, descripcion);
 	}
 
 	@Override
@@ -53,7 +41,7 @@ public class MailDisertante extends TemplateMail {
 		anacom.Avanzar();
 		int id = anacom.Preanalisis().getAtributo();
 		
-		return d.eliminar(id, correo);
+		return this.d.eliminar(id, correo);
 	}
 
 	@Override

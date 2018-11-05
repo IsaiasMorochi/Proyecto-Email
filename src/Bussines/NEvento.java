@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 import Data.DEvento;
 import Data.DPersona;
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NEvento {
 	

@@ -2,13 +2,14 @@ package Data;
 
 public class DDetalla_Venta extends Template {
 
-	 private int id;
-	    private int id_venta;
-	    private int id_persona;
-	    private int id_usuario;
-	    private int id_evento;
-	    private String fecha_comprobante;
-	    private String nro_comprobante;
+		private int id;
+		private int id_evento;
+		private int id_usuario;
+		private int id_persona;
+		private int id_venta;
+		private String nro_comprobante;
+		private String fecha_comprobante;
+
 	    private String created_at;
 	    private String updated_at;
 	    private String deleted_at; 
@@ -104,39 +105,51 @@ public class DDetalla_Venta extends Template {
 			this.deleted_at = deleted_at;
 		}
 
-		@Override
-		public String toString() {
-			return "DDetalla_Venta [id_venta=" + id_venta + ", id_persona=" + id_persona + ", id_usuario=" + id_usuario
-					+ ", id_evento=" + id_evento + ", fecha_comprobante=" + fecha_comprobante + ", nro_comprobante="
-					+ nro_comprobante + "]";
-		}
+	@Override
+	public String toString() {
+		return "DDetalla_Venta{" +
+				"id_evento=" + id_evento +
+				", id_usuario=" + id_usuario +
+				", id_persona=" + id_persona +
+				", id_venta=" + id_venta +
+				", nro_comprobante='" + nro_comprobante + '\'' +
+				", fecha_comprobante='" + fecha_comprobante + '\'' +
+				'}';
+	}
 
-		@Override
+	@Override
 	    protected String registrar() {
-	        return "insert into detalle_venta(id_venta, id_persona, id_usuario, id_evento, fecha_comprobante, nro_comprobante, created_at) values("
-	                + id_venta+ "',"
-	                + id_persona+ "',"
-	                + id_usuario+ "',"
-	                + id_evento+"',"
-	                + "'"+fecha_comprobante+  "'"
-	                + "'"+nro_comprobante+"'"
+	        return "insert into detalle_venta(id_evento, id_usuario, id_persona, id_venta, nro_comprobante, fecha_comprobante, created_at) values("
+					+ id_evento+","
+					+ id_usuario+ ","
+	                + id_persona+ ","
+					+ id_venta+ ","
+					+ "'"+nro_comprobante+"',"
+	                + "'"+fecha_comprobante+  "',"
 	                + "'"+created_at+ "'"
 	                + ")";
 	    }
 
 	    @Override
 	    protected String modificar() {
-	        return null;
+			return "update detalle_venta set "
+					+ "nro_comprobante = '"+ nro_comprobante +"',"
+					+ "fecha_comprobante = '"+ fecha_comprobante +"',"
+					+ "updated_at = '"+ updated_at +"'"
+					+ "where id ="+ id
+					+ ")";
 	    }
 
 	    @Override
 	    protected String borrar() {
-	        return null;
+			return "update detalle_venta set "
+					+"deleted_at = '"+ deleted_at+"'"
+					+"where id = " +id;
 	    }
 
 	    @Override
 	    protected String listado() {
-	        return "select id_venta, id_persona, id_usuario, id_evento, fecha_comprobante, nro_comprobante from detalle_venta where deleted_at is null";
+	        return "select * from detalle_venta where deleted_at is null";
 	    }
 
 	    @Override

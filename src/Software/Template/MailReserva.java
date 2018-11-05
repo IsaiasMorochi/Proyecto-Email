@@ -1,12 +1,12 @@
 package Software.Template;
 
 import Bussines.NReserva;
-import nucleo.procesador.Anacom;
-import nucleo.utilidades.Herramientas;
+import Nucleo.procesador.Anacom;
+import Nucleo.utilidades.Herramientas;
 
 public class MailReserva extends TemplateMail {
 
-    NReserva d = new NReserva();
+    private NReserva d = new NReserva();
 
     @Override
     public boolean insertar(Anacom anacom, String correo) {
@@ -19,7 +19,7 @@ public class MailReserva extends TemplateMail {
         anacom.Avanzar();
         int id_evento =anacom.Preanalisis().getAtributo();
 
-        return d.registrar(fecha, id_persona, id_evento);
+        return this.d.registrar(fecha, id_persona, id_evento);
     }
 
     @Override

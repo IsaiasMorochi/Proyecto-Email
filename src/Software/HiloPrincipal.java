@@ -1,20 +1,20 @@
 
 package Software;
 
-import nucleo.protocolos.ClientePOP;
-import nucleo.utilidades.Constantes;
+import Nucleo.protocolos.ClientePOP;
+import Nucleo.utilidades.Constantes;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class CorreosTecno extends javax.swing.JFrame {
+public class HiloPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form CorreosTecno
+     * Creates new form HiloPrincipal
      */
     HiloCorreo myThread;
 
-    public CorreosTecno() {
+    public HiloPrincipal() {
         initComponents();
         this.setTitle("Correos Tecnologia Web");
         this.setLocationRelativeTo(null);
@@ -39,7 +39,6 @@ public class CorreosTecno extends javax.swing.JFrame {
                         new HiloAtencion(content).start();
                     }
                 }
-
                 waitCiclo();
             }
             System.out.println("Finalizado");
@@ -49,7 +48,7 @@ public class CorreosTecno extends javax.swing.JFrame {
             try {
                 sleep(Constantes.TIME_THREAD * 1000); // Esperar 2 seg.
             } catch (InterruptedException ex) {
-                Logger.getLogger(CorreosTecno.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(HiloPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -68,8 +67,8 @@ public class CorreosTecno extends javax.swing.JFrame {
 //            mensaje[1]="icode295@gmail.com";
             System.out.println(mensaje[0] + "\n\r" + mensaje[1] + "\n\r");
             try {
-//                new software().processMessage(mensaje[0],mensaje[1],mensaje[2],mensaje[3]);
-            	new software().processMessage(mensaje[0],mensaje[1],"","");
+//                new ProcesadorMensaje().processMessage(mensaje[0],mensaje[1],mensaje[2],mensaje[3]);
+            	new ProcesadorMensaje().processMessage(mensaje[0],mensaje[1],"","");
             } catch (Exception e) {
                 System.out.println("Ocurrio una excepcion");
                 System.out.println(e);
@@ -162,20 +161,20 @@ public class CorreosTecno extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CorreosTecno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HiloPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CorreosTecno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HiloPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CorreosTecno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HiloPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CorreosTecno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HiloPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CorreosTecno().setVisible(true);
+                new HiloPrincipal().setVisible(true);
             }
         });
     }

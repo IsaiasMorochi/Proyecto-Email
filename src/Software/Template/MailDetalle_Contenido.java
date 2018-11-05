@@ -1,13 +1,12 @@
 package Software.Template;
 
 import Bussines.NDetalle_Contenido;
-import Bussines.NDetalle_Venta;
-import nucleo.procesador.Anacom;
-import nucleo.utilidades.Herramientas;
+import Nucleo.procesador.Anacom;
+import Nucleo.utilidades.Herramientas;
 
 public class MailDetalle_Contenido extends TemplateMail {
 
-	NDetalle_Contenido d = new  NDetalle_Contenido();
+	private NDetalle_Contenido d = new  NDetalle_Contenido();
 	
 	@Override
 	public boolean insertar(Anacom anacom, String correo) {
@@ -17,7 +16,7 @@ public class MailDetalle_Contenido extends TemplateMail {
 		anacom.Avanzar();
 		String descripcion = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 
-		return d.registrar(id_contenido, descripcion);
+		return this.d.registrar(id_contenido, descripcion);
 	}
 
 	@Override
@@ -28,7 +27,7 @@ public class MailDetalle_Contenido extends TemplateMail {
 		anacom.Avanzar();
 		String descripcion = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 		
-		return d.modificar(id, descripcion);
+		return this.d.modificar(id, descripcion);
 	}
 
 	@Override
@@ -36,12 +35,12 @@ public class MailDetalle_Contenido extends TemplateMail {
 		anacom.Avanzar();
 		int id =  anacom.Preanalisis().getAtributo();
 		
-		return d.eliminar(id, correo);
+		return this.d.eliminar(id, correo);
 	}
 
 	@Override
 	public String listar() {
-		return d.Mostrar();
+		return this.d.Mostrar();
 	}
 
 	@Override

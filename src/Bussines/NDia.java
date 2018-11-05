@@ -6,7 +6,7 @@ import java.util.List;
 import Data.DDia;
 import Data.DPersona;
 
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NDia {
 

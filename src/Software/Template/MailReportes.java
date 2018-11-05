@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Bussines.NReporte;
-import nucleo.procesador.Anacom;
+import Nucleo.procesador.Anacom;
 
 
 
@@ -56,21 +56,41 @@ public class MailReportes extends TemplateMail {
         return s;
     }
     
-    private String generarTabla(List<String> nombres, List<Integer> cantidades, String titulo){
-        String tabla = "<table style=\"display:inline-block; position: relative; width: 20%; margin:20px; border-collapse: collapse;\">\n" +
+    private String generarTabla(List<String> nombres, List<String> programa, List<Integer> cantidades, String titulo){
+
+        String tabla = "<h2> "+ titulo + "</h2><br><table style=\"display:inline-block; position: relative; width: 30%; margin:20px; border-collapse: collapse;\">\n" +
                     "\n" +
                     "  <tr>\n" +
-                    "    <th style=\"border: 1px solid #dddddd; text-align: center; padding: 8px;\">Entidad</th>\n" +
-                    "    <th style=\"border: 1px solid #dddddd; text-align: center; padding: 8px;\">Cantidad</th>\n" +
+                    "    <th style=\"border: 2px solid #dddddd; text-align: center; padding: 8px;\">Participante</th>\n" +
+                    "    <th style=\"border: 2px solid #dddddd; text-align: center; padding: 8px;\">Programa</th>\n" +
+                    "    <th style=\"border: 2px solid #dddddd; text-align: center; padding: 8px;\">Nro de Asistencia a Talleres</th>\n" +
                     "  </tr>\n" +
                     " <tr>\n";
         for(int i=0; i<nombres.size(); i++){
+
             tabla += "  <tr>\n" +
-                     "    <td style=\"border: 1px solid #dddddd; text-align: center; padding: 8px;\">"+ nombres.get(i) +"</td>\n" +
-                     "    <td style=\"border: 1px solid #dddddd; text-align: center; padding: 8px;\">"+ cantidades.get(i) +"</td>\n" +
+                     "    <td style=\"border: 2px solid #dddddd; text-align: center; padding: 8px;\">"+ nombres.get(i) +"</td>\n" +
+                     "    <td style=\"border: 2px solid #dddddd; text-align: center; padding: 8px;\">"+ programa.get(i) +"</td>\n" +
+                     "    <td style=\"border: 2px solid #dddddd; text-align: center; padding: 8px;\">"+ cantidades.get(i) +"</td>\n" +
                      "  </tr>\n";
         }
         tabla += "</table><br>";
+
+        String columnas = "";
+        String valores  = "";
+        for(int i=0; i < nombres.size(); i++){
+            if (i+1 >= nombres.size()){
+                columnas += nombres.get(i);
+                valores += cantidades.get(i);
+            }else{
+                columnas += nombres.get(i) + "|";
+                valores += cantidades.get(i) + ",";
+            }
+        }
+        System.out.println(columnas);
+        System.out.println(valores);
+
+        tabla +=    "<img src=\" http://chart.apis.google.com/chart?chs=800x300&cht=p3&chd=t:"+ valores+"&chl="+columnas+"\" alt=\"Participacion\" height=\"300\" width=\"800\">";
         return tabla;
     }
    
@@ -155,19 +175,19 @@ public class MailReportes extends TemplateMail {
     
     
     @Override
-	public boolean insertar(nucleo.procesador.Anacom anacom, String correo) {
+	public boolean insertar(Nucleo.procesador.Anacom anacom, String correo) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean modificar(nucleo.procesador.Anacom anacom, String correo) {
+	public boolean modificar(Nucleo.procesador.Anacom anacom, String correo) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean eliminar(nucleo.procesador.Anacom anacom, String correo) {
+	public boolean eliminar(Nucleo.procesador.Anacom anacom, String correo) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -187,13 +207,15 @@ public class MailReportes extends TemplateMail {
             ResultSet data = listaReportes.get(i);
             try {
                 List<String> nombres = new ArrayList<>();
+                List<String> programa = new ArrayList<>();
                 List<Integer> cantidades = new ArrayList<>();
                 if(data.next()){
                     do {
                         nombres.add(data.getString("nombre"));
+                        programa.add(data.getString("programa"));
                         cantidades.add(data.getInt("cantidad"));
                     } while(data.next());
-                    cuerpo += this.generarTabla(nombres, cantidades, titulos[i])+"\n\n";
+                    cuerpo += this.generarTabla(nombres, programa, cantidades, titulos[i])+"\n\n";
                 }
             } catch (SQLException ex) {
                 System.out.println(ex);

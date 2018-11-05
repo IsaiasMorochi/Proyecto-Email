@@ -1,18 +1,22 @@
 package Software.Template;
 
 import Bussines.NCronograma;
-import nucleo.procesador.Anacom;
+import Nucleo.procesador.Anacom;
+import Nucleo.utilidades.Herramientas;
 
 public class MailCronograma extends TemplateMail {
 
-	NCronograma d = new NCronograma();
+	private NCronograma d = new NCronograma();
 	
 	@Override
 	public boolean insertar(Anacom anacom, String correo) {
 		anacom.Avanzar();
 		int id_evento = anacom.Preanalisis().getAtributo();
-		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-		return d.registrar(id_evento);
+		anacom.Avanzar();
+		anacom.Avanzar();
+		String titulo = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+
+		return this.d.registrar(id_evento, titulo);
 	}
 
 	@Override
@@ -26,7 +30,7 @@ public class MailCronograma extends TemplateMail {
 		anacom.Avanzar();
 		int id = anacom.Preanalisis().getAtributo();
 
-		return d.eliminar(id, correo);
+		return this.d.eliminar(id, correo);
 	}
 
 	@Override

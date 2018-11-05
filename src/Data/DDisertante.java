@@ -3,11 +3,10 @@ package Data;
 public class DDisertante extends Template {
 
     private int id;
-    private String nombre;
-    private String foto;
-    private String nacionalidad;
-    private String descripcion;
-    private int id_evento;
+	private int id_evento;
+	private String nombre;
+	private String descripcion;
+
     private String created_at;
     private String updated_at;
     private String deleted_at;
@@ -21,7 +20,7 @@ public class DDisertante extends Template {
   	//Get the only object available
   	public static DDisertante getInstance(){
   		return instance;
-  	}	
+  	}
 
 	public int getId() {
 		return id;
@@ -29,6 +28,14 @@ public class DDisertante extends Template {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getId_evento() {
+		return id_evento;
+	}
+
+	public void setId_evento(int id_evento) {
+		this.id_evento = id_evento;
 	}
 
 	public String getNombre() {
@@ -39,36 +46,12 @@ public class DDisertante extends Template {
 		this.nombre = nombre;
 	}
 
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
-
-	public String getNacionalidad() {
-		return nacionalidad;
-	}
-
-	public void setNacionalidad(String nacionalidad) {
-		this.nacionalidad = nacionalidad;
-	}
-
 	public String getDescripcion() {
 		return descripcion;
 	}
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-
-	public int getId_evento() {
-		return id_evento;
-	}
-
-	public void setId_evento(int id_evento) {
-		this.id_evento = id_evento;
 	}
 
 	public String getCreated_at() {
@@ -95,24 +78,21 @@ public class DDisertante extends Template {
 		this.deleted_at = deleted_at;
 	}
 
-	public static void setInstance(DDisertante instance) {
-		DDisertante.instance = instance;
-	}	
-
 	@Override
 	public String toString() {
-		return "DDisertante [nombre=" + nombre + ", foto=" + foto + ", nacionalidad=" + nacionalidad + ", descripcion="
-				+ descripcion + ", id_evento=" + id_evento + "]";
+		return "DDisertante{" +
+				"id_evento=" + id_evento +
+				", nombre='" + nombre + '\'' +
+				", descripcion='" + descripcion + '\'' +
+				'}';
 	}
 
 	@Override
     protected String registrar() {
-        return "insert into disertante(nombre, foto, nacionalidad, descripcion, id_evento, created_at) values("
-                +"'"+nombre+ "',"
-                +"'"+foto+ "',"
-                +"'"+nacionalidad+ "',"
+        return "insert into disertante(id_evento, nombre, descripcion, created_at) values("
+				+id_evento+ ","
+				+"'"+nombre+ "',"
                 +"'"+descripcion+ "',"
-                +id_evento+ ","
                 +"'"+created_at+ "'"
                 + ")";                                  
     }
@@ -121,8 +101,6 @@ public class DDisertante extends Template {
     protected String modificar() {
         return "update disertante set "
                 + "nombre = '"+ nombre +"',"
-                + "foto = '"+ foto +"',"
-                + "nacionalidad = '"+ nacionalidad +"',"
                 + "descripcion = '"+ descripcion +"',"
                 + "updated_at = '"+ updated_at +"'"
                 + "where id ="+ id 
@@ -143,6 +121,6 @@ public class DDisertante extends Template {
 
     @Override
     protected int cantidadAtributos() {
-        return 5;
+        return 4;
     }
 }

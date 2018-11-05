@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 import Data.DModoPago;
 import Data.DPersona;
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NModoPago {
 
@@ -19,9 +19,9 @@ public class NModoPago {
 		return obj;
 	}
 
-	public boolean registrar(String descripcion, int id_evento){
-	    this.obj.setDescripcion(descripcion);
+	public boolean registrar(int id_evento, String descripcion){
 		this.obj.setId_evento(id_evento);
+	    this.obj.setDescripcion(descripcion);
 		this.obj.setCreated_at(Utils.dateToString(new Date()));
 		
 		return this.obj.insertar();
@@ -52,10 +52,11 @@ public class NModoPago {
         for (Object objecto : lista) {
             List<Object> objetoX = (List<Object>) objecto;
             DModoPago objectY = new DModoPago();
-            
-            objectY.setId(Integer.valueOf(objetoX.get(0).toString()));
-            objectY.setDescripcion(objetoX.get(1).toString());
-            objectY.setId_evento(Integer.valueOf(objetoX.get(2).toString()));
+
+			objectY.setId(Integer.valueOf(objetoX.get(0).toString()));
+			objectY.setId_evento(Integer.valueOf(objetoX.get(1).toString()));
+            objectY.setDescripcion(objetoX.get(2).toString());
+
             
             listaServicio.add(objectY);
         }
@@ -68,8 +69,8 @@ public class NModoPago {
         for (DModoPago objetoX : listarObjetos) {
             resultado = resultado +
                     "Codigo: " + objetoX.getId() +
-                    "\nDescripcion: " + objetoX.getDescripcion() +
-                    "\nID Evento: " + objetoX.getId_evento() + 
+					"\nID Evento: " + objetoX.getId_evento() +
+					"\nDescripcion: " + objetoX.getDescripcion() +
                     "\n\n"
                     ;
 //            if (!objetoX.getDeleted_at().equals(null)) {

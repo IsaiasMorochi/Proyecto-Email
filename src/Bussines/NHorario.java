@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import Data.DEvento;
 import Data.DHorario;
 import Data.DPersona;
-import nucleo.utilidades.Utils;
+import Nucleo.utilidades.Utils;
 
 public class NHorario {
 
@@ -21,8 +20,8 @@ public class NHorario {
 		return h;
 	}
 
-	public boolean registrar(int id_cronograma, int id_dia, int id_lugar, String inicio, String fin){
-		this.h.setId_cronograma(id_cronograma);
+	public boolean registrar(int id_evento, int id_dia, int id_lugar, String inicio, String fin){
+		this.h.setId_evento(id_evento);
 		this.h.setId_dia(id_dia);
 		this.h.setId_lugar(id_lugar);
 		this.h.setInicio(inicio);
@@ -59,7 +58,7 @@ public class NHorario {
 	            DHorario objectY = new DHorario();
 	            
 	            objectY.setId(Integer.valueOf(objetoX.get(0).toString()));
-	            objectY.setId_cronograma(Integer.valueOf(objetoX.get(0).toString()));
+	            objectY.setId_evento(Integer.valueOf(objetoX.get(0).toString()));
 	            objectY.setId_dia(Integer.valueOf(objetoX.get(0).toString()));
 	            objectY.setId_lugar(Integer.valueOf(objetoX.get(0).toString()));
 	            objectY.setInicio(objetoX.get(1).toString());
@@ -76,7 +75,7 @@ public class NHorario {
         for (DHorario objetoX : listarObjetos) {
             resultado = resultado +
                     "Codigo: " + objetoX.getId()+
-                    "\nID Cronograma: " + objetoX.getId_cronograma() +
+                    "\nID Evento: " + objetoX.getId_evento() +
                     "\nID Dia: " + objetoX.getId_dia() +
                     "\nID Lugar: " + objetoX.getId_lugar() +
                     "\nHora Inicio: " + objetoX.getInicio() +

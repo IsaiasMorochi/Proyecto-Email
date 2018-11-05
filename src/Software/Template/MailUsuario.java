@@ -1,6 +1,6 @@
 package Software.Template;
 
-import nucleo.procesador.Anacom;
+import Nucleo.procesador.Anacom;
 
 public class MailUsuario extends TemplateMail {
 
