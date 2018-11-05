@@ -34,7 +34,7 @@ public class MailPersona extends TemplateMail {
 		anacom.Avanzar();
 		String password = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 	
-		return this.obj.registrar(nombre, telefono, nacionalidad, ci, direccion, tipo, correo, password);
+		return this.obj.registrar(nombre, telefono, nacionalidad, ci, direccion, tipo, correou, password);
 	}
 
 	@Override
@@ -43,24 +43,9 @@ public class MailPersona extends TemplateMail {
 		int id = anacom.Preanalisis().getAtributo();
 		anacom.Avanzar();
 		anacom.Avanzar();
-		String nombre = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-		anacom.Avanzar();
-		anacom.Avanzar();
-		String telefono = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-		anacom.Avanzar();
-		anacom.Avanzar();
-		String nacionalidad = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-		anacom.Avanzar();
-		anacom.Avanzar();
-		String ci = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-		anacom.Avanzar();
-		anacom.Avanzar();
-		String direccion = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
-		anacom.Avanzar();
-		anacom.Avanzar();
 		String tipo = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 		
-		return this.obj.modificar(id, nombre, telefono, nacionalidad, ci, direccion, tipo);
+		return this.obj.modificar(id, tipo);
 	}
 
 	@Override

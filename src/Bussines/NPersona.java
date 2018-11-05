@@ -41,12 +41,8 @@ public class NPersona {
         return false;
     }
     
-	public boolean modificar(int id, String nombre, String telefono, String nacionalidad, String ci, String direccion, String tipo) {
+	public boolean modificar(int id, String tipo) {
 		 personaModel.setId(id);
-		 personaModel.setNombre(nombre); 
-		 personaModel.setDireccion(direccion);
-	     personaModel.setTelefono(telefono);
-	     personaModel.setNacionalidad(nacionalidad);
 	     personaModel.setTipo(tipo); 
 		 personaModel.setUpdated_at(Utils.dateToString(new Date()));
 		

@@ -128,11 +128,6 @@ public class DPersona extends Template {
     @Override
     protected String modificar() {
         return "update persona set "
-                + "nombre='"+nombre+"',"
-                + "telefono='"+telefono+"',"
-                + "nacionalidad='"+nacionalidad+"',"
-                + "ci='"+ci+"',"
-                + "direccion='"+direccion+"',"
                 + "tipo='"+tipo+"',"
                 + "updated_at='"+updated_at+"'"
                 + "where id="+id;

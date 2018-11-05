@@ -1,0 +1,180 @@
+
+
+/****************************************** USUARIO *******************************************************
+/**********************************************************************************************************
+[nombre, telefono, nacionalidad, ci, direccion, tipo, correo, password]
+INSERTARUSUARIO["JOAQUIN CHUMACERO","723456","BOL","913265","LOS POZOS","I","icode295@gmail.com","123456"]
+INSERTARUSUARIO["FABIOLA MENDEZ","723456","BOL","913265","LOS TILUCHIS","I","icode295@gmail.com","123456"]
+INSERTARUSUARIO["SATURNINO MAMANI","723456","BOL","913265","LOS BARBAROS","I","icode295@gmail.com","123456"]
+
+/**********************************************************************************************************
+
+
+
+/****************************************** EVENTO ********************************************************
+/**********************************************************************************************************
+[titulo, fecha_inicio, fecha_fin, costo, tipo]
+INSERTAREVENTO["Perforación y Terminación de Pozos Petroleros","27/10/2018","27/10/2019",2500,"M"]
+
+/**********************************************************************************************************
+
+
+
+/****************************************** OBJETIVOS *****************************************************
+/**********************************************************************************************************
+[nombre, descripcion, id_evento]
+INSERTAROBJETIVO[1,"OBJETIVOS Y METAS","La formación de recursos humanos de alto nivel en el área de Ingeniería de Perforación para favorecer el mejoramiento continuo de la gestión de la Industria."]
+
+INSERTAROBJETIVO[1,"DIRIGIDO A","La Maestría en Perforación y Terminación de Pozos Petroleros está dirigido a titulados universitarios en Ingeniería Petrolera o ramas afines que, por sus características personales o por su experiencia, pueden desear una formación de calidad en el ámbito del área de perforación, optimizando la aplicación de las técnicas disponibles, así como, conocer, estudiar e implementar nuevas tecnologías, a fin de mejorar la productividad a través de la disminución de los costos de perforación."]
+
+INSERTAROBJETIVO[1,"MODALIDAD SEMIPRESENCIAL","Las clases se impartirán de forma intercalada, un fin de semana presencial y otro fin de semana en modalidad virtual, así sucesivamente hasta finalizar todo el programa."]
+
+INSERTAROBJETIVO[1,"METODOLOGÍA","Este programa se basa en la interacción entre la teoría y la práctica a través de exposiciones magistrales, dinámicas de grupo, análisis de discusiones dirigidas, investigaciones, análisis de casos concretos y simulaciones virtuales, entre otros."]
+
+INSERTAROBJETIVO[1,"TITULACIÓN","El participante ha aprobado todos los módulos de la Maestría en las condiciones de obtención del Grado Académico de: Maestría en Perforación y Terminación de Pozos Petroleros. Otorgados por la Escuela de Postgrado de la Universidad Autónoma Gabriel René Moreno. RR Nº. 416/2006."]
+
+/**********************************************************************************************************
+
+
+
+/****************************************** REQUISITO *****************************************************
+/**********************************************************************************************************
+[id_evento, descripcion]
+INSERTARREQUISITO[1,"Fotocopia de Cédula de Identidad."]
+INSERTARREQUISITO[1,"Fotocopia legalizada del Título Académico o Suministro Nacional."]
+INSERTARREQUISITO[1,"Dos fotos de 4x4 fondo gris."]
+INSERTARREQUISITO[1,"Formulario INEGAS debidamente llenado."]
+
+/**********************************************************************************************************
+
+
+
+/****************************************** MODO PAGO *****************************************************
+/**********************************************************************************************************
+[id_evento, descripcion]
+INSERTARMODOPAGO[1,"Plan de Pago INEGAS dando una cuota inicial del 20% y el saldo en 15 cuota"]
+
+/**********************************************************************************************************
+
+
+
+/****************************************** CONTENIDO *****************************************************
+/**********************************************************************************************************
+[id_evento, titulo]
+INSERTARCONTENIDO[1,"PROGRAMA I: DIPLOMADO EN CONSTRUCCIÓN DE POZOS PETROLEROS"]
+INSERTARCONTENIDO[1,"PROGRAMA II: ESPECIALIDAD EN PERFORACIÓN DE POZOS PETROLEROS"]
+INSERTARCONTENIDO[1,"PROGRAMA III: FASE FINAL DE LA MAESTRIA"]
+
+/**********************************************************************************************************
+
+
+
+/****************************************** DETALLE CONTENIDO *********************************************
+/**********************************************************************************************************
+[id_contenido, descripcion]
+INSERTARDETALLECONTENIDO[1,"MOD 1: Geología Aplicada a la Perforación"]
+INSERTARDETALLECONTENIDO[1,"MOD 2: Fundamentos de Perforación"]
+INSERTARDETALLECONTENIDO[1,"MOD 3: Planificación de Pozo y la Selección del Equipo"]
+INSERTARDETALLECONTENIDO[1,"MOD 4: Fluidos de Perforación"]
+INSERTARDETALLECONTENIDO[1,"MOD 5: Cementación"]
+
+INSERTARDETALLECONTENIDO[2,"MOD 6: Geomecánica-Aplicaciones en Bolivia"]
+INSERTARDETALLECONTENIDO[2,"MOD 7: Arquitectura de Pozos"]
+INSERTARDETALLECONTENIDO[2,"MOD 8: Diseño de Asentamiento de los Revestidores"]
+INSERTARDETALLECONTENIDO[2,"MOD 9: Trepano,Sarta de Perforación y HTA´s de Pesca"]
+INSERTARDETALLECONTENIDO[2,"MOD 10: Diseño de Pozos HPHT"]
+INSERTARDETALLECONTENIDO[2,"MOD 11: Diseño de Completación y Reacondicionamiento de Pozos"]
+INSERTARDETALLECONTENIDO[2,"MOD 12: Metodología de la Investigación"]
+
+INSERTARDETALLECONTENIDO[3,"MOD 13: Diseño de cabezales y pruebas de producción"]
+INSERTARDETALLECONTENIDO[3,"MOD 14: Perforación Direccional y Horizontal"]
+INSERTARDETALLECONTENIDO[3,"MOD 15: Perforación de Pozos Shale oil / Shale gas"]
+INSERTARDETALLECONTENIDO[3,"MOD 16: Tecnologia MPD en Perforación de Pozos"]
+INSERTARDETALLECONTENIDO[3,"MOD 17: Problemas de Perforación en pozos profundos tipo Bolivia"]
+INSERTARDETALLECONTENIDO[3,"MOD 18: Taller de Tesis"]
+
+/**********************************************************************************************************
+
+
+
+/****************************************** DISERTANTE ****************************************************
+/**********************************************************************************************************
+[id_evento, nombre, descripcion]
+INSERTARDISERTANTE[1,"INSTRUCTORES","La maestría cuenta con un plantel docente de Profesionales Nacionales e Internacionales de reconocido prestigio en el ambiente empresarial del sector de hidrocarburos y referencia en temas de petróleo, gas natural, y energía."]
+
+/**********************************************************************************************************
+
+
+
+/****************************************** DIA ***********************************************************
+/**********************************************************************************************************
+[dia]
+INSERTARDIA["LUNES"]
+INSERTARDIA["MARTES"]
+INSERTARDIA["MIERCOLES"]
+INSERTARDIA["JUEVES"]
+INSERTARDIA["VIERNES"]
+INSERTARDIA["SABADO"]
+INSERTARDIA["DOMINGO"]
+
+/**********************************************************************************************************
+
+
+
+/****************************************** LUGAR *********************************************************
+/**********************************************************************************************************
+[descripcion]
+INSERTARLUGAR["LAB-01"]
+INSERTARLUGAR["LAB-02"]
+INSERTARLUGAR["LAB-03"]
+INSERTARLUGAR["LAB-04"]
+INSERTARLUGAR["LAB-05"]
+INSERTARLUGAR["LAB-06"]
+
+/**********************************************************************************************************
+
+
+
+/****************************************** HORARIO *******************************************************
+/**********************************************************************************************************
+[id_evento, id_dia, id_lugar, inicio, fin]
+INSERTARHORARIO[1,6,1,"14:00","18:00"]
+INSERTARHORARIO[1,7,1,"08:00","12:00"]
+
+/**********************************************************************************************************
+
+
+/****************************************** CRONOGRAMA ****************************************************
+/**********************************************************************************************************
+[id_evento, titulo]
+INSERTARCRONOGRAMA[1,"PRIMER SEMESTRE  2018"]
+/**********************************************************************************************************
+
+
+
+/****************************************** VENTA *********************************************************
+/**********************************************************************************************************
+[fecha]
+INSERTARVENTA["05/11/2018"]
+/**********************************************************************************************************
+
+
+
+/****************************************** DETALLE VENTA *************************************************
+/**********************************************************************************************************
+[id_evento, id_usuario, id_persona, id_venta, nro_comprobante, fecha_comprobante]
+INSERTARDETALLEVENTA[1,1,1,2,"457892","05/11/2018"]
+INSERTARDETALLEVENTA[1,2,2,2,"123588","05/11/2018"]
+INSERTARDETALLEVENTA[1,3,3,2,"889225","05/11/2018"]
+/**********************************************************************************************************
+
+
+
+/****************************************** RESERVA *******************************************************
+/**********************************************************************************************************
+[fecha, id_persona, id_evento]
+INSERTARRESERVA["05/11/2018",1,1]
+INSERTARRESERVA["05/11/2018",2,1]
+INSERTARRESERVA["05/11/2018",3,1]
+/**********************************************************************************************************
+

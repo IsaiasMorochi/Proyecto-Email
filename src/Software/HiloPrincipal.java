@@ -31,6 +31,7 @@ public class HiloPrincipal extends javax.swing.JFrame {
             while (estado) {
                 // Preguntar si hay mail
                if (ClientePOP.verifyInbox()) {
+
                     String content[] = ClientePOP.readMail();
                     if (content != null) {
                         System.out.println("-------------------------------------------");
@@ -38,6 +39,7 @@ public class HiloPrincipal extends javax.swing.JFrame {
                         System.out.println("-------------------------------------------");
                         new HiloAtencion(content).start();
                     }
+
                 }
                 waitCiclo();
             }
