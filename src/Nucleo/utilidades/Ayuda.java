@@ -101,7 +101,7 @@ public class Ayuda {
                 + separador
  
             + "Insertar un dia:\n"
-                + "INSERTARDIA[\"Dia\"]\n\n"
+                + "INSERTARDIA[\"DDia\"]\n\n"
                 +separador
 
            + " Insertar un lugar:\n"

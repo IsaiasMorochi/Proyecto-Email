@@ -45,17 +45,17 @@ public class MailRequisito extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Requisito registrado exitosamente con id: " + obj.getRequisito().autoincrement +  obj.getRequisito().toString() : "No se pudo registrar el requisito";
+		return (sw) ? "DRequisito registrado exitosamente con id: " + obj.getRequisito().autoincrement +  obj.getRequisito().toString() : "No se pudo registrar el requisito";
 	}
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Requisito modificado exitosamente con id: " +  obj.getRequisito().autoincrement +  obj.getRequisito().toString() : "No se pudo modificar el requisito";
+		return (sw) ? "DRequisito modificado exitosamente con id: " +  obj.getRequisito().autoincrement +  obj.getRequisito().toString() : "No se pudo modificar el requisito";
 	}
 
 	@Override
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Requisito eliminado exitosamente con id: " +  obj.getRequisito().autoincrement +  obj.getRequisito().toString() : "No se pudo eliminar el requisito";
+		return (sw) ? "DRequisito eliminado exitosamente con id: " +  obj.getRequisito().autoincrement +  obj.getRequisito().toString() : "No se pudo eliminar el requisito";
 	}
 
 	@Override

@@ -40,17 +40,17 @@ public class MailCronograma extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Cronograma registrado exitosamente con id: " + d.getCronograma().autoincrement + d.getCronograma().toString() : "No se pudo registrar el cronograma";
+		return (sw) ? "DCronograma registrado exitosamente con id: " + d.getCronograma().autoincrement + d.getCronograma().toString() : "No se pudo registrar el cronograma";
 	}
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Cronograma modificado exitosamente con id: " + d.getCronograma().autoincrement + d.getCronograma().toString() : "No se pudo modificar el cronograma";
+		return (sw) ? "DCronograma modificado exitosamente con id: " + d.getCronograma().autoincrement + d.getCronograma().toString() : "No se pudo modificar el cronograma";
 	}
 
 	@Override                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Cronograma eliminado exitosamente con id: " + d.getCronograma().autoincrement  + d.getCronograma().toString() : "No se pudo eliminar el cronograma";
+		return (sw) ? "DCronograma eliminado exitosamente con id: " + d.getCronograma().autoincrement  + d.getCronograma().toString() : "No se pudo eliminar el cronograma";
 	}
 
 	@Override

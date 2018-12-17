@@ -39,21 +39,21 @@ public class MailReserva extends TemplateMail {
 
     @Override
     public String messageCreate(boolean sw) {
-        return (sw) ? "Reserva registrado exitosamente con id: " + d.getReserva().autoincrement + d.getReserva().toString()  : "No se pudo registrar el Reserva" ;
+        return (sw) ? "DReserva registrado exitosamente con id: " + d.getReserva().autoincrement + d.getReserva().toString()  : "No se pudo registrar el DReserva" ;
     }
 
     @Override
     public String messageEdit(boolean sw) {
-        return (sw) ? "Reserva modificado exitosamente con id: " + d.getReserva().autoincrement + d.getReserva().toString() : "No se pudo modificar el Reserva" ;
+        return (sw) ? "DReserva modificado exitosamente con id: " + d.getReserva().autoincrement + d.getReserva().toString() : "No se pudo modificar el DReserva" ;
     }
 
     @Override
     public String messageRemove(boolean sw) {
-        return (sw) ? "Reserva eliminado exitosamente con id: " + d.getReserva().autoincrement + d.getReserva().toString() : "No se pudo eliminar el Reserva";
+        return (sw) ? "DReserva eliminado exitosamente con id: " + d.getReserva().autoincrement + d.getReserva().toString() : "No se pudo eliminar el DReserva";
     }
 
     @Override
     public String messageFindAll(boolean sw) {
-        return (sw) ? "Listado de Reservas: " : "No se pudo encontrar el listado de Reserva";
+        return (sw) ? "Listado de Reservas: " : "No se pudo encontrar el listado de DReserva";
     }
 }

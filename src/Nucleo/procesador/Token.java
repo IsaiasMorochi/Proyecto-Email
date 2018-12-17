@@ -32,7 +32,7 @@ public class Token {
     public static final int LISTARUSUARIOS = 23;
     
     /**
-     * Dia
+     * DDia
      */
     public static final int INSERTARDIA = 24;
     
@@ -105,12 +105,12 @@ public class Token {
     
 //    
     /**
-     * Venta
+     * DVenta
      */
     public static final int INSERTARVENTA = 56;
     
     /**
-     * Detalle Venta
+     * Detalle DVenta
      */
     public static final int INSERTARDETALLEVENTA = 57;
     public static final int MODIFICARDETALLEVENTA = 58;
@@ -118,7 +118,7 @@ public class Token {
     public static final int LISTARDETALLEVENTAS = 60;
     
     /**
-     * Modo de Pago
+     * Modo de DPago
      */
     public static final int INSERTARMODOPAGO = 61;
     public static final int MODIFICARMODOPAGO = 62;

@@ -82,7 +82,7 @@ public class NEvento {
                     "\nFecha Inicio: " + objetoX.getFecha_inicio() +
                     "\nFecha Fin: " + objetoX.getFecha_fin() +
                     "\nCosto: " + objetoX.getCosto() +
-                    "\nTipo: " + objetoX.getTipo() +
+                    "\nDTipo: " + objetoX.getTipo() +
                     "\n\n"
                     ;
 //            if (!objetoX.getDeleted_at().equals(null)) {

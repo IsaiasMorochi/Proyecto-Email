@@ -76,7 +76,7 @@ public class NHorario {
             resultado = resultado +
                     "Codigo: " + objetoX.getId()+
                     "\nID Evento: " + objetoX.getId_evento() +
-                    "\nID Dia: " + objetoX.getId_dia() +
+                    "\nID DDia: " + objetoX.getId_dia() +
                     "\nID Lugar: " + objetoX.getId_lugar() +
                     "\nHora Inicio: " + objetoX.getInicio() +
                     "\nHora Fin: " + objetoX.getFin() +

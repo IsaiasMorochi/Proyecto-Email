@@ -77,9 +77,9 @@ public class NDetalle_Venta {
         for (DDetalla_Venta objetoX : listarObjetos) {
             resultado = resultado +
                     "Codigo: " + objetoX.getId()+
-                    "\nID Venta: " + objetoX.getId_venta() +
+                    "\nID DVenta: " + objetoX.getId_venta() +
                     "\nID Persona: " + objetoX.getId_persona() +
-                    "\nID Usuario: " + objetoX.getId_usuario() +
+                    "\nID DUsuario: " + objetoX.getId_usuario() +
                     "\nID Evento: " + objetoX.getId_evento() +
 					"\nFecha Comprobante: " + objetoX.getFecha_comprobante() +
 					"\nNro Comprobante: " + objetoX.getNro_comprobante() +
