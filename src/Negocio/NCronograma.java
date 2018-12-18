@@ -1,39 +1,44 @@
 package Negocio;
 
-import Datos.DBoleta;
+import Datos.DCronograma;
+import org.postgresql.jdbc.EscapedFunctions;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NBoleta {
+public class NCronograma {
 
-    private DBoleta o;
+    private DCronograma o;
 
-    public NBoleta() throws Exception{
-        this.o = new DBoleta();
+    public NCronograma() throws Exception{
+        this.o = new DCronograma();
     }
+//    private int id;
+//    private String description;
+//    private String period;
 
-    public void add(double monto, int pago_id) throws Exception {
+    public void add(String description, String period) throws Exception{
         try{
-            o.setMonto(monto);
-            o.setPago_id(pago_id);
+            o.setDescription(description);
+            o.setPeriod(period);
             o.add();
         } catch (Exception e){
             throw e;
         }
     }
 
-    public void update(int id, double monto) throws Exception {
+    public void update(int id, String description, String period) throws Exception{
         try{
             o.setId(id);
-            o.setMonto(monto);
+            o.setDescription(description);
+            o.setPeriod(period);
             o.update();
         } catch (Exception e){
             throw e;
         }
     }
 
-    public void delete(int id) throws Exception {
+    public void delete(int id) throws Exception{
         try{
             o.setId(id);
             o.delete();
@@ -42,17 +47,17 @@ public class NBoleta {
         }
     }
 
-    public List<DBoleta> getAll() throws Exception {
-        List<DBoleta> ob = new ArrayList<>();
+    public List<DCronograma> getAll() throws Exception{
+        List<DCronograma> ob = new ArrayList<>();
         List<Object> lista = (List<Object>) this.o.getAll();
         try {
             for (Object objecto : lista) {
                 List<Object> obj = (List<Object>) objecto;
-                DBoleta oo = new DBoleta();
+                DCronograma oo = new DCronograma();
 
                 oo.setId(Integer.valueOf(obj.get(0).toString()));
-                oo.setMonto(Double.valueOf(obj.get(1).toString()));
-                oo.setPago_id(Integer.valueOf(obj.get(2).toString()));
+                oo.setDescription(obj.get(1).toString());
+                oo.setPeriod(obj.get(2).toString());
 
                 ob.add(oo);
             }
@@ -64,14 +69,14 @@ public class NBoleta {
     }
 
     public String Mostrar() throws Exception {
-        String rx = "Boletas\n\n";
+        String rx = "Cronograma \n\n";
         try {
-            List<DBoleta> lObj = this.getAll();
-            for (DBoleta obj : lObj) {
+            List<DCronograma> lObj = this.getAll();
+            for (DCronograma obj : lObj) {
                 rx = rx +
                         "Codigo: " + obj.getId()+
-                        "\nMonto: " + obj.getMonto() +
-                        "\nID Pago: " + obj.getPago_id() +
+                        "\nDescripcion: " + obj.getDescription() +
+                        "\nPeriodo: " + obj.getPeriod() +
                         "\n\n"
                 ;
             }
@@ -80,4 +85,6 @@ public class NBoleta {
         }
         return rx;
     }
+
+
 }

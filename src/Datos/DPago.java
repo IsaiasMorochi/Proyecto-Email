@@ -97,7 +97,7 @@ public class DPago extends Template {
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, monto, created_at, updated_at, deleted_at, type" +
-                "FROM public.pago" +
+                "FROM pago" +
                 "WHERE deleted_at is null ;";
     }
 

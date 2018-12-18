@@ -92,7 +92,7 @@ public class DPeriodo extends Template{
     @Override
     protected String updateT() throws Exception {
         return "UPDATE execution_period" +
-                "SET description="+ getDescription() +", updated_at= NOW(), deleted_at=?, start_date=?" +
+                "SET description="+ getDescription() +", updated_at= NOW(), start_date=" + getStart_date() +
                 "WHERE id = "+ getId() +";";
     }
 

@@ -43,7 +43,7 @@ public class NAdministrador_Oferta {
         }
     }
 
-    public List<DAdministrador_Oferta> select() throws Exception{
+    public List<DAdministrador_Oferta> getAll() throws Exception{
         List<DAdministrador_Oferta> ob = new ArrayList<>();
         List<Object> lista = (List<Object>) this.o.getAll();
         try {
@@ -62,6 +62,33 @@ public class NAdministrador_Oferta {
             throw e;
         }
         return ob;
+    }
+
+    public String Mostrar() throws Exception {
+        String rx = "Administrador Oferta\n\n";
+        try {
+            List<DAdministrador_Oferta> lObj = this.getAll();
+            for (DAdministrador_Oferta obj : lObj) {
+                rx = rx +
+                        "Codigo: " + obj.getId()+
+                        "\n ID Usuario: " + obj.getUser_id() +
+                        "\n ID Oferta: " + obj.getOferta_id() +
+                        "\n\n"
+                ;
+//            if (!objetoX.getDeleted_at().equals(null)) {
+//                resultado = resultado +
+//                        "\nEstado: Habilitada"+
+//                        "\n------------------------------------------------------\n";
+//            }else{
+//                resultado = resultado +
+//                        "\nEstado: No Habilitada"+
+//                        "\n------------------------------------------------------\n";
+//            }
+            }
+        } catch (Exception e){
+            throw e;
+        }
+        return rx;
     }
 
 

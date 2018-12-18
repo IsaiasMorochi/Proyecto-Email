@@ -1,32 +1,32 @@
 package Negocio;
 
-import Datos.DBoleta;
+import Datos.DObjetivo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NBoleta {
+public class NObjetivo {
 
-    private DBoleta o;
+    private DObjetivo o;
 
-    public NBoleta() throws Exception{
-        this.o = new DBoleta();
+    public NObjetivo() throws Exception{
+        this.o = new DObjetivo();
     }
 
-    public void add(double monto, int pago_id) throws Exception {
+    public void add(String description, int ofertta_id) throws Exception {
         try{
-            o.setMonto(monto);
-            o.setPago_id(pago_id);
+            o.setDescription(description);
+            o.setOferta_id(ofertta_id);
             o.add();
         } catch (Exception e){
             throw e;
         }
     }
 
-    public void update(int id, double monto) throws Exception {
+    public void update(int id, String description) throws Exception {
         try{
             o.setId(id);
-            o.setMonto(monto);
+            o.setDescription(description);
             o.update();
         } catch (Exception e){
             throw e;
@@ -42,36 +42,35 @@ public class NBoleta {
         }
     }
 
-    public List<DBoleta> getAll() throws Exception {
-        List<DBoleta> ob = new ArrayList<>();
+    private List<DObjetivo> getAll() throws Exception{
+        List<DObjetivo> ob = new ArrayList<>();
         List<Object> lista = (List<Object>) this.o.getAll();
         try {
             for (Object objecto : lista) {
                 List<Object> obj = (List<Object>) objecto;
-                DBoleta oo = new DBoleta();
+                DObjetivo oo = new DObjetivo();
 
                 oo.setId(Integer.valueOf(obj.get(0).toString()));
-                oo.setMonto(Double.valueOf(obj.get(1).toString()));
-                oo.setPago_id(Integer.valueOf(obj.get(2).toString()));
+                oo.setOferta_id(Integer.valueOf(obj.get(1).toString()));
+                oo.setDescription(obj.get(2).toString());
 
                 ob.add(oo);
             }
         } catch (Exception e) {
-            System.out.println("Excepcion en la capa de estudiante Negocio select");
             throw e;
         }
         return ob;
     }
 
     public String Mostrar() throws Exception {
-        String rx = "Boletas\n\n";
+        String rx = "METODOLOGIA \n\n";
         try {
-            List<DBoleta> lObj = this.getAll();
-            for (DBoleta obj : lObj) {
+            List<DObjetivo> lObj = this.getAll();
+            for (DObjetivo obj : lObj) {
                 rx = rx +
                         "Codigo: " + obj.getId()+
-                        "\nMonto: " + obj.getMonto() +
-                        "\nID Pago: " + obj.getPago_id() +
+                        "\nID Oferta: " + obj.getOferta_id() +
+                        "\nDescripcion: " + obj.getDescription() +
                         "\n\n"
                 ;
             }

@@ -1,32 +1,33 @@
 package Negocio;
 
-import Datos.DBoleta;
+import Datos.DPago;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NBoleta {
+public class NPago {
 
-    private DBoleta o;
+    private DPago o;
 
-    public NBoleta() throws Exception{
-        this.o = new DBoleta();
+    public NPago() throws Exception{
+        this.o = new DPago();
     }
 
-    public void add(double monto, int pago_id) throws Exception {
+    public void add(Double monto, String type) throws Exception {
         try{
             o.setMonto(monto);
-            o.setPago_id(pago_id);
+            o.setType(type);
             o.add();
         } catch (Exception e){
             throw e;
         }
     }
 
-    public void update(int id, double monto) throws Exception {
+    public void update(int id, Double monto, String type) throws Exception {
         try{
             o.setId(id);
             o.setMonto(monto);
+            o.setType(type);
             o.update();
         } catch (Exception e){
             throw e;
@@ -42,36 +43,35 @@ public class NBoleta {
         }
     }
 
-    public List<DBoleta> getAll() throws Exception {
-        List<DBoleta> ob = new ArrayList<>();
+    private List<DPago> getAll() throws Exception{
+        List<DPago> ob = new ArrayList<>();
         List<Object> lista = (List<Object>) this.o.getAll();
         try {
             for (Object objecto : lista) {
                 List<Object> obj = (List<Object>) objecto;
-                DBoleta oo = new DBoleta();
+                DPago oo = new DPago();
 
                 oo.setId(Integer.valueOf(obj.get(0).toString()));
                 oo.setMonto(Double.valueOf(obj.get(1).toString()));
-                oo.setPago_id(Integer.valueOf(obj.get(2).toString()));
+                oo.setType(obj.get(5).toString());
 
                 ob.add(oo);
             }
         } catch (Exception e) {
-            System.out.println("Excepcion en la capa de estudiante Negocio select");
             throw e;
         }
         return ob;
     }
 
     public String Mostrar() throws Exception {
-        String rx = "Boletas\n\n";
+        String rx = "METODOLOGIA \n\n";
         try {
-            List<DBoleta> lObj = this.getAll();
-            for (DBoleta obj : lObj) {
+            List<DPago> lObj = this.getAll();
+            for (DPago obj : lObj) {
                 rx = rx +
                         "Codigo: " + obj.getId()+
                         "\nMonto: " + obj.getMonto() +
-                        "\nID Pago: " + obj.getPago_id() +
+                        "\nTipo: " + obj.getType() +
                         "\n\n"
                 ;
             }
@@ -80,4 +80,5 @@ public class NBoleta {
         }
         return rx;
     }
+
 }
