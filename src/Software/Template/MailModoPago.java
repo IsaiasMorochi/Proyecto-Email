@@ -45,21 +45,21 @@ public class MailModoPago extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Modo de Pago registrado exitosamente con id: " + obj.getModoPago().autoincrement +  obj.getModoPago().toString() : "No se pudo registrar el Modo de Pago";
+		return (sw) ? "Modo de DPago registrado exitosamente con id: " + obj.getModoPago().autoincrement +  obj.getModoPago().toString() : "No se pudo registrar el Modo de DPago";
 	}
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Modo de Pago modificado exitosamente con id: " + obj.getModoPago().autoincrement +  obj.getModoPago().toString() : "No se pudo modificar el Modo de Pago";
+		return (sw) ? "Modo de DPago modificado exitosamente con id: " + obj.getModoPago().autoincrement +  obj.getModoPago().toString() : "No se pudo modificar el Modo de DPago";
 	}
 
 	@Override
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Modo de Pago eliminado exitosamente con id: " + obj.getModoPago().autoincrement +  obj.getModoPago().toString() : "No se pudo eliminar el Modo de Pago";
+		return (sw) ? "Modo de DPago eliminado exitosamente con id: " + obj.getModoPago().autoincrement +  obj.getModoPago().toString() : "No se pudo eliminar el Modo de DPago";
 	}
 
 	@Override
 	public String messageFindAll(boolean sw) {
-		return (sw) ? "Listado de Modo de Pagos: " : "No se pudo encontrar en listado de Modo de Pago";
+		return (sw) ? "Listado de Modo de Pagos: " : "No se pudo encontrar en listado de Modo de DPago";
 	}
 }

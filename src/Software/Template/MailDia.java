@@ -47,12 +47,12 @@ public class MailDia extends TemplateMail {
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Dia modificado exitosamente con id: " + d.getDia().autoincrement + ", " +  d.getDia().toString() : "No se pudo modificar el dia";
+		return (sw) ? "DDia modificado exitosamente con id: " + d.getDia().autoincrement + ", " +  d.getDia().toString() : "No se pudo modificar el dia";
 	}
 
 	@Override
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Dia eliminado exitosamente con id: " + d.getDia().autoincrement + ", " +  d.getDia().toString() : "No se pudo eliminar el dia";
+		return (sw) ? "DDia eliminado exitosamente con id: " + d.getDia().autoincrement + ", " +  d.getDia().toString() : "No se pudo eliminar el dia";
 	}
 
 	@Override

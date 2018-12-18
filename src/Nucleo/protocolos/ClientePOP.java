@@ -162,7 +162,7 @@ public class ClientePOP {
 
             if (socket != null && reader != null && writer != null) {
                 reader.readLine();
-                // Autenticando Usuario
+                // Autenticando DUsuario
                 command = "USER " + Constantes.MAIL_USER + "\r\n";
                 writer.writeBytes(command);
                 reader.readLine();

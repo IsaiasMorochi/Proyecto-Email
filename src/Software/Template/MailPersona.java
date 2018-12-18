@@ -63,7 +63,7 @@ public class MailPersona extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Usuario registrado exitosamente con id: " + obj.getPersona().autoincrement +  obj.getPersona().toString() : "No se pudo registrar el usuario";
+		return (sw) ? "DUsuario registrado exitosamente con id: " + obj.getPersona().autoincrement +  obj.getPersona().toString() : "No se pudo registrar el usuario";
 	}
 
 	@Override

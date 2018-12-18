@@ -35,17 +35,17 @@ public class MailVenta extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Venta registrado exitosamente con id: " + obj.getVenta().autoincrement +  obj.getVenta().toString() : "No se pudo registrar la Venta";
+		return (sw) ? "DVenta registrado exitosamente con id: " + obj.getVenta().autoincrement +  obj.getVenta().toString() : "No se pudo registrar la DVenta";
 	}
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Venta modificado exitosamente con id: " +  obj.getVenta().autoincrement +  obj.getVenta().toString() : "No se pudo modificar la Venta";
+		return (sw) ? "DVenta modificado exitosamente con id: " +  obj.getVenta().autoincrement +  obj.getVenta().toString() : "No se pudo modificar la DVenta";
 	}
 
 	@Override
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Venta eliminado exitosamente con id: " +  obj.getVenta().autoincrement +  obj.getVenta().toString() : "No se pudo eliminar la Venta";
+		return (sw) ? "DVenta eliminado exitosamente con id: " +  obj.getVenta().autoincrement +  obj.getVenta().toString() : "No se pudo eliminar la DVenta";
 	}
 
 	@Override

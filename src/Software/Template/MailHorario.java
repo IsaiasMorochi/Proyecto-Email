@@ -57,17 +57,17 @@ public class MailHorario extends TemplateMail {
 
 	@Override
 	public String messageCreate(boolean sw) {
-		return (sw) ? "Horario registrado exitosamente con id: " + h.getHorario().autoincrement + h.getHorario().toString() : "No se pudo registrar el Horario";
+		return (sw) ? "DHorario registrado exitosamente con id: " + h.getHorario().autoincrement + h.getHorario().toString() : "No se pudo registrar el DHorario";
 	}
 
 	@Override
 	public String messageEdit(boolean sw) {
-		return (sw) ? "Horario modificado exitosamente con id: " + h.getHorario().autoincrement + h.getHorario().toString() : "No se pudo modificar el Horario";
+		return (sw) ? "DHorario modificado exitosamente con id: " + h.getHorario().autoincrement + h.getHorario().toString() : "No se pudo modificar el DHorario";
 	}
 
 	@Override
 	public String messageRemove(boolean sw) {
-		return (sw) ? "Horario eliminado exitosamente con id: " + h.getHorario().autoincrement + h.getHorario().toString() : "No se pudo eliminar el Horario";
+		return (sw) ? "DHorario eliminado exitosamente con id: " + h.getHorario().autoincrement + h.getHorario().toString() : "No se pudo eliminar el DHorario";
 	}
 
 	@Override

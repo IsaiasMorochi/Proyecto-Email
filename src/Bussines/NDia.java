@@ -63,7 +63,7 @@ public class NDia {
         for (DDia objetoX : listarObjetos) {
             resultado = resultado +
                     "Codigo: " + objetoX.getId()+
-                    "\nDia: " + objetoX.getDia();
+                    "\nDDia: " + objetoX.getDia();
                     ;
             if (!objetoX.getDeleted_at().equals(null)) {
                 resultado = resultado + 

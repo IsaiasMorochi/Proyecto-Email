@@ -311,7 +311,7 @@ public class ProcesadorMensaje {
 //            return false;
 //        }
 //        int tipo = u.getTipo();
-//        System.out.println("Usuario tipo:"+tipo);
+//        System.out.println("DUsuario tipo:"+tipo);
 //        switch (tipo) {
 //            case 1:
 //                b = buscarComando(usuario, token);
