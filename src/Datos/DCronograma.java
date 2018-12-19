@@ -67,12 +67,8 @@ public class DCronograma extends Template {
     @Override
     public String toString() {
         return "DCronograma{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
-                ", period='" + period + '\'' +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
+                "description='" + description + '\'' +
+                ", periodO_id='" + period + '\'' +
                 '}';
     }
 
@@ -80,26 +76,26 @@ public class DCronograma extends Template {
     protected String addT() throws Exception {
         return "INSERT INTO schedule(" +
                 "description, created_at, period) " +
-                "VALUES (" + getDescription() +", NOW(), "+ getPeriod() +");";
+                "VALUES ('"+ getDescription() +"', NOW(), "+ getPeriod() +");";
     }
 
     @Override
     protected String updateT() throws Exception {
-        return "UPDATE schedule" +
-                "SET description="+ getDescription() +", updated_at= NOW(), period= "+ getPeriod() +
-                "WHERE id= "+ getId() +";";
+        return "UPDATE schedule " +
+                "SET description='"+ getDescription() +"', updated_at= NOW(), period= "+ getPeriod() +
+                " WHERE id= "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
-        return "UPDATE schedule" +
-                "SET deleted_at ="+ Utils.dateToString(new Date()) +
+        return "UPDATE schedule " +
+                "SET deleted_at = NOW() " +
                 "WHERE id "+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, description, created_at, updated_at, deleted_at, period" +
+        return "SELECT id, description, created_at, updated_at, deleted_at, period " +
                 "FROM schedule " +
                 "WHERE deleted_at is null ;";
     }

@@ -90,29 +90,25 @@ public class DVenta_Detalle extends Template{
     @Override
     public String toString() {
         return "DVenta_Detalle{" +
-                "id=" + id +
-                ", date='" + date + '\'' +
+                "date='" + date + '\'' +
                 ", venta_id=" + venta_id +
                 ", oferta_id=" + oferta_id +
                 ", pago_id=" + pago_id +
                 ", user_id=" + user_id +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
     @Override
     protected String addT() throws Exception {
         return "INSERT INTO venta_detail(" +
-                "    date, venta_id, offer_id, pago_id, user_id, created_at)" +
-                "    VALUES ("+ getDate() +", "+ getVenta_id() +", "+ getOferta_id() +", "+ getPago_id()  +", "+ getUser_id() +", NOW());";
+                " date, venta_id, offer_id, pago_id, user_id, created_at)" +
+                " VALUES ('"+ getDate() +"', "+ getVenta_id() +", "+ getOferta_id() +", "+ getPago_id()  +", "+ getUser_id() +", NOW());";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE venta_detail" +
-                " SET date="+ getDate() +", updated_at= NOW()" +
+                " SET date='"+ getDate() +"', updated_at= NOW()" +
                 " WHERE id = "+ getId() +";";
     }
 
@@ -126,8 +122,8 @@ public class DVenta_Detalle extends Template{
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, date, venta_id, offer_id, pago_id, user_id, created_at, updated_at, deleted_at" +
-                "FROM venta_detail" +
-                "WHERE deleted_at is null;";
+                " FROM venta_detail" +
+                " WHERE deleted_at is null;";
     }
 
     @Override

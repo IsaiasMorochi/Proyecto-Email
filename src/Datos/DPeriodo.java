@@ -72,13 +72,9 @@ public class DPeriodo extends Template{
     @Override
     public String toString() {
         return "DPeriodo{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
+                "description='" + description + '\'' +
                 ", start_date='" + start_date + '\'' +
                 ", oferta_id=" + oferta_id +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
@@ -86,28 +82,28 @@ public class DPeriodo extends Template{
     protected String addT() throws Exception {
         return "INSERT INTO execution_period(" +
                 "offer_id, description, created_at, start_date)" +
-                "VALUES ("+ getOferta_id() +", "+ getDescription() +", NOW(), "+ getStart_date() +");";
+                " VALUES ("+ getOferta_id() +", '"+ getDescription() +"', NOW(), '"+ getStart_date() +"');";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE execution_period" +
-                "SET description="+ getDescription() +", updated_at= NOW(), start_date=" + getStart_date() +
-                "WHERE id = "+ getId() +";";
+                " SET description='"+ getDescription() +"', updated_at= NOW(), start_date='" + getStart_date() +"'"+
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE execution_period" +
-                "SET deleted_at= NOW() " +
-                "WHERE id = "+ getId() +";";
+                " SET deleted_at= NOW() " +
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, offer_id, description, created_at, updated_at, deleted_at, start_date" +
-                "FROM execution_period " +
-                "WHERE deleted_at is null;";
+                " FROM execution_period " +
+                " WHERE deleted_at is null;";
     }
 
     @Override

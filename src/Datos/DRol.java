@@ -54,11 +54,7 @@ public class DRol extends Template {
     @Override
     public String toString() {
         return "DRol{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
+                "name='" + name + '\'' +
                 '}';
     }
 
@@ -66,28 +62,28 @@ public class DRol extends Template {
     protected String addT() throws Exception {
         return "INSERT INTO role(" +
                 "name, created_at)" +
-                "VALUES ("+ getName() +", NOW());";
+                " VALUES ("+ getName() +", NOW());";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE role" +
-                "SET name="+ getName() +", updated_at= NOW()" +
-                "WHERE id= "+ getId() +";";
+                " SET name='"+ getName() +"', updated_at= NOW()" +
+                " WHERE id= "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE role" +
-                "SET name="+ getName() +", deleted_at= NOW()" +
-                "WHERE id= "+ getId() +";";
+                " SET deleted_at= NOW()" +
+                " WHERE id= "+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, name, created_at, updated_at, deleted_at" +
-                "FROM role" +
-                "WHERE deleted_at is null;";
+                " FROM role" +
+                " WHERE deleted_at is null;";
     }
 
     @Override

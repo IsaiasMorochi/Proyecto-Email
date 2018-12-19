@@ -64,12 +64,8 @@ public class DPago extends Template {
     @Override
     public String toString() {
         return "DPago{" +
-                "id=" + id +
-                ", monto=" + monto +
+                "monto=" + monto +
                 ", type='" + type + '\'' +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
@@ -90,15 +86,15 @@ public class DPago extends Template {
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE pago" +
-                "SET deleted_at= NOW() "+
-                "WHERE id = "+ getId() +";";
+                " SET deleted_at= NOW() "+
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, monto, created_at, updated_at, deleted_at, type" +
-                "FROM pago" +
-                "WHERE deleted_at is null ;";
+                " FROM pago" +
+                " WHERE deleted_at is null ;";
     }
 
     @Override

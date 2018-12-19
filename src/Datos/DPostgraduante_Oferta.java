@@ -35,8 +35,7 @@ public class DPostgraduante_Oferta extends Template{
     @Override
     public String toString() {
         return "DPostgraduante_Oferta{" +
-                "id=" + id +
-                ", user_id=" + user_id +
+                "user_id=" + user_id +
                 ", oferta_id=" + oferta_id +
                 '}';
     }
@@ -45,7 +44,7 @@ public class DPostgraduante_Oferta extends Template{
     protected String addT() throws Exception {
         return "INSERT INTO posgraduante_offer(" +
                 "offer_id, posgraduante_id)" +
-                "VALUES ("+ getOferta_id() +", "+ getUser_id() +");";
+                " VALUES ("+ getOferta_id() +", "+ getUser_id() +");";
     }
 
     @Override
@@ -61,7 +60,7 @@ public class DPostgraduante_Oferta extends Template{
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, offer_id, posgraduante_id" +
-                "FROM posgraduante_offer;";
+                " FROM posgraduante_offer;";
     }
 
     @Override

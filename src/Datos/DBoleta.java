@@ -67,18 +67,14 @@ public class DBoleta extends Template{
     @Override
     public String toString() {
         return "DBoleta{" +
-                "id=" + id +
-                ", monto=" + monto +
+                "monto=" + monto +
                 ", pago_id=" + pago_id +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
     @Override
     protected String addT() throws Exception {
-        return "INSERT INTO public.ticket(" +
+        return "INSERT INTO ticket(" +
                 "monto, pago_id, created_at) " +
                 "VALUES ("
                 + getMonto() +", "
@@ -102,8 +98,8 @@ public class DBoleta extends Template{
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, monto, pago_id, created_at, updated_at, deleted_at" +
-                "FROM ticket" +
+        return "SELECT id, monto, pago_id, created_at, updated_at, deleted_at " +
+                "FROM ticket " +
                 "WHERE deleted_at is null;";
     }
 

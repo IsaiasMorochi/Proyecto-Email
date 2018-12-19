@@ -81,27 +81,23 @@ public class DOferta  extends Template{
     @Override
     public String toString() {
         return "DOferta{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", type_id='" + type_id + '\'' +
                 ", price=" + price +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
     @Override
     protected String addT() throws Exception {
         return "INSERT INTO offer(name, description, price, type, created_at)" +
-                " VALUES ("+ getName() +", "+ getDescription() +", "+ getPrice() +", "+ getType_id() +", NOW());";
+                " VALUES ('"+ getName() +"', '"+ getDescription() +"', "+ getPrice() +", "+ getType_id() +", NOW());";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE offer " +
-                "SET name="+ getName() +", description="+ getDescription() +", price= "+ getPrice() + "updated_at= NOW() "+
+                " SET name='"+ getName() +"', description='"+ getDescription() +"', price= "+ getPrice() + "updated_at= NOW() "+
                 " WHERE id = "+ getId() +";";
     }
 

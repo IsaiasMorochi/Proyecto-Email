@@ -35,8 +35,7 @@ public class DAdministrador_Oferta extends Template{
     @Override
     public String toString() {
         return "DAdministrador_Oferta{" +
-                "id=" + id +
-                ", user_id=" + user_id +
+                "user_id=" + user_id +
                 ", oferta_id=" + oferta_id +
                 '}';
     }

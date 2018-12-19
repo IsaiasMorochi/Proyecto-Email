@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 public class Conexion {
 
     private static Connection cnx;
-    private static final String DB_URL = Constantes.DB_URL_LOCAL;
+    private static final String DB_URL = Constantes.DB_URL;
     private static final String DRIVER = Constantes.DRIVER;
     private static final String USER = Constantes.USER;
     private static final String PASS = Constantes.PASS;

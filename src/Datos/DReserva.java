@@ -81,14 +81,10 @@ public class DReserva extends Template{
     @Override
     public String toString() {
         return "DReserva{" +
-                "id=" + id +
-                ", date='" + date + '\'' +
+                "date='" + date + '\'' +
                 ", description='" + description + '\'' +
                 ", user_id=" + user_id +
                 ", oferta_id=" + oferta_id +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
@@ -96,28 +92,28 @@ public class DReserva extends Template{
     protected String addT() throws Exception {
         return "INSERT INTO reservation(" +
                 "date, description, user_id, offer_id, created_at)" +
-                "VALUES ("+ getDate() +", "+ getDescription() +", "+ getUser_id() +", "+ getOferta_id() +", NOW());";
+                " VALUES ('"+ getDate() +"', '"+ getDescription() +"', "+ getUser_id() +", "+ getOferta_id() +", NOW());";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE reservation" +
-                "SET date="+getDate() +", description="+ getDescription() +", updated_at= NOW()" +
-                "WHERE id = "+ getId() +";";
+                " SET date='"+getDate() +"', description='"+ getDescription() +"', updated_at= NOW()" +
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE reservation" +
-                "SET date="+getDate() +", description="+ getDescription() +", deleted_at= NOW()" +
-                "WHERE id = "+ getId() +";";
+                " SET deleted_at= NOW()" +
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, date, description, user_id, offer_id, created_at, updated_at, deleted_at" +
-                "FROM reservation" +
-                "WHERE deleted_at is null;";
+                " FROM reservation" +
+                " WHERE deleted_at is null;";
     }
 
     @Override

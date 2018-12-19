@@ -1,7 +1,5 @@
 package Datos;
 
-import Datos.Conexion;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -25,6 +23,7 @@ public abstract class Template {
     }
 
     private void sql(String sql) throws Exception {
+        System.out.println("sql = [" + sql + "]");
         try {
             PreparedStatement st = this.conexion.conectar().prepareStatement(sql);
             st.executeUpdate();
@@ -36,6 +35,7 @@ public abstract class Template {
     }
 
     private List<Object> listar(String sql) throws Exception{
+        System.out.println("sql = [" + sql + "]");
         List<Object> lista = new ArrayList<>();
         try {
             Statement st = this.conexion.conectar().createStatement();

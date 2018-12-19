@@ -63,12 +63,8 @@ public class DRequisito extends Template{
     @Override
     public String toString() {
         return "DRequisito{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
+                "description='" + description + '\'' +
                 ", oferta_id=" + oferta_id +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
@@ -76,28 +72,28 @@ public class DRequisito extends Template{
     protected String addT() throws Exception {
         return "INSERT INTO requirement(" +
                 "offer_id, description, created_at) " +
-                "VALUES ("+ getOferta_id() +", "+ getDescription() +", NOW());";
+                " VALUES ("+ getOferta_id() +", '"+ getDescription() +"', NOW());";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE requirement" +
-                "SET description="+ getDescription() +", updated_at= NOW() " +
-                "WHERE id = "+ getId() +";";
+                " SET description='"+ getDescription() +"', updated_at= NOW() " +
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE requirement " +
-                "SET deleted_at= NOW() " +
-                "WHERE id = "+ getId() +";";
+                " SET deleted_at= NOW() " +
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, offer_id, description, created_at, updated_at, deleted_at" +
-                "FROM requirement" +
-                "WHERE deleted_at is null;";
+                " FROM requirement" +
+                " WHERE deleted_at is null;";
     }
 
     @Override

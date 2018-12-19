@@ -23,14 +23,13 @@ public abstract class TemplateMail {
         if (messageHelp(anacom, email, comandHelp)) return;
 
         boolean sw = this.insertar(anacom, email);
-        System.out.println(sw);
 
         if (sw) {
-            System.out.println(this.messageCreate(sw));
+            System.out.println("EXITO T INSERTAR: "+ this.messageCreate(sw));
             ClienteSMTP.sendMailHTML(email, "REGISTRO CON EXITO", "<h2>" + this.messageCreate(sw) + "</h2>");
 
         }else{
-            System.out.println(this.messageCreate(sw));
+            System.out.println("ERROR T INSERTAR: "+this.messageCreate(sw));
             ClienteSMTP.sendMailHTML(email, "REGISTRO SIN EXITO", "<h2>" + this.messageCreate(sw) + "</h2>");
         }
     }
@@ -42,10 +41,10 @@ public abstract class TemplateMail {
         boolean sw = this.modificar(anacom, email);
 
         if (sw) {
-            System.out.println(this.messageEdit(sw));
+            System.out.println("EXITO T EDITAR: "+ this.messageEdit(sw));
             ClienteSMTP.sendMailHTML(email, "MODIFICACION CON EXITO", this.messageEdit(sw));
         }else{
-            System.out.println(this.messageEdit(sw));
+            System.out.println("ERROR T EDITAR: "+this.messageEdit(sw));
             ClienteSMTP.sendMailHTML(email, "MODIFICACION SINT EXITO", this.messageEdit(sw));
         }
     }
@@ -56,10 +55,10 @@ public abstract class TemplateMail {
         boolean sw = this.eliminar(anacom, email);
 
         if (sw) {
-            System.out.println(messageRemove(sw));
+            System.out.println("EXITO T ELIMINAR: "+ this.messageRemove(sw));
             ClienteSMTP.sendMailHTML(email, "ELIMINACION CON EXITO", messageRemove(sw));
         }else{
-            System.out.println(this.messageRemove(sw));
+            System.out.println("ERROR T ELIMINAR: "+ this.messageRemove(sw));
             ClienteSMTP.sendMailHTML(email, "ELIMINACION CON EXITO", messageRemove(sw));
         }
     }
@@ -70,24 +69,24 @@ public abstract class TemplateMail {
         String lista = this.listar();
 
         if (lista.isEmpty()) {
-            System.out.println(this.messageFindAll(false));
+            System.out.println("ERROR T LISTAR: "+this.messageFindAll(false));
 //            ClienteSMTP.sendMail(email, "LISTADO CON EXITO", this.messageFindAll(false));
             ClienteSMTP.sendMailHTML(email, "LISTADO SIN EXITO", this.messageFindAll(false));
         }else{
-            System.out.println();
+            System.out.println("EXITO T LISTAR: "+ this.messageFindAll(true));
 //            ClienteSMTP.sendMail(email, "LISTADO SIN EXITO", this.messageFindAll(true) + lista);
             ClienteSMTP.sendMailHTML(email, "LISTADO CON EXITO", this.messageFindAll(true) + lista);
         }
     }
 
-    public abstract boolean insertar(Anacom anacom, String correo) throws Exception;
-    public abstract boolean modificar(Anacom anacom, String correo) throws Exception;
-    public abstract boolean eliminar(Anacom anacom, String correo) throws Exception;
-    public abstract String listar() throws Exception;
+    protected abstract boolean insertar(Anacom anacom, String correo) throws Exception;
+    protected abstract boolean modificar(Anacom anacom, String correo) throws Exception;
+    protected abstract boolean eliminar(Anacom anacom, String correo) throws Exception;
+    protected abstract String listar() throws Exception;
 
-    public abstract String messageCreate(boolean sw);
-    public abstract String messageEdit(boolean sw);
-    public abstract String messageRemove(boolean sw);
-    public abstract String messageFindAll(boolean sw);
+    protected abstract String messageCreate(boolean sw);
+    protected abstract String messageEdit(boolean sw);
+    protected abstract String messageRemove(boolean sw);
+    protected abstract String messageFindAll(boolean sw);
 
 }

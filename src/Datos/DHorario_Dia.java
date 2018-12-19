@@ -67,12 +67,8 @@ public class DHorario_Dia extends Template {
     @Override
     public String toString() {
         return "DHorario_Dia{" +
-                "id=" + id +
-                ", horario_id=" + horario_id +
+                "horario_id=" + horario_id +
                 ", dia_id=" + dia_id +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
@@ -80,7 +76,7 @@ public class DHorario_Dia extends Template {
     protected String addT() throws Exception {
         return "INSERT INTO horario_days(" +
                 "horario_id, days_id, created_at)" +
-                "VALUES ("+ getHorario_id() +", "+ getDia_id() +", "+  Utils.dateToString(new Date()) +");";
+                "VALUES ("+ getHorario_id() +", "+ getDia_id() +", NOW() );";
     }
 
     @Override
@@ -91,15 +87,15 @@ public class DHorario_Dia extends Template {
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE horario_days" +
-                "SET deleted_at=" +  Utils.dateToString(new Date()) +
+                "SET deleted_at= NOW() " +
                 "WHERE id =" + getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, horario_id, days_id, created_at, updated_at, deleted_at" +
-                "FROM horario_days" +
-                "WHERE id = "+ getId() +";";
+                " FROM horario_days" +
+                " WHERE deleted_at is null;";
     }
 
     @Override

@@ -117,8 +117,7 @@ public class DUsuario extends Template{
     @Override
     public String toString() {
         return "DUsuario{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", type='" + type + '\'' +
@@ -126,16 +125,13 @@ public class DUsuario extends Template{
                 ", about_me='" + about_me + '\'' +
                 ", phone='" + phone + '\'' +
                 ", grupo_id=" + grupo_id +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
     @Override
     protected String addT() throws Exception {
-        return "INSERT INTO user(" +
-                "            name, email, password, created_at, group_id, type, speciality, about_me, phone)" +
+        return "INSERT INTO users(" +
+                "    name, email, password, created_at, group_id, type, speciality, about_me, phone)" +
                 "    VALUES ("
                 + "'" + getName() +"' , "
                 + "'" + getEmail() +"' , "
@@ -149,23 +145,24 @@ public class DUsuario extends Template{
 
     @Override
     protected String updateT() throws Exception {
-        return "UPDATE user" +
-                "   SET name="+ getName() +", email="+ getEmail() +", password="+ getEmail() +", updated_at= NOW()," +
-                "   type="+ getType() +", speciality="+ getSpeciality() +", about_me="+ getAbout_me() +", phone=" + getPhone() +
-                " WHERE id= "+ getId() +";";
+        return "UPDATE users" +
+                " SET name='"+ getName() +"', email='"+ getEmail() +"', password='"+ getEmail() +"', updated_at= NOW()," +
+                "  type='"+ getType() +"', speciality='"+ getSpeciality() +"', about_me='"+ getAbout_me() +"', phone='" + getPhone() +"'"+
+                "  WHERE id= "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
-        return "UPDATE user" +
-                "   SET deleted_at="+ getDeleted_at() +
+        return "UPDATE users" +
+                " SET deleted_at= NOW()"+
                 " WHERE id= "+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, name, email, password, type, speciality, about_me, phone, group_id, created_at, updated_at, deleted_at," +
-                "FROM users;";
+        return "SELECT id, name, email, password, type, speciality, about_me, phone, group_id, created_at, updated_at, deleted_at" +
+                " FROM users" +
+                " WHERE deleted_at is null;";
     }
 
     @Override

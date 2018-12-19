@@ -64,15 +64,12 @@ public class DCronograma_Detalle extends Template {
         this.deleted_at = deleted_at;
     }
 
+
     @Override
     public String toString() {
         return "DCronograma_Detalle{" +
-                "id=" + id +
-                ", cronograma_id=" + cronograma_id +
+                "cronograma_id=" + cronograma_id +
                 ", oferta_id=" + oferta_id +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
@@ -80,27 +77,27 @@ public class DCronograma_Detalle extends Template {
     protected String addT() throws Exception {
         return "INSERT INTO schedule_detail(" +
                 "schedule_id, offer_id, created_at)" +
-                "VALUES ("+ getCronograma_id() +", "+ getOferta_id() +", "+ Utils.dateToString(new Date()) +");";
+                "VALUES ("+ getCronograma_id() +", "+ getOferta_id() +", NOW() );";
     }
 
     @Override
     protected String updateT() throws Exception {
-        return "UPDATE schedule_detail" +
-                "SET updated_at= "+ Utils.dateToString(new Date()) +
-                "WHERE id ="+ getId() +";";
+        return "UPDATE schedule_detail " +
+                "SET updated_at= NOW() " +
+                "WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE schedule_detail" +
-                "SET deleted_at= "+ Utils.dateToString(new Date()) +
+                "SET deleted_at= NOW()" +
                 "WHERE id ="+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, schedule_id, offer_id, created_at, updated_at, deleted_at" +
-                "FROM schedule_detail" +
+        return "SELECT id, schedule_id, offer_id, created_at, updated_at, deleted_at " +
+                "FROM schedule_detail " +
                 "WHERE deleted_at is null;";
     }
 

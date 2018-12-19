@@ -76,45 +76,38 @@ public class DGrupo extends Template{
     @Override
     public String toString() {
         return "DGrupo{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", role_id=" + role_id +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
     @Override
     protected String addT() throws Exception {
         return "INSERT INTO group(" +
-                "name, description, created_at, role_id) VALUES ("
-                + getName() + ", "
-                + getDescription() +", "
-                + getCreated_at() +", "
-                + getRole_id() +");";
+                "name, description, created_at, role_id) VALUES ('"
+                + getName() + "', '"+ getDescription() +"', NOW() , "+ getRole_id() +");";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE group" +
-                "SET  name= "+ getName() +", description= "+ getDescription() +", updated_at= " + Utils.dateToString(new Date()) +", role_id=" + getRole_id() +
+                "SET  name= '"+ getName() +"', description= '"+ getDescription() +"', updated_at= NOW(), role_id=" + getRole_id() +
                 "WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE group" +
-                "SET deleted_at=" + Utils.dateToString(new Date()) +
-                "WHERE id = "+ getId() +";";
+                " SET deleted_at= NOW() " +
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, name, description, created_at, updated_at, deleted_at, role_id" +
-                "FROM group" +
-                "WHERE deleted_at is null;";
+                " FROM group" +
+                " WHERE deleted_at is null;";
     }
 
     @Override

@@ -63,41 +63,37 @@ public class DVenta extends Template{
     @Override
     public String toString() {
         return "DVenta{" +
-                "id=" + id +
-                ", total=" + total +
+                "total=" + total +
                 ", user_id=" + user_id +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
     @Override
     protected String addT() throws Exception {
         return "INSERT INTO venta(" +
-                "    total, user_id, created_at)" +
-                "    VALUES ("+ getTotal() +", "+ getUser_id() +", NOW());";
+                " total, user_id, created_at)" +
+                " VALUES ("+ getTotal() +", "+ getUser_id() +", NOW());";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE venta" +
-                "   SET total=?, updated_at= NOW()" +
+                " SET total='"+ getTotal() +"', updated_at= NOW()" +
                 " WHERE id= "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE venta" +
-                "   SET deleted_at= NOW()" +
+                " SET deleted_at= NOW()" +
                 " WHERE id= "+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, total, user_id, created_at, updated_at, deleted_at" +
-                "FROM venta" +
-                "WHERE id= "+ getId() +";";
+                " FROM venta" +
+                " WHERE deleted_at is null ;";
     }
 
     @Override

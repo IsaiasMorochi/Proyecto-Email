@@ -67,12 +67,8 @@ public class DHorario extends Template {
     @Override
     public String toString() {
         return "DHorario{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
+                "description='" + description + '\'' +
                 ", periodo_id=" + periodo_id +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
                 '}';
     }
 
@@ -80,28 +76,28 @@ public class DHorario extends Template {
     protected String addT() throws Exception {
         return "INSERT INTO horario(" +
                 "execution_period_id, description, created_at)" +
-                "VALUES ("+ getPeriodo_id() +", "+ getDescription() +", " + Utils.dateToString(new Date()) +");";
+                " VALUES ("+ getPeriodo_id() +", '"+ getDescription() +"', NOW() );";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE horario" +
-                "SET description=" + getDescription() +", updated_at=" + Utils.dateToString(new Date()) +
-                "WHERE id = "+ getId() +";";
+                " SET description= '" + getDescription() +"', updated_at= NOW()" +
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE horario" +
-                "SET description=" + getDescription() +", deleted_at=" + Utils.dateToString(new Date()) +
-                "WHERE id = "+ getId() +";";
+                " SET description= '" + getDescription() +"', deleted_at= NOW() "+
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, execution_period_id, description, created_at, updated_at, deleted_at" +
-                "FROM horario " +
-                "WHERE deleted_at is null;";
+                " FROM horario " +
+                " WHERE deleted_at is null;";
     }
 
     @Override

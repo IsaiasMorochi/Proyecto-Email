@@ -11,7 +11,7 @@ public class MailPostgraduanteOferta extends TemplateMail {
         this.o = new NPostgraduante_Oferta();
     }
     @Override
-    public boolean insertar(Anacom anacom, String correo) throws Exception {
+    protected boolean insertar(Anacom anacom, String correo) throws Exception {
         try {
             anacom.Avanzar();
             int user_id = anacom.Preanalisis().getAtributo();
@@ -27,7 +27,7 @@ public class MailPostgraduanteOferta extends TemplateMail {
     }
 
     @Override
-    public boolean modificar(Anacom anacom, String correo) throws Exception{
+    protected boolean modificar(Anacom anacom, String correo) throws Exception{
         try {
             anacom.Avanzar();
             int id = anacom.Preanalisis().getAtributo();
@@ -39,7 +39,7 @@ public class MailPostgraduanteOferta extends TemplateMail {
     }
 
     @Override
-    public boolean eliminar(Anacom anacom, String correo) throws Exception{
+    protected boolean eliminar(Anacom anacom, String correo) throws Exception{
         try {
             anacom.Avanzar();
             int id = anacom.Preanalisis().getAtributo();
@@ -51,7 +51,7 @@ public class MailPostgraduanteOferta extends TemplateMail {
     }
 
     @Override
-    public String listar() throws Exception {
+    protected String listar() throws Exception {
         try {
             return o.Mostrar();
         } catch (Exception e){
@@ -60,24 +60,24 @@ public class MailPostgraduanteOferta extends TemplateMail {
     }
 
     @Override
-    public String messageCreate(boolean sw) {
+    protected String messageCreate(boolean sw) {
         return (sw) ? "Contenido registrado exitosamente con id: "  + o.getInfo().toString() : "No se pudo registrar el contenido";
 
     }
 
     @Override
-    public String messageEdit(boolean sw) {
+    protected String messageEdit(boolean sw) {
         return (sw) ? "Contenido modificado exitosamente con id: " + o.getInfo().toString() : "No se pudo modificar el contenido";
 
     }
 
     @Override
-    public String messageRemove(boolean sw) {
+    protected String messageRemove(boolean sw) {
         return (sw) ? "Contenido eliminado exitosamente con id: " + o.getInfo().toString() : "No se pudo eliminar el contenido";
     }
 
     @Override
-    public String messageFindAll(boolean sw) {
+    protected String messageFindAll(boolean sw) {
         return (sw) ? "Listado de contenidos: " : "No se pudo encontrar en listado de contenidos";
     }
 }

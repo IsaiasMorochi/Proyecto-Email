@@ -2,7 +2,6 @@ package Datos;
 
 import Nucleo.utilidades.Utils;
 
-import java.util.Date;
 
 public class DDia extends Template {
 
@@ -12,39 +11,6 @@ public class DDia extends Template {
     private String created_at;
     private String updated_at;
     private String deleted_at;
-
-    @Override
-    protected String addT() throws Exception {
-        return "INSERT INTO days(" +
-                "name, created_at)" +
-                "VALUES ( "+ getName() +", "+ Utils.dateToString(new Date()) +");";
-    }
-
-    @Override
-    protected String updateT() throws Exception {
-        return "UPDATE days" +
-                "SET name= "+ getName() +",  updated_at=" + Utils.dateToString(new Date()) +
-                "WHERE id = "+ getId() +";";
-    }
-
-    @Override
-    protected String deleteT() throws Exception {
-        return "UPDATE days" +
-                "SET name= "+ getName() +", deleted_at=" + Utils.dateToString(new Date()) +
-                "WHERE id="+ getId() +";";
-    }
-
-    @Override
-    protected String getAllT() throws Exception {
-        return "SELECT id, name, created_at, updated_at, deleted_at" +
-                "FROM days" +
-                "WHERE deleted_at is null;";
-    }
-
-    @Override
-    protected int currentColumn() throws Exception {
-        return 5;
-    }
 
     public DDia() throws  Exception{}
 
@@ -91,12 +57,40 @@ public class DDia extends Template {
     @Override
     public String toString() {
         return "DDia{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", created_at='" + created_at + '\'' +
-                ", updated_at='" + updated_at + '\'' +
-                ", deleted_at='" + deleted_at + '\'' +
+                "name='" + name + '\'' +
                 '}';
+    }
+    @Override
+    protected String addT() throws Exception {
+        return "INSERT INTO days(" +
+                "name, created_at) " +
+                "VALUES ( '"+ getName() +"' , NOW() );";
+    }
+
+    @Override
+    protected String updateT() throws Exception {
+        return "UPDATE days" +
+                "SET name= '"+ getName() +"' , updated_at=  NOW() " +
+                "WHERE id = "+ getId() +";";
+    }
+
+    @Override
+    protected String deleteT() throws Exception {
+        return "UPDATE days" +
+                "deleted_at= NOW() " +
+                "WHERE id="+ getId() +";";
+    }
+
+    @Override
+    protected String getAllT() throws Exception {
+        return "SELECT id, name, created_at, updated_at, deleted_at " +
+                "FROM days " +
+                "WHERE deleted_at is null;";
+    }
+
+    @Override
+    protected int currentColumn() throws Exception {
+        return 5;
     }
 
 

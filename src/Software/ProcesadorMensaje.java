@@ -36,7 +36,7 @@ public class ProcesadorMensaje {
     public ProcesadorMensaje() throws Exception {
     }
 
-    public void processMessage(String content, String destinatario, String url, String tipo) {
+    public void processMessage(String content, String destinatario, String url, String tipo) throws Exception {
 
         Cinta cinta = new Cinta(content);
         Anacom anacom = new Anacom(cinta);
@@ -68,218 +68,218 @@ public class ProcesadorMensaje {
 
         switch (token.getAtributo()) {
             case Token.INSERTARUSUARIO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_usuario.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARUSUARIO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_usuario.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARUSUARIO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_usuario.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARUSUARIOS:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_usuario.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARDIA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_dia.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARDIA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_dia.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARDIA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_dia.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARDIA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_dia.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTAROFERTA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_oferta.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICAROFERTA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_oferta.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINAROFERTA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_oferta.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTAROFERTA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_oferta.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARCRONOGRAMA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_cronograma.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARCRONOGRAMA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_cronograma.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARCRONOGRAMA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_cronograma.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARCRONOGRAMA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_cronograma.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARDETALLECRONOGRAMA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_cronograma_detalle.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARDETALLECRONOGRAMA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_cronograma_detalle.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARDETALLECRONOGRAMA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_cronograma_detalle.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARDIRIGIDO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_dirigido.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARDIRIGIDO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_dirigido.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARDIRIGIDO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_dirigido.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARDIRIGIDO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_dirigido.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTAROBJETIVO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_objetivo.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICAROBJETIVO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_objetivo.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINAROBJETIVO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_objetivo.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTAROBJETIVO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_objetivo.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARMETODOLOGIA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_metodologia.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARMETODOLOGIA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_metodologia.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARMETODOLOGIA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_metodologia.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARMETODOLOGIA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_metodologia.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARPERIODO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_periodo.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARPERIODO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_periodo.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARPERIODO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_periodo.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARPERIODO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_periodo.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARHORARIO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_horario.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARHORARIO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_horario.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARHORARIO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_horario.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARHORARIO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_horario.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARHORARIODIA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_horario_dia.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARHORARIODIA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_horario_dia.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARHORARIODIA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_horario_dia.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARROL:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_rol.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARROL:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_rol.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARROL:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_rol.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARROL:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_rol.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARGRUPO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_grupo.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARGRUPO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_grupo.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARGRUPO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_grupo.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARGRUPO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_grupo.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARVENTA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_venta.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARVENTA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_venta.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARVENTA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_venta.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARVENTA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_venta.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARDETALLEVENTA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_venta_detalle.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARDETALLEVENTA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_venta_detalle.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARDETALLEVENTA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_venta_detalle.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARDETALLEVENTA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_venta_detalle.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARPAGO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_pago.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARPAGO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_pago.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARPAGO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_pago.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARPAGO:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_pago.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.INSERTARBOLETA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_boleta.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.MODIFICARBOLETA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_boleta.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.ELIMINARBOLETA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_boleta.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             case Token.LISTARBOLETA:
-//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                mail_boleta.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             default:
                 break;
