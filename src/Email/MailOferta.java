@@ -1,26 +1,33 @@
 package Email;
 
-import Negocio.NCronograma;
+import Negocio.NOferta;
 import Nucleo.procesador.Anacom;
 import Nucleo.utilidades.Herramientas;
 
-public class MailCronograma extends TemplateMail {
+public class MailOferta extends TemplateMail {
 
-    private NCronograma o;
+    private NOferta o;
 
-    public MailCronograma() throws Exception{
-        this.o = new NCronograma();
+    public MailOferta() throws Exception{
+        this.o = new NOferta();
     }
+
     @Override
     public boolean insertar(Anacom anacom, String correo) throws Exception {
         try {
             anacom.Avanzar();
+            String name = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+            anacom.Avanzar();
+            anacom.Avanzar();
             String description = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
             anacom.Avanzar();
             anacom.Avanzar();
-            String periodo_id = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+            double precio = anacom.Preanalisis().getAtributo();
+            anacom.Avanzar();
+            anacom.Avanzar();
+            String tipo_id = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 
-            o.add(description, periodo_id);
+            o.add(name, description, precio, tipo_id);
             return true;
         } catch (Exception e) {
             return false;
@@ -34,12 +41,15 @@ public class MailCronograma extends TemplateMail {
             int id = anacom.Preanalisis().getAtributo();
             anacom.Avanzar();
             anacom.Avanzar();
+            String name = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+            anacom.Avanzar();
+            anacom.Avanzar();
             String description = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
             anacom.Avanzar();
             anacom.Avanzar();
-            String periodo_id = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+            double precio = anacom.Preanalisis().getAtributo();
 
-            o.update(id, description, periodo_id);
+            o.update(id, name, description, precio);
             return true;
         } catch (Exception e) {
             return false;
@@ -51,6 +61,7 @@ public class MailCronograma extends TemplateMail {
         try {
             anacom.Avanzar();
             int id = anacom.Preanalisis().getAtributo();
+
             o.delete(id);
             return true;
         } catch (Exception e) {

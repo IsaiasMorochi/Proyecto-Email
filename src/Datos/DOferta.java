@@ -1,19 +1,18 @@
 package Datos;
 
-import Nucleo.utilidades.Utils;
-import java.util.Date;
-
-public class DMetodologia extends Template {
+public class DOferta  extends Template{
 
     private int id;
+    private String name;
     private String description;
-    private int oferta_id;
+    private String type_id;
+    private Double price;
 
     private String created_at;
     private String updated_at;
     private String deleted_at;
 
-    public DMetodologia() throws Exception{}
+    public DOferta() throws Exception{}
 
     public int getId() {
         return id;
@@ -21,6 +20,14 @@ public class DMetodologia extends Template {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -31,12 +38,20 @@ public class DMetodologia extends Template {
         this.description = description;
     }
 
-    public int getOferta_id() {
-        return oferta_id;
+    public String getType_id() {
+        return type_id;
     }
 
-    public void setOferta_id(int oferta_id) {
-        this.oferta_id = oferta_id;
+    public void setType_id(String type_id) {
+        this.type_id = type_id;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public String getCreated_at() {
@@ -65,10 +80,12 @@ public class DMetodologia extends Template {
 
     @Override
     public String toString() {
-        return "DMetodologia{" +
+        return "DOferta{" +
                 "id=" + id +
+                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", oferta_id=" + oferta_id +
+                ", type_id='" + type_id + '\'' +
+                ", price=" + price +
                 ", created_at='" + created_at + '\'' +
                 ", updated_at='" + updated_at + '\'' +
                 ", deleted_at='" + deleted_at + '\'' +
@@ -77,34 +94,33 @@ public class DMetodologia extends Template {
 
     @Override
     protected String addT() throws Exception {
-        return "INSERT INTO metodology(" +
-                "offer_id, description, created_at)" +
-                "VALUES ("+ getOferta_id() +", "+ getDescription() +", "+ Utils.dateToString(new Date()) +");";
+        return "INSERT INTO offer(name, description, price, type, created_at)" +
+                " VALUES ("+ getName() +", "+ getDescription() +", "+ getPrice() +", "+ getType_id() +", NOW());";
     }
 
     @Override
     protected String updateT() throws Exception {
-        return "UPDATE metodology " +
-                "SET description="+ getDescription() +", updated_at=" + Utils.dateToString(new Date()) +
-                "WHERE id = "+ getId() +";";
+        return "UPDATE offer " +
+                "SET name="+ getName() +", description="+ getDescription() +", price= "+ getPrice() + "updated_at= NOW() "+
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
-        return "UPDATE metodology " +
-                "SET  deleted_at=" + Utils.dateToString(new Date()) +
-                "WHERE id = "+ getId() +";";
+        return "UPDATE offer" +
+                " deleted_at = NOW() " +
+                " WHERE id = "+ getId() + ";";
     }
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, offer_id, description, created_at, updated_at, deleted_at" +
-                "FROM metodology" +
-                "WHERE deleted_at is null ;";
+        return "SELECT id, name, description, price, type, created_at, updated_at, deleted_at" +
+                " FROM offer " +
+                " WHERE deleted_at is null;";
     }
 
     @Override
     protected int currentColumn() throws Exception {
-        return 6;
+        return 8;
     }
 }

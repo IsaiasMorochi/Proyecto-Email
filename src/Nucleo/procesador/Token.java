@@ -30,110 +30,138 @@ public class Token {
     public static final int MODIFICARUSUARIO = 21;
     public static final int ELIMINARUSUARIO = 22;
     public static final int LISTARUSUARIOS = 23;
-    
+
     /**
-     * DDia
+     * Dia
      */
     public static final int INSERTARDIA = 24;
-    
+    public static final int MODIFICARDIA = 25;
+    public static final int ELIMINARDIA = 26;
+    public static final int LISTARDIA = 27;
+
     /**
-     * EVENTO
+     * OFERTA
      */
-    public static final int INSERTAREVENTO = 25;
-    public static final int MODIFICAREVENTO = 26;
-    public static final int ELIMINAREVENTO = 27;
-    public static final int LISTAREVENTOS = 28;
-    
-    /**
-     * CONTENIDO
-     */
-    public static final int INSERTARCONTENIDO = 29;
-    public static final int MODIFICARCONTENIDO = 30;
-    public static final int ELIMINARCONTENIDO = 31;
-    public static final int LISTARCONTENIDO = 32;
-    
-    /**
-     * DETALLE CONTENIDO
-     */
-    public static final int INSERTARDETALLECONTENIDO = 33;
-    public static final int MODIFICARDETALLECONTENIDO = 34;
-    public static final int ELIMINARDETALLECONTENIDO = 35;
-    public static final int LISTARDETALLECONTENIDO = 36;
-    
-    /**
-     * DISERTANTE
-     */
-    public static final int INSERTARDISERTANTE = 37;
-    public static final int MODIFICARDISERTANTE = 38;
-    public static final int ELIMINARDISERTANTE = 39;
-    public static final int LISTARDISERTANTES = 40;
-    
+    public static final int INSERTAROFERTA = 28;
+    public static final int MODIFICAROFERTA = 29;
+    public static final int ELIMINAROFERTA = 30;
+    public static final int LISTAROFERTA = 31;
+
     /**
      * CRONOGRAMA
      */
-    public static final int INSERTARCRONOGRAMA = 41;
-    public static final int ELIMINARCRONOGRAMA = 42;
-        
+    public static final int INSERTARCRONOGRAMA = 32;
+    public static final int MODIFICARCRONOGRAMA = 33;
+    public static final int ELIMINARCRONOGRAMA = 34;
+    public static final int LISTARCRONOGRAMA = 35;
+
     /**
-     * OBJETIVOS
+     * DETALLE CRONOGRAMA
+     */
+    public static final int INSERTARDETALLECRONOGRAMA = 36;
+    public static final int ELIMINARDETALLECRONOGRAMA = 37;
+    public static final int LISTARDETALLECRONOGRAMA = 38;
+
+    /**
+     * DIRIGIDO
+     */
+    public static final int INSERTARDIRIGIDO = 39;
+    public static final int MODIFICARDIRIGIDO = 40;
+    public static final int ELIMINARDIRIGIDO = 41;
+    public static final int LISTARDIRIGIDO = 42;
+
+
+    /**
+     * OBJETIVO
      */
     public static final int INSERTAROBJETIVO = 43;
     public static final int MODIFICAROBJETIVO = 44;
     public static final int ELIMINAROBJETIVO = 45;
-    public static final int LISTAROBJETIVOS = 46;
-            
+    public static final int LISTAROBJETIVO = 46;
+
     /**
-     * LUGAR
+     * METODOLOGIA
      */
-    public static final int INSERTARLUGAR = 47;
-    public static final int MODIFICARLUGAR = 48;
-    public static final int ELIMINARLUGAR = 49;
-    public static final int LISTARLUGARES = 50;
-    
+    public static final int INSERTARMETODOLOGIA = 47;
+    public static final int MODIFICARMETODOLOGIA = 48;
+    public static final int ELIMINARMETODOLOGIA = 49;
+    public static final int LISTARMETODOLOGIA = 50;
+
     /**
-     * RESERVA
+     * PERIODO
      */
-    public static final int INSERTARRESERVA = 51;
-    
+    public static final int INSERTARPERIODO = 51;
+    public static final int MODIFICARPERIODO = 52;
+    public static final int ELIMINARPERIODO = 53;
+    public static final int LISTARPERIODO = 54;
+
     /**
      * HORARIO
      */
-    public static final int INSERTARHORARIO = 52;
-    public static final int MODIFICARHORARIO = 53;
-    public static final int ELIMINARHORARIO = 54;
-    public static final int LISTARHORARIOS = 55;
-    
-//    
+    public static final int INSERTARHORARIO = 55;
+    public static final int MODIFICARHORARIO = 56;
+    public static final int ELIMINARHORARIO = 57;
+    public static final int LISTARHORARIO = 58;
+
     /**
-     * DVenta
+     * HORARIO-DIA
      */
-    public static final int INSERTARVENTA = 56;
-    
+    public static final int INSERTARHORARIODIA = 59;
+    public static final int ELIMINARHORARIODIA = 60;
+    public static final int LISTARHORARIODIA = 61;
+
     /**
-     * Detalle DVenta
+     * ROL
      */
-    public static final int INSERTARDETALLEVENTA = 57;
-    public static final int MODIFICARDETALLEVENTA = 58;
-    public static final int ELIMINARDETALLEVENTA = 59;
-    public static final int LISTARDETALLEVENTAS = 60;
-    
+    public static final int INSERTARROL = 62;
+    public static final int MODIFICARROL = 63;
+    public static final int ELIMINARROL = 64;
+    public static final int LISTARROL = 65;
+
     /**
-     * Modo de DPago
+     * GRUPO
      */
-    public static final int INSERTARMODOPAGO = 61;
-    public static final int MODIFICARMODOPAGO = 62;
-    public static final int ELIMINARMODOPAGO = 63;
-    public static final int LISTARMODOPAGOS = 64;
-    
+    public static final int INSERTARGRUPO = 66;
+    public static final int MODIFICARGRUPO = 67;
+    public static final int ELIMINARGRUPO = 68;
+    public static final int LISTARGRUPO = 69;
+
     /**
-     * Requisitos
+     * VENTA
      */
-    public static final int INSERTARREQUISITO = 65;
-    public static final int MODIFICARREQUISITO = 66;
-    public static final int ELIMINARREQUISITO = 67;
-    public static final int LISTARREQUISITOS = 68;
-    
-    public static final int REPORTE = 69;
+    public static final int INSERTARVENTA = 70;
+    public static final int MODIFICARVENTA = 71;
+    public static final int ELIMINARVENTA = 72;
+    public static final int LISTARVENTA = 73;
+
+    /**
+     * DETALLE VENTA
+     */
+    public static final int INSERTARDETALLEVENTA = 74;
+    public static final int MODIFICARDETALLEVENTA = 75;
+    public static final int ELIMINARDETALLEVENTA = 76;
+    public static final int LISTARDETALLEVENTA = 77;
+
+    /**
+     * PAGO
+     */
+    public static final int INSERTARPAGO = 78;
+    public static final int MODIFICARPAGO = 79;
+    public static final int ELIMINARPAGO = 80;
+    public static final int LISTARPAGO = 81;
+
+    /**
+     * PAGO
+     */
+    public static final int INSERTARBOLETA = 82;
+    public static final int MODIFICARBOLETA = 83;
+    public static final int ELIMINARBOLETA = 84;
+    public static final int LISTARBOLETA = 85;
+
+    /**
+     * REPORTE
+     */
+    public static final int REPORTE = 86;
     
   
   

@@ -17,64 +17,83 @@ public class LCC {
         "LISTARUSUARIOS",
         
         "INSERTARDIA",
-        
-        "INSERTAREVENTO",
-        "MODIFICAREVENTO",
-        "ELIMINAREVENTO",
-        "LISTAREVENTOS",
-               
-        "INSERTARCONTENIDO",
-        "MODIFICARCONTENIDO",
-        "ELIMINARCONTENIDO",
-        "LISTARCONTENIDO",
-        
-        "INSERTARDETALLECONTENIDO",
-        "MODIFICARDETALLECONTENIDO",
-        "ELIMINARDETALLECONTENIDO",
-        "LISTARDETALLECONTENIDO",
-               
-        "INSERTARDISERTANTE",
-        "MODIFICARDISERTANTE",
-        "ELIMINARDISERTANTE",
-        "LISTARDISERTANTES",
-        
+        "MODIFICARDIA",
+        "ELIMINARDIA",
+        "LISTARDIA",
+
+        "INSERTAROFERTA",
+        "MODIFICAROFERTA",
+        "ELIMINAROFERTA",
+        "LISTAROFERTA",
+
         "INSERTARCRONOGRAMA",
-        "ELIMINARCRONOGRAMA",     
-             
+        "MODIFICARCRONOGRAMA",
+        "ELIMINARCRONOGRAMA",
+        "LISTARCRONOGRAMA",
+
+        "INSERTARDETALLECRONOGRAMA",
+        "ELIMINARDETALLECRONOGRAMA",
+        "LISTARDETALLECRONOGRAMA",
+
+        "INSERTARDIRIGIDO",
+        "MODIFICARDIRIGIDO",
+        "ELIMINARDIRIGIDO",
+        "LISTARDIRIGIDO",
+
         "INSERTAROBJETIVO",
         "MODIFICAROBJETIVO",
         "ELIMINAROBJETIVO",
-        "LISTAROBJETIVOS",     
-        
-        "INSERTARLUGAR",
-        "MODIFICARLUGAR",
-        "ELIMINARLUGAR",
-        "LISTARLUGARES",
-        
-        "INSERTARRESERVA",    
-   
+        "LISTAROBJETIVO",
+
+        "INSERTARMETODOLOGIA",
+        "MODIFICARMETODOLOGIA",
+        "ELIMINARMETODOLOGIA",
+        "LISTARMETODOLOGIA",
+
+        "INSERTARPERIODO",
+        "MODIFICARPERIODO",
+        "ELIMINARPERIODO",
+        "LISTARPERIODO",
+
         "INSERTARHORARIO",
         "MODIFICARHORARIO",
         "ELIMINARHORARIO",
-        "LISTARHORARIOS",
-        
+        "LISTARHORARIO",
+
+        "INSERTARHORARIODIA",
+        "ELIMINARHORARIODIA",
+        "LISTARHORARIODIA",
+
+        "INSERTARROL",
+        "MODIFICARROL",
+        "ELIMINARROL",
+        "LISTARROL",
+
+        "INSERTARGRUPO",
+        "MODIFICARGRUPO",
+        "ELIMINARGRUPO",
+        "LISTARGRUPO",
+
         "INSERTARVENTA",
-        
+        "MODIFICARVENTA",
+        "ELIMINARVENTA",
+        "LISTARVENTA",
+
         "INSERTARDETALLEVENTA",
         "MODIFICARDETALLEVENTA",
         "ELIMINARDETALLEVENTA",
-        "LISTARDETALLEVENTAS",
-        
-        "INSERTARMODOPAGO",
-        "MODIFICARMODOPAGO",
-        "ELIMINARMODOPAGO",
-        "LISTARMODOPAGOS",
-        
-        "INSERTARREQUISITO",
-        "MODIFICARREQUISITO",
-        "ELIMINARREQUISITO",
-        "LISTARREQUISITOS",
-        
+        "LISTARDETALLEVENTA",
+
+        "INSERTARPAGO",
+        "MODIFICARPAGO",
+        "ELIMINARPAGO",
+        "LISTARPAGO",
+
+        "INSERTARBOLETA",
+        "MODIFICARBOLETA",
+        "ELIMINARBOLETA",
+        "LISTARBOLETA",
+
         "REPORTE"
 
     ));
@@ -89,66 +108,85 @@ public class LCC {
         new Token(Token.FUNC, Token.ELIMINARUSUARIO, "ELIMINARUSUARIO"),
         new Token(Token.FUNC, Token.LISTARUSUARIOS, "LISTARUSUARIOS"),
         
-        new Token(Token.FUNC, Token.INSERTARDIA, "INSERTARDIA"),   
-        
-        new Token(Token.FUNC, Token.INSERTAREVENTO, "INSERTAREVENTO"),     
-        new Token(Token.FUNC, Token.MODIFICAREVENTO, "MODIFICAREVENTO"),    
-        new Token(Token.FUNC, Token.ELIMINAREVENTO, "ELIMINAREVENTO"),    
-        new Token(Token.FUNC, Token.LISTAREVENTOS, "LISTAREVENTOS"),
-               
-        new Token(Token.FUNC, Token.INSERTARCONTENIDO , "INSERTARCONTENIDO"),
-        new Token(Token.FUNC, Token.MODIFICARCONTENIDO, "MODIFICARCONTENIDO"),
-        new Token(Token.FUNC, Token.ELIMINARCONTENIDO, "ELIMINARCONTENIDO"),
-        new Token(Token.FUNC, Token.LISTARCONTENIDO, "LISTARCONTENIDO"),
-        
-        new Token(Token.FUNC, Token.INSERTARDETALLECONTENIDO, "INSERTARDETALLECONTENIDO"),
-        new Token(Token.FUNC, Token.MODIFICARDETALLECONTENIDO, "MODIFICARDETALLECONTENIDO"),
-        new Token(Token.FUNC, Token.ELIMINARDETALLECONTENIDO, "ELIMINARDETALLECONTENIDO"),
-        new Token(Token.FUNC, Token.LISTARDETALLECONTENIDO, "LISTARDETALLECONTENIDO"),
-        
-        new Token(Token.FUNC, Token.INSERTARDISERTANTE, "INSERTARDISERTANTE"),
-        new Token(Token.FUNC, Token.MODIFICARDISERTANTE, "MODIFICARDISERTANTE"),
-        new Token(Token.FUNC, Token.ELIMINARDISERTANTE, "ELIMINARDISERTANTE"),
-        new Token(Token.FUNC, Token.LISTARDISERTANTES, "LISTARDISERTANTES"),
+        new Token(Token.FUNC, Token.INSERTARDIA, "INSERTARDIA"),
+        new Token(Token.FUNC, Token.MODIFICARDIA, "MODIFICARDIA"),
+        new Token(Token.FUNC, Token.ELIMINARDIA, "ELIMINARDIA"),
+        new Token(Token.FUNC, Token.LISTARDIA, "LISTARDIA"),
 
-        new Token(Token.FUNC, Token.INSERTARCRONOGRAMA, "INSERTARCRONOGRAMA"),
+        new Token(Token.FUNC, Token.INSERTAROFERTA, "INSERTAROFERTA"),
+        new Token(Token.FUNC, Token.MODIFICAROFERTA, "MODIFICAROFERTA"),
+        new Token(Token.FUNC, Token.ELIMINAROFERTA, "ELIMINAROFERTA"),
+        new Token(Token.FUNC, Token.LISTAROFERTA, "LISTAROFERTA"),
+
+        new Token(Token.FUNC, Token.INSERTARCRONOGRAMA , "INSERTARCRONOGRAMA"),
+        new Token(Token.FUNC, Token.MODIFICARCRONOGRAMA, "MODIFICARCRONOGRAMA"),
         new Token(Token.FUNC, Token.ELIMINARCRONOGRAMA, "ELIMINARCRONOGRAMA"),
+        new Token(Token.FUNC, Token.LISTARCRONOGRAMA, "LISTARCRONOGRAMA"),
         
+        new Token(Token.FUNC, Token.INSERTARDETALLECRONOGRAMA, "INSERTARDETALLECRONOGRAMA"),
+        new Token(Token.FUNC, Token.ELIMINARDETALLECRONOGRAMA, "ELIMINARDETALLECRONOGRAMA"),
+        new Token(Token.FUNC, Token.LISTARDETALLECRONOGRAMA, "LISTARDETALLECRONOGRAMA"),
+
+        new Token(Token.FUNC, Token.INSERTARDIRIGIDO, "INSERTARDIRIGIDO"),
+        new Token(Token.FUNC, Token.MODIFICARDIRIGIDO, "MODIFICARDIRIGIDO"),
+        new Token(Token.FUNC, Token.ELIMINARDIRIGIDO, "ELIMINARDIRIGIDO"),
+        new Token(Token.FUNC, Token.LISTARDIRIGIDO, "LISTARDIRIGIDO"),
+
         new Token(Token.FUNC, Token.INSERTAROBJETIVO, "INSERTAROBJETIVO"),
         new Token(Token.FUNC, Token.MODIFICAROBJETIVO, "MODIFICAROBJETIVO"),
         new Token(Token.FUNC, Token.ELIMINAROBJETIVO, "ELIMINAROBJETIVO"),
-        new Token(Token.FUNC, Token.LISTAROBJETIVOS, "LISTAROBJETIVOS"),
+        new Token(Token.FUNC, Token.LISTAROBJETIVO, "LISTAROBJETIVO"),
+
+        new Token(Token.FUNC, Token.INSERTARMETODOLOGIA, "INSERTARMETODOLOGIA"),
+        new Token(Token.FUNC, Token.MODIFICARMETODOLOGIA, "MODIFICARMETODOLOGIA"),
+        new Token(Token.FUNC, Token.ELIMINARMETODOLOGIA, "ELIMINARMETODOLOGIA"),
+        new Token(Token.FUNC, Token.LISTARMETODOLOGIA, "LISTARMETODOLOGIA"),
              
-        new Token(Token.FUNC, Token.INSERTARLUGAR, "INSERTARLUGAR"),
-        new Token(Token.FUNC, Token.MODIFICARLUGAR, "MODIFICARLUGAR"),
-        new Token(Token.FUNC, Token.ELIMINARLUGAR, "ELIMINARLUGAR"),
-        new Token(Token.FUNC, Token.LISTARLUGARES, "LISTARLUGARES"),
+        new Token(Token.FUNC, Token.INSERTARPERIODO, "INSERTARPERIODO"),
+        new Token(Token.FUNC, Token.MODIFICARPERIODO, "MODIFICARPERIODO"),
+        new Token(Token.FUNC, Token.ELIMINARPERIODO, "ELIMINARPERIODO"),
+        new Token(Token.FUNC, Token.LISTARPERIODO, "LISTARPERIODO"),
 
-        new Token(Token.FUNC, Token.INSERTARRESERVA, "INSERTARRESERVA"),
-
-      
         new Token(Token.FUNC, Token.INSERTARHORARIO, "INSERTARHORARIO"),
         new Token(Token.FUNC, Token.MODIFICARHORARIO, "MODIFICARHORARIO"),
         new Token(Token.FUNC, Token.ELIMINARHORARIO, "ELIMINARHORARIO"),
-        new Token(Token.FUNC, Token.LISTARHORARIOS, "LISTARHORARIOS"),
-   
+        new Token(Token.FUNC, Token.LISTARHORARIO, "LISTARHORARIO"),
+
+        new Token(Token.FUNC, Token.INSERTARHORARIODIA, "INSERTARHORARIODIA"),
+        new Token(Token.FUNC, Token.ELIMINARHORARIODIA, "ELIMINARHORARIODIA"),
+        new Token(Token.FUNC, Token.LISTARHORARIODIA, "LISTARHORARIODIA"),
+
+        new Token(Token.FUNC, Token.INSERTARROL, "INSERTARROL"),
+        new Token(Token.FUNC, Token.MODIFICARROL, "MODIFICARROL"),
+        new Token(Token.FUNC, Token.ELIMINARROL, "ELIMINARROL"),
+        new Token(Token.FUNC, Token.LISTARROL, "LISTARROL"),
+
+        new Token(Token.FUNC, Token.INSERTARGRUPO, "INSERTARGRUPO"),
+        new Token(Token.FUNC, Token.MODIFICARGRUPO, "MODIFICARGRUPO"),
+        new Token(Token.FUNC, Token.ELIMINARGRUPO, "ELIMINARGRUPO"),
+        new Token(Token.FUNC, Token.LISTARGRUPO, "LISTARGRUPO"),
+
         new Token(Token.FUNC, Token.INSERTARVENTA, "INSERTARVENTA"),
-        
+        new Token(Token.FUNC, Token.MODIFICARVENTA, "MODIFICARVENTA"),
+        new Token(Token.FUNC, Token.ELIMINARVENTA, "ELIMINARVENTA"),
+        new Token(Token.FUNC, Token.LISTARVENTA, "LISTARVENTA"),
+
         new Token(Token.FUNC, Token.INSERTARDETALLEVENTA, "INSERTARDETALLEVENTA"),
         new Token(Token.FUNC, Token.MODIFICARDETALLEVENTA, "MODIFICARDETALLEVENTA"),
         new Token(Token.FUNC, Token.ELIMINARDETALLEVENTA, "ELIMINARDETALLEVENTA"),
-        new Token(Token.FUNC, Token.LISTARDETALLEVENTAS, "LISTARDETALLEVENTAS"),
-        
-        new Token(Token.FUNC, Token.INSERTARMODOPAGO, "INSERTARMODOPAGO"),
-        new Token(Token.FUNC, Token.MODIFICARMODOPAGO, "MODIFICARMODOPAGO"),
-        new Token(Token.FUNC, Token.ELIMINARMODOPAGO, "ELIMINARMODOPAGO"),
-        new Token(Token.FUNC, Token.LISTARMODOPAGOS, "LISTARMODOPAGOS"),
-        
-        new Token(Token.FUNC, Token.INSERTARREQUISITO, "INSERTARREQUISITO"),
-        new Token(Token.FUNC, Token.MODIFICARREQUISITO, "MODIFICARREQUISITO"),
-        new Token(Token.FUNC, Token.ELIMINARREQUISITO, "ELIMINARREQUISITO"),
-        new Token(Token.FUNC, Token.LISTARREQUISITOS, "LISTARREQUISITOS"),
-        
+        new Token(Token.FUNC, Token.ELIMINARDETALLEVENTA, "ELIMINARDETALLEVENTA"),
+        new Token(Token.FUNC, Token.LISTARDETALLEVENTA, "LISTARDETALLEVENTA"),
+
+        new Token(Token.FUNC, Token.INSERTARPAGO, "INSERTARPAGO"),
+        new Token(Token.FUNC, Token.MODIFICARPAGO, "MODIFICARPAGO"),
+        new Token(Token.FUNC, Token.ELIMINARPAGO, "ELIMINARPAGO"),
+        new Token(Token.FUNC, Token.LISTARPAGO, "LISTARPAGO"),
+
+        new Token(Token.FUNC, Token.INSERTARBOLETA, "INSERTARBOLETA"),
+        new Token(Token.FUNC, Token.MODIFICARBOLETA, "MODIFICARBOLETA"),
+        new Token(Token.FUNC, Token.ELIMINARBOLETA, "ELIMINARBOLETA"),
+        new Token(Token.FUNC, Token.LISTARBOLETA, "LISTARBOLETA"),
+
         new Token(Token.FUNC, Token.REPORTE, "REPORTE")
        
     ));
