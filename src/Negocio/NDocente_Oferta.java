@@ -27,15 +27,16 @@ public class NDocente_Oferta {
         }
     }
 
-    public void update(int oferta_id, int docente_id) throws Exception {
-        try {
-            o.setOferta_id(oferta_id);
-            o.setUser_id(docente_id);
-            o.update();
-        } catch (Exception e) {
-            throw e;
-        }
-    }
+//    public void update(int id, int oferta_id, int docente_id) throws Exception {
+//        try {
+//            o.setId(id);
+//            o.setOferta_id(oferta_id);
+//            o.setUser_id(docente_id);
+//            o.update();
+//        } catch (Exception e) {
+//            throw e;
+//        }
+//    }
 
     public void delete(int id) throws Exception {
         try {

@@ -2,7 +2,7 @@ package Datos;
 
 public class DTipo extends Template {
 
-    private int id;
+    private String  id;
     private String description;
 
     private String created_at;
@@ -11,11 +11,11 @@ public class DTipo extends Template {
 
     public DTipo() throws Exception{}
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -54,28 +54,29 @@ public class DTipo extends Template {
     @Override
     public String toString() {
         return "DTipo{" +
-                "description='" + description + '\'' +
+                "id='" + id + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 
     @Override
     protected String addT() throws Exception {
         return "INSERT INTO type( id, description, created_at)" +
-                "    VALUES ("+ getId() +", '"+ getDescription() +"', NOW());";
+                "    VALUES ('"+ getId() +"', '"+ getDescription() +"', NOW());";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE type" +
                 " SET description='"+ getDescription() +"', updated_at= NOW() " +
-                " WHERE id = "+ getId() +";";
+                " WHERE id = '"+ getId() +"';";
     }
 
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE type" +
                 " SET deleted_at= NOW()" +
-                " WHERE id = "+ getId() +";";
+                " WHERE id = '"+ getId() +"';";
     }
 
     @Override

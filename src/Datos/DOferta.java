@@ -91,21 +91,21 @@ public class DOferta  extends Template{
     @Override
     protected String addT() throws Exception {
         return "INSERT INTO offer(name, description, price, type, created_at)" +
-                " VALUES ('"+ getName() +"', '"+ getDescription() +"', "+ getPrice() +", "+ getType_id() +", NOW());";
+                " VALUES ('"+ getName() +"', '"+ getDescription() +"', "+ getPrice() +", '"+ getType_id() +"', NOW());";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE offer " +
-                " SET name='"+ getName() +"', description='"+ getDescription() +"', price= "+ getPrice() + "updated_at= NOW() "+
+                " SET name='"+ getName() +"', description='"+ getDescription() +"', price= "+ getPrice() + ", updated_at= NOW() "+
                 " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE offer" +
-                " deleted_at = NOW() " +
-                " WHERE id = "+ getId() + ";";
+                " SET deleted_at= NOW()" +
+                " WHERE id= "+ getId() + ";";
     }
 
     @Override

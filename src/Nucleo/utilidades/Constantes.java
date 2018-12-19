@@ -12,7 +12,7 @@ public class Constantes {
     public static final String USER = "grupo03sa";
     public static final String PASS = "grupo03grupo03";
 
-    public static final String DB_URL_LOCAL = "jdbc:postgresql:/localhost/db_grupo03sa";
+    public static final String DB_URL_LOCAL = "jdbc:postgresql://localhost/db_grupo03sa";
 
 
 

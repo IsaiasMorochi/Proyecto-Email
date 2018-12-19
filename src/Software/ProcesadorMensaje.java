@@ -32,6 +32,10 @@ public class ProcesadorMensaje {
     private MailVenta_Detalle mail_venta_detalle = new MailVenta_Detalle();
     private MailPago mail_pago = new MailPago();
     private MailBoleta mail_boleta = new MailBoleta();
+    private MailPostgraduanteOferta mail_posgraduante_oferat = new MailPostgraduanteOferta();
+    private MailDocenteOferta mail_docente_oferta = new MailDocenteOferta();
+    private MailReporte mail_reporte = new MailReporte();
+
 
     public ProcesadorMensaje() throws Exception {
     }
@@ -280,6 +284,30 @@ public class ProcesadorMensaje {
                 break;
             case Token.LISTARBOLETA:
                 mail_boleta.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+
+            case Token.INSERTARPO:
+                mail_posgraduante_oferat.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.ELIMINARPO:
+                mail_posgraduante_oferat.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.LISTARPO:
+                mail_posgraduante_oferat.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+
+            case Token.INSERTARDO:
+                mail_docente_oferta.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.ELIMINARDO:
+                mail_docente_oferta.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.LISTARDO:
+                mail_docente_oferta.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+
+            case Token.REPORTE:
+//                mail_reporte.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
             default:
                 break;

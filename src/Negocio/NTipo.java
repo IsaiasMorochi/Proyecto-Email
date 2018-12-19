@@ -17,8 +17,9 @@ public class NTipo {
         return o;
     }
 
-    public void add(String description) throws Exception {
+    public void add(String id, String description) throws Exception {
         try{
+            o.setId(id);
             o.setDescription(description);
             o.add();
         } catch (Exception e){
@@ -26,7 +27,7 @@ public class NTipo {
         }
     }
 
-    public void update(int id, String description) throws Exception {
+    public void update(String id, String description) throws Exception {
         try{
             o.setId(id);
             o.setDescription(description);
@@ -36,7 +37,7 @@ public class NTipo {
         }
     }
 
-    public void delete(int id) throws Exception {
+    public void delete(String id) throws Exception {
         try{
             o.setId(id);
             o.delete();
@@ -53,7 +54,7 @@ public class NTipo {
                 List<Object> obj = (List<Object>) objecto;
                 DTipo oo = new DTipo();
 
-                oo.setId(Integer.valueOf(obj.get(0).toString()));
+                oo.setId(obj.get(0).toString());
                 oo.setDescription(obj.get(1).toString());
 
                 ob.add(oo);

@@ -17,7 +17,7 @@ public class NVenta {
         return o;
     }
 
-    public void add(Double total, int user_id) throws Exception{
+    public void add(double total, int user_id) throws Exception{
         try{
             o.setTotal(total);
             o.setUser_id(user_id);
@@ -27,7 +27,7 @@ public class NVenta {
         }
     }
 
-    public void update(int id, Double total) throws Exception{
+    public void update(int id, double total) throws Exception{
         try{
             o.setId(id);
             o.setTotal(total);

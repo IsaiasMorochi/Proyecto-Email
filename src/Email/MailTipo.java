@@ -16,9 +16,12 @@ public class MailTipo extends TemplateMail {
     protected boolean insertar(Anacom anacom, String correo) throws Exception {
         try {
             anacom.Avanzar();
+            String id = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+            anacom.Avanzar();
+            anacom.Avanzar();
             String description = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 
-            o.add(description);
+            o.add(id,description);
             return true;
         } catch (Exception e) {
             return false;
@@ -29,7 +32,7 @@ public class MailTipo extends TemplateMail {
     protected boolean modificar(Anacom anacom, String correo) throws Exception{
         try {
             anacom.Avanzar();
-            int id = anacom.Preanalisis().getAtributo();
+            String id = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
             anacom.Avanzar();
             anacom.Avanzar();
             String description = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
@@ -45,7 +48,7 @@ public class MailTipo extends TemplateMail {
     protected boolean eliminar(Anacom anacom, String correo) throws Exception{
         try {
             anacom.Avanzar();
-            int id = anacom.Preanalisis().getAtributo();
+            String id = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
             o.delete(id);
             return true;
         } catch (Exception e) {

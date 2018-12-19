@@ -83,22 +83,22 @@ public class DCronograma_Detalle extends Template {
     @Override
     protected String updateT() throws Exception {
         return "UPDATE schedule_detail " +
-                "SET updated_at= NOW() " +
-                "WHERE id = "+ getId() +";";
+                " SET updated_at= NOW() " +
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE schedule_detail" +
-                "SET deleted_at= NOW()" +
-                "WHERE id ="+ getId() +";";
+                " SET deleted_at= NOW()" +
+                " WHERE id ="+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, schedule_id, offer_id, created_at, updated_at, deleted_at " +
-                "FROM schedule_detail " +
-                "WHERE deleted_at is null;";
+                " FROM schedule_detail " +
+                " WHERE deleted_at is null;";
     }
 
     @Override

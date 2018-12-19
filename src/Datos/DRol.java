@@ -62,7 +62,7 @@ public class DRol extends Template {
     protected String addT() throws Exception {
         return "INSERT INTO role(" +
                 "name, created_at)" +
-                " VALUES ("+ getName() +", NOW());";
+                " VALUES ('"+ getName() +"', NOW());";
     }
 
     @Override

@@ -159,9 +159,24 @@ public class Token {
     public static final int LISTARBOLETA = 85;
 
     /**
+     * DOCENTE OFERA
+     */
+    public static final int INSERTARDO = 86;
+    public static final int ELIMINARDO = 87;
+    public static final int LISTARDO = 88;
+
+    /**
+     * POSTGRADUANTE OFERTA
+     */
+    public static final int INSERTARPO = 89;
+    public static final int ELIMINARPO = 90;
+    public static final int LISTARPO = 91;
+
+
+    /**
      * REPORTE
      */
-    public static final int REPORTE = 86;
+    public static final int REPORTE = 92;
     
   
   

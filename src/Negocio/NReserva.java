@@ -79,10 +79,10 @@ public class NReserva {
             for (DReserva obj : lObj) {
                 rx = rx +
                         "Codigo: " + obj.getId()+
-                        "\nFecha: " + obj.getOferta_id() +
+                        "\nFecha: " + obj.getDate() +
                         "\nDescripcion: " + obj.getDescription() +
-                        "\nID Cliente: " + obj.getDescription() +
-                        "\nID Oferta: " + obj.getDescription() +
+                        "\nID Cliente: " + obj.getUser_id() +
+                        "\nID Oferta: " + obj.getOferta_id() +
                         "\n\n"
                 ;
             }

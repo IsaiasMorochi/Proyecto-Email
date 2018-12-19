@@ -17,7 +17,7 @@ public class NUsuario {
         return o;
     }
 
-    public void add(String name, String email, String password, String type, String speciality, String about_me, String phone, int grupo_id) throws Exception{
+    public void add(String name, String email, String password, int type, String speciality, String about_me, String phone, int grupo_id) throws Exception{
         try{
             o.setName(name);
             o.setEmail(email);
@@ -33,8 +33,9 @@ public class NUsuario {
         }
     }
 
-    public void update(String name, String email, String password, String type, String speciality, String about_me, String phone) throws Exception {
+    public void update(int id, String name, String email, String password, int type, String speciality, String about_me, String phone) throws Exception {
         try{
+            o.setId(id);
             o.setName(name);
             o.setEmail(email);
             o.setPassword(password);
@@ -69,7 +70,7 @@ public class NUsuario {
                 oo.setName(obj.get(1).toString());
                 oo.setEmail(obj.get(2).toString());
                 oo.setPassword(obj.get(3).toString());
-                oo.setType(obj.get(4).toString());
+                oo.setType(Integer.valueOf(obj.get(4).toString()));
                 oo.setSpeciality(obj.get(5).toString());
                 oo.setAbout_me(obj.get(6).toString());
                 oo.setPhone(obj.get(7).toString());
@@ -84,7 +85,7 @@ public class NUsuario {
     }
 
     public String Mostrar() throws Exception {
-        String rx = "TIPO \n\n";
+        String rx = "USUARIOS \n\n";
         try {
             List<DUsuario> lObj = this.getAll();
             for (DUsuario obj : lObj) {

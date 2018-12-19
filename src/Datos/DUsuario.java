@@ -6,7 +6,7 @@ public class DUsuario extends Template{
     private String name;
     private String email;
     private String password;
-    private String type;
+    private int type;
     private String speciality;
     private String about_me;
     private String phone;
@@ -50,11 +50,11 @@ public class DUsuario extends Template{
         this.password = password;
     }
 
-    public String getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(int type) {
         this.type = type;
     }
 
@@ -120,7 +120,6 @@ public class DUsuario extends Template{
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", type='" + type + '\'' +
                 ", speciality='" + speciality + '\'' +
                 ", about_me='" + about_me + '\'' +
                 ", phone='" + phone + '\'' +
@@ -130,14 +129,13 @@ public class DUsuario extends Template{
 
     @Override
     protected String addT() throws Exception {
-        return "INSERT INTO users(" +
-                "    name, email, password, created_at, group_id, type, speciality, about_me, phone)" +
-                "    VALUES ("
+        return "INSERT INTO users(name, email, password, created_at, group_id, type, speciality, about_me, phone)" +
+                " VALUES ("
                 + "'" + getName() +"' , "
                 + "'" + getEmail() +"' , "
-                + "'" + getCreated_at() +"', NOW(), "
+                + "'" + getPassword() +"' , NOW(), "
                 + getGrupo_id() +", "
-                + "'" + getType()  +"', "
+                + getType() +", "
                 + "'" + getSpeciality() +"', "
                 + "'" + getAbout_me() +"', "
                 + "'" + getPhone() +"');";
@@ -147,7 +145,7 @@ public class DUsuario extends Template{
     protected String updateT() throws Exception {
         return "UPDATE users" +
                 " SET name='"+ getName() +"', email='"+ getEmail() +"', password='"+ getEmail() +"', updated_at= NOW()," +
-                "  type='"+ getType() +"', speciality='"+ getSpeciality() +"', about_me='"+ getAbout_me() +"', phone='" + getPhone() +"'"+
+                "  type="+ getType() +", speciality='"+ getSpeciality() +"', about_me='"+ getAbout_me() +"', phone='" + getPhone() +"'"+
                 "  WHERE id= "+ getId() +";";
     }
 

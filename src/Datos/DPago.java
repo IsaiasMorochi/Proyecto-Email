@@ -73,14 +73,14 @@ public class DPago extends Template {
     protected String addT() throws Exception {
         return "INSERT INTO pago(" +
                 "monto, created_at, type)" +
-                "VALUES ("+ getMonto() +", NOW(), "+ getType() +");";
+                "VALUES ("+ getMonto() +", NOW(), '"+ getType() +"');";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE pago" +
-                "SET  monto="+ getMonto() +", updated_at= NOW(), type=" + getType() +
-                "WHERE id = "+ getId() +";";
+                " SET  monto="+ getMonto() +", updated_at= NOW(), type='" + getType() +"'"+
+                " WHERE id = "+ getId() +";";
     }
 
     @Override

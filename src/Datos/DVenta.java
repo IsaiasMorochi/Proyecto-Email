@@ -3,7 +3,7 @@ package Datos;
 public class DVenta extends Template{
 
     private int id;
-    private Double total;
+    private double total;
     private int user_id;
 
     private String created_at;

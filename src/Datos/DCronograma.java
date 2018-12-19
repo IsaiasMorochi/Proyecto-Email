@@ -76,28 +76,28 @@ public class DCronograma extends Template {
     protected String addT() throws Exception {
         return "INSERT INTO schedule(" +
                 "description, created_at, period) " +
-                "VALUES ('"+ getDescription() +"', NOW(), "+ getPeriod() +");";
+                "VALUES ('"+ getDescription() +"', NOW(), '"+ getPeriod() +"');";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE schedule " +
-                "SET description='"+ getDescription() +"', updated_at= NOW(), period= "+ getPeriod() +
+                " SET description='"+ getDescription() +"', updated_at= NOW(), period= '"+ getPeriod() +"'"+
                 " WHERE id= "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
-        return "UPDATE schedule " +
-                "SET deleted_at = NOW() " +
-                "WHERE id "+ getId() +";";
+        return "UPDATE schedule" +
+                " SET deleted_at = NOW() " +
+                " WHERE id="+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, description, created_at, updated_at, deleted_at, period " +
-                "FROM schedule " +
-                "WHERE deleted_at is null ;";
+        return "SELECT id, description, period, created_at, updated_at, deleted_at" +
+                " FROM schedule" +
+                " WHERE deleted_at is null ;";
     }
 
     @Override

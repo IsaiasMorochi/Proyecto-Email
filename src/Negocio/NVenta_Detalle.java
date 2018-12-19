@@ -72,7 +72,7 @@ public class NVenta_Detalle {
     }
 
     public String Mostrar() throws Exception {
-        String rx = "TIPO \n\n";
+        String rx = "DETALLE DE VENTA \n\n";
         try {
             List<DVenta_Detalle> lObj = this.getAll();
             for (DVenta_Detalle obj : lObj) {

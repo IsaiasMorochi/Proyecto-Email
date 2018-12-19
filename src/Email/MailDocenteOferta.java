@@ -30,14 +30,14 @@ public class MailDocenteOferta extends TemplateMail {
     @Override
     protected boolean modificar(Anacom anacom, String correo) throws Exception{
         try {
-            anacom.Avanzar();
-            int oferta_id = anacom.Preanalisis().getAtributo();
-            anacom.Avanzar();
-            anacom.Avanzar();
-            int user_id = anacom.Preanalisis().getAtributo();
-
-            o.update(oferta_id, user_id);
-            return true;
+//            anacom.Avanzar();
+//            int oferta_id = anacom.Preanalisis().getAtributo();
+//            anacom.Avanzar();
+//            anacom.Avanzar();
+//            int user_id = anacom.Preanalisis().getAtributo();
+//
+//            o.update(oferta_id, user_id);
+            return false;
         } catch (Exception e) {
             return false;
         }

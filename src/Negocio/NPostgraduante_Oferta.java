@@ -27,6 +27,15 @@ public class NPostgraduante_Oferta {
         }
     }
 
+    public void delete(int id) throws Exception {
+        try{
+            o.setId(id);
+            o.delete();
+        } catch (Exception e){
+            throw e;
+        }
+    }
+
     private List<DPostgraduante_Oferta> getAll() throws Exception{
         List<DPostgraduante_Oferta> ob = new ArrayList<>();
         List<Object> lista = (List<Object>) this.o.getAll();

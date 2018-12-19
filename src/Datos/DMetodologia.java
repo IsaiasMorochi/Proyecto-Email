@@ -87,7 +87,7 @@ public class DMetodologia extends Template {
 
     @Override
     protected String deleteT() throws Exception {
-        return "UPDATE metodology " +
+        return "UPDATE metodology" +
                 " SET deleted_at= NOW() " +
                 " WHERE id = "+ getId() +";";
     }

@@ -94,6 +94,14 @@ public class LCC {
         "ELIMINARBOLETA",
         "LISTARBOLETA",
 
+        "INSERTARDO",
+        "ELIMINARDO",
+        "LISTARDO",
+
+        "INSERTARPO",
+        "ELIMINARPO",
+        "LISTARPO",
+
         "REPORTE"
 
     ));
@@ -186,6 +194,14 @@ public class LCC {
         new Token(Token.FUNC, Token.MODIFICARBOLETA, "MODIFICARBOLETA"),
         new Token(Token.FUNC, Token.ELIMINARBOLETA, "ELIMINARBOLETA"),
         new Token(Token.FUNC, Token.LISTARBOLETA, "LISTARBOLETA"),
+
+        new Token(Token.FUNC, Token.INSERTARDO, "INSERTARDO"),
+        new Token(Token.FUNC, Token.ELIMINARDO, "ELIMINARDO"),
+        new Token(Token.FUNC, Token.LISTARDO, "LISTARDO"),
+
+        new Token(Token.FUNC, Token.INSERTARPO, "INSERTARPO"),
+        new Token(Token.FUNC, Token.ELIMINARPO, "ELIMINARPO"),
+        new Token(Token.FUNC, Token.LISTARPO, "LISTARPO"),
 
         new Token(Token.FUNC, Token.REPORTE, "REPORTE")
        

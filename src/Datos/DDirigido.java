@@ -94,7 +94,7 @@ public class DDirigido extends Template{
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, offer_id, description, created_at, updated_at, deleted_at" +
+        return "SELECT id, description, offer_id, created_at, updated_at, deleted_at" +
                 " FROM target_people" +
                 " WHERE deleted_at is null;";
     }

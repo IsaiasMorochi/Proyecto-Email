@@ -54,7 +54,8 @@ public class DPostgraduante_Oferta extends Template{
 
     @Override
     protected String deleteT() throws Exception {
-        return null;
+        return "DELETE FROM posgraduante_offer" +
+                " WHERE id = "+ getId() +";";
     }
 
     @Override

@@ -29,8 +29,8 @@ public class MailPostgraduanteOferta extends TemplateMail {
     @Override
     protected boolean modificar(Anacom anacom, String correo) throws Exception{
         try {
-            anacom.Avanzar();
-            int id = anacom.Preanalisis().getAtributo();
+//            anacom.Avanzar();
+//            int id = anacom.Preanalisis().getAtributo();
 
             return false;
         } catch (Exception e) {
@@ -44,7 +44,8 @@ public class MailPostgraduanteOferta extends TemplateMail {
             anacom.Avanzar();
             int id = anacom.Preanalisis().getAtributo();
 
-            return false;
+            o.delete(id);
+            return true;
         } catch (Exception e) {
             return false;
         }

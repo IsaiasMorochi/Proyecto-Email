@@ -84,21 +84,21 @@ public class DGrupo extends Template{
 
     @Override
     protected String addT() throws Exception {
-        return "INSERT INTO group(" +
+        return "INSERT INTO groups (" +
                 "name, description, created_at, role_id) VALUES ('"
                 + getName() + "', '"+ getDescription() +"', NOW() , "+ getRole_id() +");";
     }
 
     @Override
     protected String updateT() throws Exception {
-        return "UPDATE group" +
-                "SET  name= '"+ getName() +"', description= '"+ getDescription() +"', updated_at= NOW(), role_id=" + getRole_id() +
-                "WHERE id = "+ getId() +";";
+        return "UPDATE groups" +
+                " SET name= '"+ getName() +"', description= '"+ getDescription() +"', updated_at= NOW()" +
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
-        return "UPDATE group" +
+        return "UPDATE groups" +
                 " SET deleted_at= NOW() " +
                 " WHERE id = "+ getId() +";";
     }
@@ -106,7 +106,7 @@ public class DGrupo extends Template{
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, name, description, created_at, updated_at, deleted_at, role_id" +
-                " FROM group" +
+                " FROM groups" +
                 " WHERE deleted_at is null;";
     }
 

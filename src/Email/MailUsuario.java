@@ -22,7 +22,7 @@ public class MailUsuario extends TemplateMail {
             anacom.Avanzar(); anacom.Avanzar();
             String password = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
             anacom.Avanzar(); anacom.Avanzar();
-            String type = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+            int type = anacom.Preanalisis().getAtributo();
             anacom.Avanzar(); anacom.Avanzar();
             String speciality = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
             anacom.Avanzar(); anacom.Avanzar();
@@ -51,7 +51,7 @@ public class MailUsuario extends TemplateMail {
             anacom.Avanzar(); anacom.Avanzar();
             String password = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
             anacom.Avanzar(); anacom.Avanzar();
-            String type = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+            int type = anacom.Preanalisis().getAtributo();
             anacom.Avanzar(); anacom.Avanzar();
             String speciality = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
             anacom.Avanzar(); anacom.Avanzar();
@@ -60,7 +60,7 @@ public class MailUsuario extends TemplateMail {
             String phone = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
             anacom.Avanzar(); anacom.Avanzar();
 
-            o.update(name, email, password, type, speciality, about_me, phone);
+            o.update(id, name, email, password, type, speciality, about_me, phone);
             return true;
         } catch (Exception e) {
             return false;

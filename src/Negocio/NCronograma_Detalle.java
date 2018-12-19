@@ -64,7 +64,7 @@ public class NCronograma_Detalle {
     }
 
     public String Mostrar() throws Exception {
-        String rx = "Cronograma \n\n";
+        String rx = "DETALLE CRONOGRAMA \n\n";
         try {
             List<DCronograma_Detalle> lObj = this.getAll();
             for (DCronograma_Detalle obj : lObj) {
