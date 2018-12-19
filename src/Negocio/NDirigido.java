@@ -13,6 +13,10 @@ public class NDirigido {
         this.o = new DDirigido();
     }
 
+    public DDirigido getInfo(){
+        return o;
+    }
+
     public void add(String description, int oferta_id) throws Exception {
         try{
             o.setDescription(description);

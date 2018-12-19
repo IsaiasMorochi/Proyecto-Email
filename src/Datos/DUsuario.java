@@ -164,9 +164,8 @@ public class DUsuario extends Template{
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, name, email, password, created_at, updated_at, deleted_at," +
-                "       group_id, type, speciality, about_me, phone" +
-                "  FROM user;";
+        return "SELECT id, name, email, password, type, speciality, about_me, phone, group_id, created_at, updated_at, deleted_at," +
+                "FROM users;";
     }
 
     @Override

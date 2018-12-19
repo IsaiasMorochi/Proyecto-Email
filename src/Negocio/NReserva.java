@@ -14,6 +14,10 @@ public class NReserva {
         this.o = new DReserva();
     }
 
+    public DReserva getInfo(){
+        return o;
+    }
+
     public void add(String date, String description, int user_id, int oferta_id) throws Exception {
         try{
             o.setDate(date);

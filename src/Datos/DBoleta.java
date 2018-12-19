@@ -79,24 +79,24 @@ public class DBoleta extends Template{
     @Override
     protected String addT() throws Exception {
         return "INSERT INTO public.ticket(" +
-                "monto, pago_id, created_at)" +
+                "monto, pago_id, created_at) " +
                 "VALUES ("
                 + getMonto() +", "
                 + getPago_id() +", "
-                + Utils.dateToString(new Date()) +");";
+                + " NOW());";
     }
 
     @Override
     protected String updateT() throws Exception {
-        return "UPDATE ticket" +
-                "SET monto= "+ getMonto() +", updated_at="+ Utils.dateToString(new Date()) +
+        return "UPDATE ticket " +
+                "SET monto= "+ getMonto() +", updated_at= NOW() " +
                 "WHERE id ="+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
-        return "UPDATE ticket" +
-                "SET deleted_at="+ Utils.dateToString(new Date()) +
+        return "UPDATE ticket " +
+                "SET deleted_at= NOW() " +
                 "WHERE id ="+ getId() +";";
     }
 

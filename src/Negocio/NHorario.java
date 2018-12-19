@@ -13,6 +13,10 @@ public class NHorario {
         this.o = new DHorario();
     }
 
+    public DHorario getInfo(){
+        return o;
+    }
+
     public void add(String description, int periodo_id) throws Exception {
         try{
             o.setDescription(description);

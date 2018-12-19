@@ -13,6 +13,10 @@ public class NGrupo {
         this.o = new DGrupo();
     }
 
+    public DGrupo getInfo(){
+        return o;
+    }
+
     public void add(String name, String description, int role_id) throws Exception {
         try{
             o.setName(name);

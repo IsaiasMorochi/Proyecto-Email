@@ -13,6 +13,10 @@ public class NAdministrador_Oferta {
         this.o = new DAdministrador_Oferta();
     }
 
+    public DAdministrador_Oferta getAdministradorOferta(){
+        return o;
+    }
+
     public void add(int user_id, int oferta_id) throws Exception {
         try{
             o.setUser_id(user_id);

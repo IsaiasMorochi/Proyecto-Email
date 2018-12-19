@@ -5,22 +5,6 @@
  */
 package Software;
 
-import Software.Template.MailContenido;
-import Software.Template.MailCronograma;
-import Software.Template.MailDetalle_Contenido;
-import Software.Template.MailDetalle_Venta;
-import Software.Template.MailDia;
-import Software.Template.MailDisertante;
-import Software.Template.MailEvento;
-import Software.Template.MailHorario;
-import Software.Template.MailLugar;
-import Software.Template.MailModoPago;
-import Software.Template.MailObjetivos;
-import Software.Template.MailPersona;
-import Software.Template.MailReportes;
-import Software.Template.MailRequisito;
-import Software.Template.MailReserva;
-import Software.Template.MailVenta;
 import Nucleo.procesador.Anacom;
 import Nucleo.procesador.Checker;
 import Nucleo.procesador.Cinta;
@@ -30,23 +14,8 @@ import Nucleo.utilidades.Ayuda;
 
 public class ProcesadorMensaje {
 	
-    private MailPersona mail_persona = new MailPersona();
-    private MailLugar mail_lugar = new MailLugar();
-    private MailDia mail_dia = new MailDia();
-    private MailEvento mail_evento = new MailEvento();
-    private MailReserva mail_reserva = new MailReserva();
-    private MailCronograma mail_cronograma = new MailCronograma();
-    private MailDisertante mail_disertante = new MailDisertante();
-    private MailContenido mail_contenido = new MailContenido();
-    private MailDetalle_Contenido mail_detallecontenido = new MailDetalle_Contenido();
-    private MailObjetivos mail_objetivos = new MailObjetivos();
-    private MailHorario mail_horario = new MailHorario();
-    private MailVenta mail_venta = new MailVenta();
-    private MailDetalle_Venta mail_detalleVenta = new MailDetalle_Venta();
-    private MailModoPago mail_modoPago = new MailModoPago();
-    private MailRequisito mail_requisito = new MailRequisito();
-    private MailReportes mail_reporte = new MailReportes();
-   
+//    private MailPersona mail_persona = new MailPersona();
+
 
     public void processMessage(String content, String destinatario, String url, String tipo) {
 
@@ -80,170 +49,8 @@ public class ProcesadorMensaje {
 
         switch (token.getAtributo()) {
             case Token.INSERTARUSUARIO:
-                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;   
-            case Token.MODIFICARUSUARIO:
-                mail_persona.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;   
-            case Token.ELIMINARUSUARIO:
-                mail_persona.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;   
-            case Token.LISTARUSUARIOS:
-                mail_persona.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+//                mail_persona.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
-                
-            case Token.INSERTARDIA:
-            	mail_dia.create(anacom, destinatario, Ayuda.HELP_GLOBAL);              
-                break;  
-                
-            case Token.INSERTAREVENTO:
-            	mail_evento.create(anacom, destinatario, Ayuda.HELP_GLOBAL);              
-                break;
-            case Token.MODIFICAREVENTO:  
-            	mail_evento.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);          
-                break;
-            case Token.ELIMINAREVENTO:  
-            	mail_evento.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);          
-                break;
-            case Token.LISTAREVENTOS:  
-            	mail_evento.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);          
-                break;     
-                
-            case Token.INSERTARCONTENIDO:
-                mail_contenido.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.MODIFICARCONTENIDO:
-                mail_contenido.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.ELIMINARCONTENIDO:
-                mail_contenido.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.LISTARCONTENIDO:
-                mail_contenido.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-                
-            case Token.INSERTARDETALLECONTENIDO:
-            	mail_detallecontenido.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.MODIFICARDETALLECONTENIDO:
-            	mail_detallecontenido.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.ELIMINARDETALLECONTENIDO:
-            	mail_detallecontenido.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.LISTARDETALLECONTENIDO:
-            	mail_detallecontenido.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;  
-                
-            case Token.INSERTARDISERTANTE:
-                mail_disertante.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.MODIFICARDISERTANTE:
-                mail_disertante.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.ELIMINARDISERTANTE:
-                mail_disertante.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.LISTARDISERTANTES:
-                mail_disertante.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;  
-                                               
-            case Token.INSERTAROBJETIVO:
-            	mail_objetivos.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.MODIFICAROBJETIVO:
-            	mail_objetivos.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.ELIMINAROBJETIVO:
-            	mail_objetivos.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.LISTAROBJETIVOS:
-            	mail_objetivos.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;    
-                
-            case Token.INSERTARLUGAR:
-            	mail_lugar.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.MODIFICARLUGAR:
-            	mail_lugar.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);              
-                break;
-            case Token.ELIMINARLUGAR:
-            	mail_lugar.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);              
-                break;
-            case Token.LISTARLUGARES:
-            	mail_lugar.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);              
-                break;   
-                
-            case Token.INSERTARRESERVA:
-                mail_reserva.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;       
-                
-            case Token.INSERTARCRONOGRAMA:
-                mail_cronograma.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.ELIMINARCRONOGRAMA:
-            	mail_cronograma.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;   
-                
-            case Token.INSERTARHORARIO:
-            	mail_horario.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.MODIFICARHORARIO:
-            	mail_horario.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.ELIMINARHORARIO:
-            	mail_horario.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.LISTARHORARIOS:
-            	mail_horario.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;         
-                
-            case Token.INSERTARVENTA:
-                mail_venta.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-                
-            case Token.INSERTARDETALLEVENTA:
-            	mail_detalleVenta.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-            	break;
-            case Token.MODIFICARDETALLEVENTA:
-            	mail_detalleVenta.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
-            	break;
-            case Token.ELIMINARDETALLEVENTA:
-             	mail_detalleVenta.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.LISTARDETALLEVENTAS:
-            	this.mail_detalleVenta.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
-            	break;  
-            	
-            case Token.INSERTARMODOPAGO:
-            	this.mail_modoPago.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-            	break;
-            case Token.MODIFICARMODOPAGO:
-            	this.mail_modoPago.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.ELIMINARMODOPAGO:
-            	this.mail_modoPago.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.LISTARMODOPAGOS:
-            	this.mail_modoPago.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;      
-                
-            case Token.INSERTARREQUISITO:
-                mail_requisito.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.MODIFICARREQUISITO:
-            	mail_requisito.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.ELIMINARREQUISITO:
-            	mail_requisito.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break;
-            case Token.LISTARREQUISITOS:
-            	mail_requisito.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
-                break; 
-                
-            case Token.REPORTE:
-            	mail_reporte.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
-            	break;   
             default:
                 break;
         }

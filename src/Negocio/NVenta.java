@@ -1,42 +1,43 @@
 package Negocio;
 
-import Datos.DTipo;
+import Datos.DVenta;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NTipo {
+public class NVenta {
 
-    private DTipo o;
+    private DVenta o;
 
-    public NTipo() throws Exception{
-        this.o = new DTipo();
+    public NVenta() throws Exception{
+        this.o = new DVenta();
     }
 
-    public DTipo getInfo(){
+    public DVenta getInfo(){
         return o;
     }
 
-    public void add(String description) throws Exception {
+    public void add(Double total, int user_id) throws Exception{
         try{
-            o.setDescription(description);
+            o.setTotal(total);
+            o.setUser_id(user_id);
             o.add();
         } catch (Exception e){
             throw e;
         }
     }
 
-    public void update(int id, String description) throws Exception {
+    public void update(int id, Double total) throws Exception{
         try{
             o.setId(id);
-            o.setDescription(description);
+            o.setTotal(total);
             o.update();
         } catch (Exception e){
             throw e;
         }
     }
 
-    public void delete(int id) throws Exception {
+    public void delete(int id) throws Exception{
         try{
             o.setId(id);
             o.delete();
@@ -45,16 +46,17 @@ public class NTipo {
         }
     }
 
-    private List<DTipo> getAll() throws Exception{
-        List<DTipo> ob = new ArrayList<>();
+    private List<DVenta> getAll() throws Exception{
+        List<DVenta> ob = new ArrayList<>();
         List<Object> lista = (List<Object>) this.o.getAll();
         try {
             for (Object objecto : lista) {
                 List<Object> obj = (List<Object>) objecto;
-                DTipo oo = new DTipo();
+                DVenta oo = new DVenta();
 
                 oo.setId(Integer.valueOf(obj.get(0).toString()));
-                oo.setDescription(obj.get(1).toString());
+                oo.setTotal(Double.valueOf(obj.get(1).toString()));
+                oo.setUser_id(Integer.valueOf(obj.get(2).toString()));
 
                 ob.add(oo);
             }
@@ -67,11 +69,12 @@ public class NTipo {
     public String Mostrar() throws Exception {
         String rx = "TIPO \n\n";
         try {
-            List<DTipo> lObj = this.getAll();
-            for (DTipo obj : lObj) {
+            List<DVenta> lObj = this.getAll();
+            for (DVenta obj : lObj) {
                 rx = rx +
                         "Codigo: " + obj.getId() +
-                        "\nDescripcion: " + obj.getDescription() +
+                        "\nTotal: " + obj.getTotal() +
+                        "\nID User: " + obj.getUser_id() +
                         "\n\n"
                 ;
             }
@@ -80,4 +83,7 @@ public class NTipo {
         }
         return rx;
     }
+
+
+
 }

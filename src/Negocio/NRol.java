@@ -12,6 +12,9 @@ public class NRol {
     public NRol() throws Exception{
         this.o = new DRol();
     }
+    public DRol getInfo(){
+        return o;
+    }
 
     public void add(String name) throws Exception {
         try{

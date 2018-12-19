@@ -13,6 +13,10 @@ public class NRequisito {
         this.o = new DRequisito();
     }
 
+    public DRequisito getInfo(){
+        return o;
+    }
+
     public void add(String description, int oferta_id) throws Exception {
         try{
             o.setDescription(description);

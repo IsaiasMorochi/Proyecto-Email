@@ -1,6 +1,7 @@
 package Negocio;
 
 import Datos.DDia;
+import org.omg.PortableInterceptor.DISCARDING;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,10 @@ public class NDia {
 
     public NDia() throws Exception{
         this.o = new DDia();
+    }
+
+    public DDia getInfo(){
+        return o;
     }
 
     public void add(String name) throws Exception {

@@ -13,6 +13,10 @@ public class NPeriodo {
         this.o = new DPeriodo();
     }
 
+    public DPeriodo getInfo(){
+        return o;
+    }
+
     public void add(String description, String start_date, int oferta_id) throws Exception {
         try{
             o.setDescription(description);

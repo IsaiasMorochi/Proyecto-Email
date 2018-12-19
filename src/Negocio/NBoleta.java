@@ -13,6 +13,10 @@ public class NBoleta {
         this.o = new DBoleta();
     }
 
+    public DBoleta getInfo(){
+        return o;
+    }
+
     public void add(double monto, int pago_id) throws Exception {
         try{
             o.setMonto(monto);
@@ -42,7 +46,7 @@ public class NBoleta {
         }
     }
 
-    public List<DBoleta> getAll() throws Exception {
+    private List<DBoleta> getAll() throws Exception {
         List<DBoleta> ob = new ArrayList<>();
         List<Object> lista = (List<Object>) this.o.getAll();
         try {

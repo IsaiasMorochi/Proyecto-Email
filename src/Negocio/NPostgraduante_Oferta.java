@@ -13,6 +13,10 @@ public class NPostgraduante_Oferta {
         this.o = new DPostgraduante_Oferta();
     }
 
+    public DPostgraduante_Oferta getInfo(){
+        return o;
+    }
+
     public void add(int user_id, int oferta_id) throws Exception {
         try{
             o.setUser_id(user_id);

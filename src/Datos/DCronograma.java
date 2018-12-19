@@ -79,14 +79,14 @@ public class DCronograma extends Template {
     @Override
     protected String addT() throws Exception {
         return "INSERT INTO schedule(" +
-                "description, created_at, period)" +
-                "VALUES (" + getDescription() +","+ Utils.dateToString(new Date()) +", "+ getPeriod() +");";
+                "description, created_at, period) " +
+                "VALUES (" + getDescription() +", NOW(), "+ getPeriod() +");";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE schedule" +
-                "SET description="+ getDescription() +", updated_at="+ Utils.dateToString(new Date()) +", period= "+ getPeriod() +
+                "SET description="+ getDescription() +", updated_at= NOW(), period= "+ getPeriod() +
                 "WHERE id= "+ getId() +";";
     }
 

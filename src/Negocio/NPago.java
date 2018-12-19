@@ -13,6 +13,10 @@ public class NPago {
         this.o = new DPago();
     }
 
+    public DPago getInfo(){
+        return o;
+    }
+
     public void add(Double monto, String type) throws Exception {
         try{
             o.setMonto(monto);

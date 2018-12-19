@@ -13,6 +13,10 @@ public class NHorario_Dia {
         this.o = new DHorario_Dia();
     }
 
+    public DHorario_Dia getInfo(){
+        return o;
+    }
+
     public void add(int horario_id, int dia_id) throws Exception {
         try{
             o.setHorario_id(horario_id);

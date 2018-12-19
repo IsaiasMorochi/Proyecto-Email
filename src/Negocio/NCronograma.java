@@ -13,9 +13,10 @@ public class NCronograma {
     public NCronograma() throws Exception{
         this.o = new DCronograma();
     }
-//    private int id;
-//    private String description;
-//    private String period;
+
+    public DCronograma getInfo(){
+        return o;
+    }
 
     public void add(String description, String period) throws Exception{
         try{

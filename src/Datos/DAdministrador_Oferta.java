@@ -49,20 +49,20 @@ public class DAdministrador_Oferta extends Template{
 
     @Override
     protected String updateT() throws Exception {
-        return "UPDATE administrator_offer" +
+        return "UPDATE administrator_offer " +
                 "SET offer_id= "+ getOferta_id() +", administrator_id= "+ getUser_id() +
                 "WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
-        return "DELETE FROM administrator_offer" +
+        return "DELETE FROM administrator_offer " +
                 "WHERE id ="+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, offer_id, administrator_id" +
+        return "SELECT id, offer_id, administrator_id " +
                 "FROM administrator_offer;";
     }
 

@@ -13,6 +13,10 @@ public class NDocente_Oferta {
         this.o = new DDocente_Oferta();
     }
 
+    public DDocente_Oferta getInfo(){
+        return o;
+    }
+
     public void add(int oferta_id, int docente_id) throws Exception {
         try {
             o.setOferta_id(oferta_id);

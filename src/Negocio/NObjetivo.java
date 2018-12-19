@@ -13,6 +13,10 @@ public class NObjetivo {
         this.o = new DObjetivo();
     }
 
+    public DObjetivo getInfo(){
+        return o;
+    }
+
     public void add(String description, int ofertta_id) throws Exception {
         try{
             o.setDescription(description);

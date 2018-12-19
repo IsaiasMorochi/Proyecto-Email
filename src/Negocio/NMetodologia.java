@@ -13,6 +13,10 @@ public class NMetodologia {
         this.o = new DMetodologia();
     }
 
+    public DMetodologia getInfo(){
+        return o;
+    }
+
     public void add(String description, int ofertta_id) throws Exception {
         try{
             o.setDescription(description);

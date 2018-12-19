@@ -1,5 +1,6 @@
 package Negocio;
 
+import Datos.DCronograma;
 import Datos.DCronograma_Detalle;
 
 import java.util.ArrayList;
@@ -11,6 +12,10 @@ public class NCronograma_Detalle {
 
     public NCronograma_Detalle() throws Exception{
         this.o = new DCronograma_Detalle();
+    }
+
+    public DCronograma_Detalle getInfo(){
+        return o;
     }
 
     public void add(int cronograma_id, int oferta_id) throws Exception{
