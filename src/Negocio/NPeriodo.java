@@ -74,7 +74,8 @@ public class NPeriodo {
         try {
             List<DPeriodo> lObj = this.getAll();
 
-            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+            rx = "<center><h2>PERIODOS DE CURSOS</h2></center><br>";
+            rx += " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
                     "             <thead>\n" +
                     "                   <tr >\n" +
                     "                         <th>#</th>\n" +

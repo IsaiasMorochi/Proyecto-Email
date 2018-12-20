@@ -1,5 +1,7 @@
 package Datos;
 
+import java.sql.ResultSet;
+
 public class DOferta  extends Template{
 
     private int id;
@@ -120,4 +122,13 @@ public class DOferta  extends Template{
     protected int currentColumn() throws Exception {
         return 5;
     }
+
+    public ResultSet obtenerReporte(){
+        String consulta = " select p.name as nombre, e.description as programa, COUNT(dv.id_persona) as Cantidad "
+                + " from offer e, posgraduante_offer dv, users p"
+                + " where dv.offer_id = e.id  AND  dv.posgraduante_id = p.id"
+                + " group by p.name, e.description";
+        return consultarDatos(consulta);
+    }
+
 }

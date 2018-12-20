@@ -68,7 +68,8 @@ public class NCronograma_Detalle {
         try {
             List<DCronograma_Detalle> lObj = this.getAll();
 
-            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+            rx = "<center><h2>DETALLE DE CRONOGRAMA</h2></center><br>";
+            rx += " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
                     "             <thead>\n" +
                     "                   <tr >\n" +
                     "                         <th>#</th>\n" +

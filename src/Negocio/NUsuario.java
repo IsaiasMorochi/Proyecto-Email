@@ -89,7 +89,8 @@ public class NUsuario {
         try {
             List<DUsuario> lObj = this.getAll();
 
-            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+            rx = "<center><h2>LISTA DE USUARIOS</h2></center><br>";
+            rx += " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
                     "             <thead>\n" +
                     "                   <tr >\n" +
                     "                         <th>#</th>\n" +

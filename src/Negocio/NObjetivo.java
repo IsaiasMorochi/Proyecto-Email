@@ -71,7 +71,8 @@ public class NObjetivo {
         try {
             List<DObjetivo> lObj = this.getAll();
 
-            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+            rx = "<center><h2>OBJETIVOS</h2></center><br>";
+            rx += " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
                     "             <thead>\n" +
                     "                   <tr >\n" +
                     "                         <th>#</th>\n" +

@@ -71,7 +71,8 @@ public class NDirigido {
         try {
             List<DDirigido> lObj = this.getAll();
 
-            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+            rx = "<center><h2>PUBLICO OBJETIVO</h2></center><br>";
+            rx += " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
                     "             <thead>\n" +
                     "                   <tr >\n" +
                     "                         <th>#</th>\n" +

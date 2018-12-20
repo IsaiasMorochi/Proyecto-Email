@@ -1,8 +1,6 @@
 package Datos;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,6 +71,21 @@ public abstract class Template {
     public List<Object> getAll() throws Exception{
         System.out.println("conexion getAll --> " + this.conexion.toString().hashCode());
         return this.listar(getAllT());
+    }
+
+
+    public ResultSet consultarDatos(String consulta) throws Exception{
+        Connection conn = (Connection) conexion.getConexion();
+        ResultSet result = null;
+        try {
+            Statement st = this.conexion.conectar().createStatement();
+            result = st.executeQuery(consulta);
+            //st.close();
+        } catch (SQLException e) {
+            System.out.println("error en Template consultarDatos capa Datos");
+            System.out.println(e);
+        }
+        return result;
     }
 
 //    public T getById() throws Exception{

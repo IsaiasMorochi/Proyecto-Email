@@ -97,7 +97,7 @@ public class Ayuda {
 
             + "REGISTRO DE USUARIOS\n\n"
             + "INSERTARUSUARIO[\"NOMBRE\",\"EMAIL\",\"PASSWORD\",TIPO,\"ESPECIALIDAD\",\"ACERDADE\",\"TELEFONO\",ID_GRUPOID]\n\n"
-            + "MODIFICARUSUARIO[ID,\"NOMBRE\",\"EMAIL\",\"PASSWORD\",TIPO,\"ESPECIALIDAD\",\"ACERDADE\",\"TELEFONO\",ID_GRUPOID]\n\n"
+            + "MODIFICARUSUARIO[ID,\"NOMBRE\",\"EMAIL\",\"PASSWORD\",TIPO,\"PROFESION\",\"ACERDADE\",\"TELEFONO\",ID_GRUPOID]\n\n"
             + "ELIMINARUSUARIO[ID]\n\n"
             + "LISTARUSUARIOS\n\n"
             + separador

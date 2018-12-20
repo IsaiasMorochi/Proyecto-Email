@@ -71,6 +71,8 @@ public class NDocente_Oferta {
         String rx = "DOCENTE OFERTA \n\n";
         try {
             List<DDocente_Oferta> lObj = this.getAll();
+
+            rx = "<center><h2>OFERTA DE DOCENTES</h2></center><br>";
             rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
                     "             <thead>\n" +
                     "                   <tr >\n" +

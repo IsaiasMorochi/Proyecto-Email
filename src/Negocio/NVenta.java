@@ -70,21 +70,15 @@ public class NVenta {
         String rx = "TIPO \n\n";
         try {
             List<DVenta> lObj = this.getAll();
-            for (DVenta obj : lObj) {
-                rx = rx +
-                        "Codigo: " + obj.getId() +
-                        "\nTotal: " + obj.getTotal() +
-                        "\nID User: " + obj.getUser_id() +
-                        "\n\n"
-                ;
-            }
 
-
-            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+            rx = "<center><h2>VENTAS</h2></center><br>";
+            rx += " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
                     "             <thead>\n" +
                     "                   <tr >\n" +
                     "                         <th>#</th>\n" +
-                    "                         <th>NOMBRE</th>\n" +
+                    "                         <th>TOTAL</th>\n" +
+                    "                         <th>ID USER</th>\n" +
+
                     "                   </tr>\n" +
                     "             </thead>\n" +
                     "                  <tbody> ";
