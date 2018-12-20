@@ -76,16 +76,33 @@ public class NReserva {
         String rx = "RESERVA \n\n";
         try {
             List<DReserva> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>FECHA</th>\n" +
+                    "                         <th>DESCRIPCION</th>\n" +
+                    "                         <th>ID CLIENTE</th>\n" +
+                    "                         <th>ID OFERTA</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DReserva obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nFecha: " + obj.getDate() +
-                        "\nDescripcion: " + obj.getDescription() +
-                        "\nID Cliente: " + obj.getUser_id() +
-                        "\nID Oferta: " + obj.getOferta_id() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getDate() + "</td>\n" +
+                        "   <td>"+ obj.getDescription() + "</td>\n" +
+                        "   <td>"+ obj.getUser_id() + "</td>\n" +
+                        "   <td>"+ obj.getOferta_id() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
+
         } catch (Exception e){
             throw e;
         }

@@ -64,17 +64,32 @@ public class NCronograma_Detalle {
     }
 
     public String Mostrar() throws Exception {
-        String rx = "DETALLE CRONOGRAMA \n\n";
+        String rx = "";
         try {
             List<DCronograma_Detalle> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>ID CRONOGRAMA</th>\n" +
+                    "                         <th>ID OFERTA</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DCronograma_Detalle obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nID Cronograma: " + obj.getCronograma_id() +
-                        "\nID Oferta: " + obj.getOferta_id() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getCronograma_id() + "</td>\n" +
+                        "   <td>"+ obj.getOferta_id() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
+
         } catch (Exception e){
             throw e;
         }

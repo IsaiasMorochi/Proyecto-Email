@@ -78,6 +78,29 @@ public class NVenta {
                         "\n\n"
                 ;
             }
+
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>NOMBRE</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
+            for (DVenta obj : lObj) {
+                rx = rx +
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getTotal() + "</td>\n" +
+                        "   <td>"+ obj.getUser_id() + "</td>\n" +
+                        "</tr>\n"
+                ;
+            }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
+
         } catch (Exception e){
             throw e;
         }

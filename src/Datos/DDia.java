@@ -64,33 +64,34 @@ public class DDia extends Template {
     protected String addT() throws Exception {
         return "INSERT INTO days(" +
                 "name, created_at) " +
-                "VALUES ( '"+ getName() +"' , NOW() );";
+                " VALUES ( '"+ getName() +"' , NOW() );";
     }
 
     @Override
     protected String updateT() throws Exception {
         return "UPDATE days" +
-                "SET name= '"+ getName() +"' , updated_at=  NOW() " +
-                "WHERE id = "+ getId() +";";
+                " SET name= '"+ getName() +"' , updated_at=  NOW() " +
+                " WHERE id = "+ getId() +";";
     }
 
     @Override
     protected String deleteT() throws Exception {
         return "UPDATE days" +
-                "deleted_at= NOW() " +
-                "WHERE id="+ getId() +";";
+                " deleted_at= NOW() " +
+                " WHERE id="+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, name, created_at, updated_at, deleted_at " +
-                "FROM days " +
-                "WHERE deleted_at is null;";
+        return "SELECT id, name" +
+                " FROM days " +
+                " WHERE deleted_at is null" +
+                " ORDER BY id ASC;";
     }
 
     @Override
     protected int currentColumn() throws Exception {
-        return 5;
+        return 3;
     }
 
 

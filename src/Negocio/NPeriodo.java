@@ -59,7 +59,7 @@ public class NPeriodo {
                 oo.setId(Integer.valueOf(obj.get(0).toString()));
                 oo.setOferta_id(Integer.valueOf(obj.get(1).toString()));
                 oo.setDescription(obj.get(2).toString());
-                oo.setStart_date(obj.get(6).toString());
+                oo.setStart_date(obj.get(3).toString());
 
                 ob.add(oo);
             }
@@ -73,15 +73,31 @@ public class NPeriodo {
         String rx = "PERIODO \n\n";
         try {
             List<DPeriodo> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>ID OFERTA</th>\n" +
+                    "                         <th>DESCRIPCION</th>\n" +
+                    "                         <th>DIA INICIO</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DPeriodo obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nID Oferta: " + obj.getOferta_id() +
-                        "\nDescripcion: " + obj.getDescription() +
-                        "\nDia Inicio: " + obj.getStart_date() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getOferta_id() + "</td>\n" +
+                        "   <td>"+ obj.getDescription() + "</td>\n" +
+                        "   <td>"+ obj.getStart_date() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
+
         } catch (Exception e){
             throw e;
         }

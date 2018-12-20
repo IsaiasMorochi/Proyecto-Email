@@ -101,13 +101,14 @@ public class DPeriodo extends Template{
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, offer_id, description, created_at, updated_at, deleted_at, start_date" +
+        return "SELECT id, offer_id, description, start_date" +
                 " FROM execution_period " +
-                " WHERE deleted_at is null;";
+                " WHERE deleted_at is null" +
+                " ORDER BY id ASC;";
     }
 
     @Override
     protected int currentColumn() throws Exception {
-        return 7;
+        return 4;
     }
 }

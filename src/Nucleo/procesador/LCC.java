@@ -102,6 +102,21 @@ public class LCC {
         "ELIMINARPO",
         "LISTARPO",
 
+        "INSERTARTIPO",
+        "MODIFICARTIPO",
+        "ELIMINARTIPO",
+        "LISTARTIPO",
+
+        "INSERTARREQUISITO",
+        "MODIFICARREQUISITO",
+        "ELIMINARREQUISITO",
+        "LISTARREQUISITO",
+
+        "INSERTARRESERVA",
+        "MODIFICARRESERVA",
+        "ELIMINARRESERVA",
+        "LISTARRESERVA",
+
         "REPORTE"
 
     ));
@@ -182,7 +197,6 @@ public class LCC {
         new Token(Token.FUNC, Token.INSERTARDETALLEVENTA, "INSERTARDETALLEVENTA"),
         new Token(Token.FUNC, Token.MODIFICARDETALLEVENTA, "MODIFICARDETALLEVENTA"),
         new Token(Token.FUNC, Token.ELIMINARDETALLEVENTA, "ELIMINARDETALLEVENTA"),
-        new Token(Token.FUNC, Token.ELIMINARDETALLEVENTA, "ELIMINARDETALLEVENTA"),
         new Token(Token.FUNC, Token.LISTARDETALLEVENTA, "LISTARDETALLEVENTA"),
 
         new Token(Token.FUNC, Token.INSERTARPAGO, "INSERTARPAGO"),
@@ -202,6 +216,21 @@ public class LCC {
         new Token(Token.FUNC, Token.INSERTARPO, "INSERTARPO"),
         new Token(Token.FUNC, Token.ELIMINARPO, "ELIMINARPO"),
         new Token(Token.FUNC, Token.LISTARPO, "LISTARPO"),
+
+        new Token(Token.FUNC, Token.INSERTARTIPO, "INSERTARTIPO"),
+        new Token(Token.FUNC, Token.MODIFICARTIPO, "MODIFICARTIPO"),
+        new Token(Token.FUNC, Token.ELIMINARTIPO, "ELIMINARTIPO"),
+        new Token(Token.FUNC, Token.LISTARTIPO, "LISTARTIPO"),
+
+        new Token(Token.FUNC, Token.INSERTARREQUISITO, "INSERTARREQUISITO"),
+        new Token(Token.FUNC, Token.MODIFICARREQUISITO, "MODIFICARREQUISITO"),
+        new Token(Token.FUNC, Token.ELIMINARREQUISITO, "ELIMINARREQUISITO"),
+        new Token(Token.FUNC, Token.LISTARREQUISITO, "LISTARREQUISITO"),
+
+        new Token(Token.FUNC, Token.INSERTARRESERVA, "INSERTARRESERVA"),
+        new Token(Token.FUNC, Token.MODIFICARRESERVA, "MODIFICARRESERVA"),
+        new Token(Token.FUNC, Token.ELIMINARRESERVA, "ELIMINARRESERVA"),
+        new Token(Token.FUNC, Token.LISTARRESERVA, "LISTARRESERVA"),
 
         new Token(Token.FUNC, Token.REPORTE, "REPORTE")
        

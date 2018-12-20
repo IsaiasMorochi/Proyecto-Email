@@ -31,7 +31,7 @@ public class NDia {
         try{
             o.setId(id);
             o.setName(name);
-            o.add();
+            o.update();
         } catch (Exception e) {
             throw e;
         }
@@ -40,7 +40,7 @@ public class NDia {
     public void delete(int id) throws Exception {
         try{
             o.setId(id);
-            o.add();
+            o.delete();
         } catch (Exception e) {
             throw e;
         }
@@ -66,16 +66,30 @@ public class NDia {
     }
 
     public String Mostrar() throws Exception {
-        String rx = "DIA \n\n";
+        String rx = ""; String rf = "";
         try {
             List<DDia> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+        "             <thead>\n" +
+        "                   <tr >\n" +
+        "                         <th>#</th>\n" +
+        "                         <th>NOMBRE</th>\n" +
+        "                   </tr>\n" +
+        "             </thead>\n" +
+"                  <tbody> ";
             for (DDia obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nNombre: " + obj.getName() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getName() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+               ;
+
         } catch (Exception e){
             throw e;
         }

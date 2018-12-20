@@ -17,7 +17,7 @@ public class NOferta {
         return o;
     }
 
-    public void add(String name, String description, Double price, String type_id) throws Exception {
+    public void add(String name, String description, double price, String type_id) throws Exception {
         try{
             o.setName(name);
             o.setDescription(description);
@@ -73,19 +73,36 @@ public class NOferta {
     }
 
     public String Mostrar() throws Exception {
-        String rx = "OFERTA \n\n";
+        String rx = "";
         try {
             List<DOferta> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>NOMBRE</th>\n" +
+                    "                         <th>DESCRIPCION</th>\n" +
+                    "                         <th>PRECIO (BS)</th>\n" +
+                    "                         <th>TIPO</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DOferta obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nNombre: " + obj.getName() +
-                        "\nDescripcion: " + obj.getDescription() +
-                        "\nPrecio: " + obj.getPrice() +
-                        "\nTipo: " + obj.getType_id() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getName() + "</td>\n" +
+                        "   <td>"+ obj.getDescription() + "</td>\n" +
+                        "   <td>"+ obj.getPrice() + "</td>\n" +
+                        "   <td>"+ obj.getType_id() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
+
         } catch (Exception e){
             throw e;
         }

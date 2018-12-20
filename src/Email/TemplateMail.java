@@ -23,14 +23,15 @@ public abstract class TemplateMail {
         if (messageHelp(anacom, email, comandHelp)) return;
 
         boolean sw = this.insertar(anacom, email);
+        String lista = this.listar();
 
         if (sw) {
             System.out.println("EXITO T INSERTAR: "+ this.messageCreate(sw));
-            ClienteSMTP.sendMailHTML(email, "REGISTRO CON EXITO", "<h2>" + this.messageCreate(sw) + "</h2>");
+            ClienteSMTP.sendMailHTML(email, "REGISTRO CON EXITO",  this.messageCreate(sw) + lista);
 
         }else{
             System.out.println("ERROR T INSERTAR: "+this.messageCreate(sw));
-            ClienteSMTP.sendMailHTML(email, "REGISTRO SIN EXITO", "<h2>" + this.messageCreate(sw) + "</h2>");
+            ClienteSMTP.sendMailHTML(email, "REGISTRO SIN EXITO", this.messageCreate(sw) + lista);
         }
     }
 
@@ -39,13 +40,13 @@ public abstract class TemplateMail {
         if (messageHelp(anacom, email, comandHelp)) return;
 
         boolean sw = this.modificar(anacom, email);
-
+        String lista = this.listar();
         if (sw) {
             System.out.println("EXITO T EDITAR: "+ this.messageEdit(sw));
-            ClienteSMTP.sendMailHTML(email, "MODIFICACION CON EXITO", this.messageEdit(sw));
+            ClienteSMTP.sendMailHTML(email, "MODIFICACION CON EXITO", this.messageEdit(sw) + lista);
         }else{
             System.out.println("ERROR T EDITAR: "+this.messageEdit(sw));
-            ClienteSMTP.sendMailHTML(email, "MODIFICACION SINT EXITO", this.messageEdit(sw));
+            ClienteSMTP.sendMailHTML(email, "MODIFICACION SIN EXITO", this.messageEdit(sw) + lista);
         }
     }
 
@@ -53,13 +54,14 @@ public abstract class TemplateMail {
         if (messageHelp(anacom, email, comandHelp)) return;
 
         boolean sw = this.eliminar(anacom, email);
+        String lista = this.listar();
 
         if (sw) {
             System.out.println("EXITO T ELIMINAR: "+ this.messageRemove(sw));
-            ClienteSMTP.sendMailHTML(email, "ELIMINACION CON EXITO", messageRemove(sw));
+            ClienteSMTP.sendMailHTML(email, "ELIMINACION CON EXITO", messageRemove(sw) + lista);
         }else{
             System.out.println("ERROR T ELIMINAR: "+ this.messageRemove(sw));
-            ClienteSMTP.sendMailHTML(email, "ELIMINACION CON EXITO", messageRemove(sw));
+            ClienteSMTP.sendMailHTML(email, "ELIMINACION CON EXITO", messageRemove(sw) + lista);
         }
     }
 

@@ -59,7 +59,7 @@ public class NGrupo {
                 oo.setId(Integer.valueOf(obj.get(0).toString()));
                 oo.setName(obj.get(1).toString());
                 oo.setDescription(obj.get(2).toString());
-                oo.setRole_id(Integer.valueOf(obj.get(6).toString()));
+                oo.setRole_id(Integer.valueOf(obj.get(3).toString()));
 
                 ob.add(oo);
             }
@@ -73,15 +73,31 @@ public class NGrupo {
         String rx = "GRUPOS \n\n";
         try {
             List<DGrupo> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>NOMBRE</th>\n" +
+                    "                         <th>DESCRIPCION</th>\n" +
+                    "                         <th>ID ROL</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DGrupo obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nNombre: " + obj.getName() +
-                        "\nDescripcion: " + obj.getDescription() +
-                        "\nID Role: " + obj.getRole_id() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getName() + "</td>\n" +
+                        "   <td>"+ obj.getDescription() + "</td>\n" +
+                        "   <td>"+ obj.getRole_id() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
+
         } catch (Exception e){
             throw e;
         }

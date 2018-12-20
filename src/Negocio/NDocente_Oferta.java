@@ -71,14 +71,28 @@ public class NDocente_Oferta {
         String rx = "DOCENTE OFERTA \n\n";
         try {
             List<DDocente_Oferta> lObj = this.getAll();
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>ID OFERTA</th>\n" +
+                    "                         <th>ID USUARIO</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DDocente_Oferta obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nID Oferta: " + obj.getOferta_id() +
-                        "\nID Docente: " + obj.getUser_id() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getOferta_id() + "</td>\n" +
+                        "   <td>"+ obj.getUser_id() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
+
         } catch (Exception e){
             throw e;
         }

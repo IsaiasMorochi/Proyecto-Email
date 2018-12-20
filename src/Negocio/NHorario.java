@@ -1,5 +1,6 @@
 package Negocio;
 
+import Datos.DDia;
 import Datos.DHorario;
 
 import java.util.ArrayList;
@@ -70,14 +71,28 @@ public class NHorario {
         String rx = "GRUPOS \n\n";
         try {
             List<DHorario> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>ID PERIODO</th>\n" +
+                    "                         <th>DESCRIPCION</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DHorario obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nID Periodo: " + obj.getPeriodo_id() +
-                        "\nDescripcion: " + obj.getDescription() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getPeriodo_id() + "</td>\n" +
+                        "   <td>"+ obj.getDescription() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
         } catch (Exception e){
             throw e;
         }

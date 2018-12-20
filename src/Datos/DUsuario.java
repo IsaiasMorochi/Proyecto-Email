@@ -158,13 +158,14 @@ public class DUsuario extends Template{
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, name, email, password, type, speciality, about_me, phone, group_id, created_at, updated_at, deleted_at" +
+        return "SELECT id, name, email, password, type, speciality, about_me, phone, group_id" +
                 " FROM users" +
-                " WHERE deleted_at is null;";
+                " WHERE deleted_at is null" +
+                " ORDER BY id ASC;";
     }
 
     @Override
     protected int currentColumn() throws Exception {
-        return 12;
+        return 9;
     }
 }

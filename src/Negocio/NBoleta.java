@@ -71,14 +71,28 @@ public class NBoleta {
         String rx = "Boletas\n\n";
         try {
             List<DBoleta> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>MONTO</th>\n" +
+                    "                         <th>ID PAGO</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DBoleta obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nMonto: " + obj.getMonto() +
-                        "\nID Pago: " + obj.getPago_id() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getMonto() + "</td>\n" +
+                        "   <td>"+ obj.getPago_id() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
         } catch (Exception e){
             throw e;
         }

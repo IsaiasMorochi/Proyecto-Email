@@ -12,140 +12,142 @@ package Nucleo.utilidades;
  */
 public class Ayuda {
 
-    public static String separador = "------------------------------------------------------------\n\n";
+    public static String separador = "------------------------------------------------------------------------------\n\n";
 
     public static final String HELP_GLOBAL = "Bienvenido!!!\n\n"
             + "A continuacion se listaran los comandos disponibles para interactuar con el sistema\n"
             + "Ejemplo: COMANDO HELP\n"
             + separador
 
-            + "Insertar un usuario:\n"
-            + "Administrativo o Cliente:\n"
-            + "INSERTARUSUARIO[\"nombre\",\"telefono\",\"nacionalidad\",\"ci\",\"direccion\",\"tipo\",\"correo\",\"password\"]\n\n"
-            + "Modificar los datos de un usuario:\n"
-            + "MODIFICARUSUARIO[id,\"tipo\"]\n\n"
-            + "Eliminar un usuario:\n"
-            + "ELIMINARUSUARIO[id]\n\n"
-            + "Listar todos los usuarios:\n"
+            + "REGISTRO DIAS DE OFERTA\n\n"
+            + "INSERTARDIA[\"DIA\"]\n\n"
+            + "MODIFICARDIA[ID,\"DIA\"]\n\n"
+            + "ELIMINARDIA[ID]\n\n"
+            + "LISTARDIA\n\n"
+            + separador
+
+            + "REGISTRO DE TIPOS DE OFERTAS\n\n"
+            + "INSERTARTIPO[\"NOMBRE\",\"DESCRIPCION\"]\n\n"
+            + "MODIFICARTIPO[\"NOMBRE\",\"DESCRIPCION\"]\n\n"
+            + "ELIMINARTIPO[\"NOMBRE\"]\n\n"
+            + "LISTARTIPO\n\n"
+            + separador
+
+            + "REGISTRO DE OFERTAS\n\n"
+            + "INSERTAROFERTA[\"TITULO\",\"DESCRIPCION\",PRECIO,\"TIPO\"]\n\n"
+            + "MODIFICAROFERTA[ID,\"TITULO\",\"DESCRIPCION\",PRECIO]\n\n"
+            + "ELIMINAROFERTA[ID]\n\n"
+            + "LISTAROFERTA\n\n"
+            + separador
+
+            + "REGISTRO DE PUBLICO OBJETIVO\n\n"
+            + "INSERTARDIRIGIDO[\"DESCRIPCION\",ID_OFERTA]\n\n"
+            + "MODIFICARDIRIGIDO[ID,\"DESCRIPCION\"]\n\n"
+            + "ELIMINARDIRIGIDO[ID]\n\n"
+            + "LISTARDIRIGIDO\n\n"
+            + separador
+
+            + "REGISTRO DE OBJETIVO DEL CURSO\n\n"
+            + "INSERTAROBJETIVO[\"DESCRIPCION\",ID_OFERTA]\n\n"
+            + "MODIFICAROBJETIVO[ID,\"DESCRIPCION\"]\n\n"
+            + "ELIMINAROBJETIVO[ID]\n\n"
+            + "LISTAROBJETIVO\n\n"
+            + separador
+
+            + "REGISTRO DE LA METODOLOGIA DEL CURSO\n\n"
+            + "INSERTARMETODOLOGIA[\"DESCRIPCION\",ID_OFERTA]\n\n"
+            + "MODIFICARMETODOLOGIA[ID,\"DESCRIPCION\"]\n\n"
+            + "ELIMINARMETODOLOGIA[ID]\n\n"
+            + "LISTARMETODOLOGIA\n\n"
+            + separador
+
+            + "REGISTRO DE CRONOGRAMA\n\n"
+            + "INSERTARCRONOGRAMA[\"TITULO\",\"PERIODO\"]\n\n"
+            + "MODIFICARCRONOGRAMA[ID,\"TITULO\",\"PERIODO\"]\n\n"
+            + "ELIMINARCRONOGRAMA[ID]\n\n"
+            + "LISTARCRONOGRAMA\n\n"
+            + separador
+
+            + "REGISTRO DEL DETALLE DEL CRONOGRAMA\n\n"
+            + "INSERTARDETALLECRONOGRAMA[ID_CRONOGRAMA,ID_OFERTA]\n\n"
+            + "ELIMINARDETALLECRONOGRAMA[ID_DETALLE]\n\n"
+            + "LISTARDETALLECRONOGRAMA\n\n"
+            + separador
+
+            + "REGISTRO DE REQUISITOS\n\n"
+            + "INSERTARREQUISITO[\"DESCRIPCION\",ID_OFERTA]\n\n"
+            + "MODIFICARREQUISITO[ID,\"DESCRIPCION\"]\n\n"
+            + "ELIMINARREQUISITO[ID]\n\n"
+            + "LISTARREQUISITO\n\n"
+            + separador
+
+            + "REGISTRO DE ROL DE USUARIOS\n\n"
+            + "INSERTARROL[\"DESCRIPCION\"]\n\n"
+            + "MODIFICARROL[ID,\"DESCRIPCION\"]\n\n"
+            + "ELIMINARROL[ID]\n\n"
+            + "LISTARROL\n\n"
+            + separador
+
+            + "REGISTRO DE GRUPOS DE USUARIOS\n\n"
+            + "INSERTARGRUPO[\"NOMBRE\",\"DESCRIPCION\",ID_ROL]\n\n"
+            + "MODIFICARGRUPO[ID,\"NOMBRE\",\"DESCRIPCION\"]\n\n"
+            + "ELIMINARGRUPO[ID]\n\n"
+            + "LISTARGRUPO\n\n"
+            + separador
+
+            + "REGISTRO DE USUARIOS\n\n"
+            + "INSERTARUSUARIO[\"NOMBRE\",\"EMAIL\",\"PASSWORD\",TIPO,\"ESPECIALIDAD\",\"ACERDADE\",\"TELEFONO\",ID_GRUPOID]\n\n"
+            + "MODIFICARUSUARIO[ID,\"NOMBRE\",\"EMAIL\",\"PASSWORD\",TIPO,\"ESPECIALIDAD\",\"ACERDADE\",\"TELEFONO\",ID_GRUPOID]\n\n"
+            + "ELIMINARUSUARIO[ID]\n\n"
             + "LISTARUSUARIOS\n\n"
             + separador
 
-            + "Insertar un evento:\n"
-            + "INSERTAREVENTO[\"Titulo\", \"fecha de inicio\", \"fecha fin\", \"costo\",\"tipo\"]\n\n"
-            + "Modificar los datos de un evento:\n"
-            + "MODIFICAREVENTO[id,\"Titulo\",\"fecha de inicio\",\"fecha fin\",\"costo\",\"tipo\"]\n\n"
-            + "Eliminar un evento\n"
-            + "ELIMINAREVENTO[id]\n\n"
-            + "Listar todos los eventos:\n"
-            + "LISTAREVENTOS\n\n"
+            + "REGISTRO DE RESERVAS\n\n"
+            + "INSERTARRESERVA[\"FECHA\",\"DESCRIPCION\",ID_USUARIO,ID_OFERTA]\n\n"
+            + "MODIFICARRESERVA[ID,\"FECHA\",\"DESCRIPCION\"]\n\n"
+            + "ELIMINARRESERVA[ID]\n\n"
+            + "LISTARRESERVA\n\n"
             + separador
-            
-           + "Insertar un objetivo:\n"
-                + "INSERTAROBJETIVO[\"Nombre\",\"Descripcion\",id_evento]\n\n"
-                + "Modificar un objetivo:\n"
-                + "MODIFICAROBJETIVO[id,\"Nombre,\",\"Descripcion\"]\n\n"
-                + "Eliminar un objetivo:\n"
-                + "ELIMINAROBJETIVO[id]\n"
-                + "Listar todos los objetivos:\n"
-                + "LISTAROBJETIVOS\n\n"
-                + separador
-            
-            + "Ingresar un requisito:\n"
-                + "INSERTARREQUISITO[id_evento,\"Descripcion\"]\n\n"
-                + "Modificar un requisito:\n"
-                + "MODIFICARREQUISITO[id,\"Descripcion\"]\n\n"
-                + "Eliminar un requisito:\n"
-                + "ELIMINARREQUISITO[id]\n\n"
-                + "Lista todo los requisitos:\n"
-                + "LISTARREQUISITOS\n\n"
-                + separador
-            
-            + "Ingresar modo de pago:\n"
-                + "INSERTARMODOPAGO[id_evento, \"Descripcion\"]\n\n"
-                + "Modificar modo de pago:\n"
-                + "MODIFICARMODOPAGO[id,\"Descripcion\"]\n\n"
-                + "Eliminar un modo de pago:\n"
-                + "ELIMINARMODOPAGO[id]\n\n"
-                + "Listar todos los modos de pagos:\n"
-                + "LISTARMODOPAGOS\n\n"
-                + separador
 
-            +"Insertar un contenido:\n"
-                +"INSERTARCONTENIDO[id_evento,\"Titulo\"]\n\n"
-                +"Modificar los datos de contenido:\n"
-                +"MODIFICARCONTENIDO[id,\"Titulo\"]\n\n"
-                +"Eliminar un contenido:\n"
-                +"ELIMINARCONTENIDO[id]\n\n"
-                +"Listar los contenidos:\n"
-                +"LISTARCONTENIDO\n\n"
-                + separador
+            + "REGISTRO DE PAGO\n\n"
+            + "INSERTARPAGO[MONTO,\"TIPO_PAGO\"]\n\n"
+            + "MODIFICARPAGO[ID,MONTO,\"TIPO_PAGO\"]\n\n"
+            + "ELIMINARPAGO[ID]\n\n"
+            + "LISTARPAGO\n\n"
+            + separador
 
-            +"Insertar detalle de contenido:\n"
-                +"INSERTARDETALLECONTENIDO[id_contenido,\"descripcion\"]\n\n"
-                +"Modificar dato de contenido:\n"
-                +"MODIFICARDETALLECONTENIDO[id,id_contenido,\"descripcion\"]\n\n"
-                +"Eliminar detalle de contenido:\n"
-                +"ELIMINARDETALLECONTENIDO[id]\n\n"
-                +"Listar los detalles de contenido:\n"
-                +"LISTARDETALLECONTENIDO\n\n"
-                + separador
+            + "REGISTRO DE VENTA\n\n"
+            + "INSERTARVENTA[MONTO,ID_USUARIO]\n\n"
+            + "MODIFICARVENTA[ID,MONTO]\n\n"
+            + "ELIMINARVENTA[ID]\n\n"
+            + "LISTARVENTA\n\n"
+            + separador
 
-            + "Insertar un Disertante:\n"
-                + "INSERTARDISERTANTE[id_evento,\"Nombre\",\"Descripcion\"]\n\n"
-                + "Modificar datos de un disertante:\n"
-                + "MODIFICARDISERTANTE[id,\"Nombre\",\"Descripcion\"]\n\n"
-                + "Eliminar a un disertante:\n"
-                + "ELIMINARDISERTANTE[id]\n\n"
-                + "Listar todos los disertantes:\n"
-                + "LISTARDISERTANTES\n\n"
-                + separador
- 
-            + "Insertar un dia:\n"
-                + "INSERTARDIA[\"DDia\"]\n\n"
-                +separador
+            + "REGISTRO DE DETALLE DE VENTA\n\n"
+            + "INSERTARDETALLEVENTA[\"FECHA\",ID_VENTA,ID_OFERTA,ID_PAGO,ID_USUARIO]\n\n"
+            + "MODIFICARDETALLEVENTA[ID,\"FECHA\"]\n\n"
+            + "ELIMINARDETALLEVENTA[ID]\n\n"
+            + "LISTARDETALLEVENTA\n\n"
+            + separador
 
-           + " Insertar un lugar:\n"
-                + "INSERTARLUGAR[\"Descripcion\"]\n\n"
-                + "Modificar datos de lugar:\n"
-                + "MODIFICARLUGAR[id,\"Descripcion\"]\n\n"
-                + "Eliminar un lugar:\n"
-                + "ELIMINARLUGAR[id]\n\n"
-                + "Listar todos los lugares:\n"
-                + "LISTARLUGARES\n\n"
-                + separador
-            
-            + "Ingresar un horario:\n"
-                + "INSERTARHORARIO[id_evento, id_dia, id_lugar,\"inicio\", \"fin\"]\n\n"
-                + "Modificar un horario:\n"
-                + "MODIFICARHORARIO[id,\"inicio\",\"fin\"]\n\n"
-                + "Eliminar un horario:\n"
-                + "ELIMINARHORARIO[id]\n\n"
-                + "Listar todos los horarios:\n"
-                + "LISTARHORARIOS\n\n"
-                + separador
+            + "REGISTRO DE BOLETA\n\n"
+            + "INSERTARBOLETA[MONTO,ID_PAGO]\n\n"
+            + "MODIFICARBOLETA[ID,MONTO]\n\n"
+            + "ELIMINARBOLETA[ID]\n\n"
+            + "LISTARBOLETA\n\n"
+            + separador
 
-           + "Ingresar un cronograma:\n"
-                + "INSERTARCRONOGRAMA[id_evento,\"titulo\"]\n\n"
-                + "Eliminar un cronograna:\n"
-                + "ELIMINARCRONOGRAMA[id]\n\n"
-                + separador
+            + "REGISTRO DE ASIGNACION DE OFERTA - CLIENTE\n\n"
+            + "INSERTARPO[ID_USAURIO,ID_OFERTA]\n\n"
+            + "ELIMINARPO[ID]\n\n"
+            + "LISTARPO\n\n"
+            + separador
 
-           + "Insertar una venta:\n"
-                + "INSERTARVENTA[\"fecha\"]\n\n"
-                + separador
-
-           + "Ingresar detalle de venta:\n"
-                + "INSERTARDETALLEVENTA[id_evento, id_usuario, id_persona, id_venta, \"numero de comprobante\",\"fecha de comprobante\"]\n\n"
-                + "Modificar datos de detalle de venta:\n"
-                + "MODIFICARDETALLEVENTA[id,\"numero de comprobante\",\"fecha de comprobante\"]\n\n"
-                + "ELIMINARDETALLEVENTA[id]\n\n"
-                + "Listar detalles de ventas:\n"
-                + "LISTARDETALLEVENTAS\n\n"
-                + separador
-
-            + "Ingresar una reserva:\n"
-                + "INSERTARRESERVA[\"fecha\", id_persona, id_evento]\n\n"
-                + separador
+            + "REGISTRO DE ASIGNACION DE OFERTA - DOCENTE\n\n"
+            + "INSERTARDO[ID_OFERTA,ID_DOCENTE]\n\n"
+            + "ELIMINARDO[ID]\n\n"
+            + "LISTARDO\n\n"
+            + separador
 
             + "Muestre los reportes:\n"
                     + "REPORTE\n\n"

@@ -9,6 +9,10 @@ public class Test {
     public static void main(String args[]) throws Exception {
 
 //        NTipo o = new NTipo();
+//        o.add("T","TALLER");
+//        System.out.println(o.Mostrar());
+//        o.update("T","TALLERES");
+//        System.out.println(o.Mostrar());
 //        o.delete("Tt");
 //        System.out.println(o.Mostrar());
 
@@ -80,7 +84,7 @@ public class Test {
 //        System.out.println(r.Mostrar());
 
 //        NRol u = new NRol();
-//        u.add("ADMINISTRADO");
+//        u.add("uu");
 //        u.add("CLIENTE");
 //        u.add("a");
 //        System.out.println(u.Mostrar());

@@ -61,7 +61,8 @@ public class DPostgraduante_Oferta extends Template{
     @Override
     protected String getAllT() throws Exception {
         return "SELECT id, offer_id, posgraduante_id" +
-                " FROM posgraduante_offer;";
+                " FROM posgraduante_offer" +
+                " ORDER BY id ASC;";
     }
 
     @Override

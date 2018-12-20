@@ -95,13 +95,14 @@ public class DObjetivo extends Template{
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, offer_id, description, created_at, update_at, deleted_at" +
+        return "SELECT id, offer_id, description" +
                 " FROM objetive" +
-                " WHERE deleted_at is null;";
+                " WHERE deleted_at is null" +
+                " ORDER BY id ASC;";
     }
 
     @Override
     protected int currentColumn() throws Exception {
-        return 6;
+        return 3;
     }
 }

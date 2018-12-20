@@ -64,16 +64,29 @@ public class NRol {
     }
 
     public String Mostrar() throws Exception {
-        String rx = "ROL \n\n";
+        String rx = "";
         try {
             List<DRol> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>NOMBRE</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DRol obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId() +
-                        "\nNombre: " + obj.getName() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getName() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
         } catch (Exception e){
             throw e;
         }

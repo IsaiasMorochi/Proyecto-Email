@@ -49,8 +49,8 @@ public class DAdministrador_Oferta extends Template{
     @Override
     protected String updateT() throws Exception {
         return "UPDATE administrator_offer " +
-                "SET offer_id= "+ getOferta_id() +", administrator_id= "+ getUser_id() +
-                "WHERE id = "+ getId() +";";
+                " SET offer_id= "+ getOferta_id() +", administrator_id= "+ getUser_id() +
+                " WHERE id = "+ getId() +";";
     }
 
     @Override

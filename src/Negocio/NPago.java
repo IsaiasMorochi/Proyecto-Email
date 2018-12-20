@@ -57,7 +57,7 @@ public class NPago {
 
                 oo.setId(Integer.valueOf(obj.get(0).toString()));
                 oo.setMonto(Double.valueOf(obj.get(1).toString()));
-                oo.setType(obj.get(5).toString());
+                oo.setType(obj.get(2).toString());
 
                 ob.add(oo);
             }
@@ -68,17 +68,31 @@ public class NPago {
     }
 
     public String Mostrar() throws Exception {
-        String rx = "METODOLOGIA \n\n";
+        String rx = "";
         try {
             List<DPago> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>MONTO</th>\n" +
+                    "                         <th>TIPO</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DPago obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nMonto: " + obj.getMonto() +
-                        "\nTipo: " + obj.getType() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getMonto() + "</td>\n" +
+                        "   <td>"+ obj.getType() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
         } catch (Exception e){
             throw e;
         }

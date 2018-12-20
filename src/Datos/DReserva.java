@@ -111,13 +111,14 @@ public class DReserva extends Template{
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, date, description, user_id, offer_id, created_at, updated_at, deleted_at" +
+        return "SELECT id, date, description, user_id, offer_id" +
                 " FROM reservation" +
-                " WHERE deleted_at is null;";
+                " WHERE deleted_at is null" +
+                " ORDER BY id ASC;";
     }
 
     @Override
     protected int currentColumn() throws Exception {
-        return 8;
+        return 5;
     }
 }

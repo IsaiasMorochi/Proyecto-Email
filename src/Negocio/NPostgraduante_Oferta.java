@@ -57,17 +57,32 @@ public class NPostgraduante_Oferta {
     }
 
     public String Mostrar() throws Exception {
-        String rx = "POSTGRADUANTE \n\n";
+        String rx = "";
         try {
             List<DPostgraduante_Oferta> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>ID OFERTA</th>\n" +
+                    "                         <th>ID POSTGRADUANTE</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DPostgraduante_Oferta obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nID Oferta: " + obj.getOferta_id() +
-                        "\nID Postgraduante: " + obj.getUser_id() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getOferta_id() + "</td>\n" +
+                        "   <td>"+ obj.getUser_id() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
+
         } catch (Exception e){
             throw e;
         }

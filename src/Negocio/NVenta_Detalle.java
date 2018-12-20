@@ -75,17 +75,36 @@ public class NVenta_Detalle {
         String rx = "DETALLE DE VENTA \n\n";
         try {
             List<DVenta_Detalle> lObj = this.getAll();
+
+            rx = "<center><h2>DETALLE DE VENTA</h2></center><br>";
+            rx += " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>FECHA</th>\n" +
+                    "                         <th>ID VENTA</th>\n" +
+                    "                         <th>ID OFERTA</th>\n" +
+                    "                         <th>ID PAGO</th>\n" +
+                    "                         <th>ID CLIENTE</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DVenta_Detalle obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId() +
-                        "\nFecha: " + obj.getDate() +
-                        "\nID Venta: " + obj.getVenta_id() +
-                        "\nID Oferta: " + obj.getOferta_id() +
-                        "\nID Pago: " + obj.getPago_id() +
-                        "\nID User: " + obj.getUser_id() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getDate() + "</td>\n" +
+                        "   <td>"+ obj.getVenta_id() + "</td>\n" +
+                        "   <td>"+ obj.getOferta_id() + "</td>\n" +
+                        "   <td>"+ obj.getPago_id() + "</td>\n" +
+                        "   <td>"+ obj.getUser_id() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
+
         } catch (Exception e){
             throw e;
         }

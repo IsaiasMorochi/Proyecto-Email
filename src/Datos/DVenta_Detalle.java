@@ -121,13 +121,14 @@ public class DVenta_Detalle extends Template{
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, date, venta_id, offer_id, pago_id, user_id, created_at, updated_at, deleted_at" +
+        return "SELECT id, date, venta_id, offer_id, pago_id, user_id" +
                 " FROM venta_detail" +
-                " WHERE deleted_at is null;";
+                " WHERE deleted_at is null" +
+                " ORDER BY id ASC;";
     }
 
     @Override
     protected int currentColumn() throws Exception {
-        return 9;
+        return 6;
     }
 }

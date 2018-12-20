@@ -93,9 +93,10 @@ public class DHorario_Dia extends Template {
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, horario_id, days_id, created_at, updated_at, deleted_at" +
+        return "SELECT id, horario_id, days_id" +
                 " FROM horario_days" +
-                " WHERE deleted_at is null;";
+                " WHERE deleted_at is null" +
+                " ORDER BY id ASC;";
     }
 
     @Override

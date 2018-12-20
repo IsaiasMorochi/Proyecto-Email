@@ -105,13 +105,14 @@ public class DGrupo extends Template{
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, name, description, created_at, updated_at, deleted_at, role_id" +
+        return "SELECT id, name, description, role_id" +
                 " FROM groups" +
-                " WHERE deleted_at is null;";
+                " WHERE deleted_at is null" +
+                " ORDER BY id ASC;";
     }
 
     @Override
     protected int currentColumn() throws Exception {
-        return 7;
+        return 4;
     }
 }

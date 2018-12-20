@@ -6,7 +6,7 @@ public class DOferta  extends Template{
     private String name;
     private String description;
     private String type_id;
-    private Double price;
+    private double price;
 
     private String created_at;
     private String updated_at;
@@ -110,13 +110,14 @@ public class DOferta  extends Template{
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, name, description, price, type, created_at, updated_at, deleted_at" +
-                " FROM offer " +
-                " WHERE deleted_at is null;";
+        return "SELECT id, name, description, price, type" +
+                " FROM offer" +
+                " WHERE deleted_at is null" +
+                " ORDER BY id ASC;";
     }
 
     @Override
     protected int currentColumn() throws Exception {
-        return 8;
+        return 5;
     }
 }

@@ -91,20 +91,21 @@ public class DBoleta extends Template{
 
     @Override
     protected String deleteT() throws Exception {
-        return "UPDATE ticket " +
-                "SET deleted_at= NOW() " +
-                "WHERE id ="+ getId() +";";
+        return "UPDATE ticket" +
+                " SET deleted_at= NOW()" +
+                " WHERE id ="+ getId() +";";
     }
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, monto, pago_id, created_at, updated_at, deleted_at " +
-                "FROM ticket " +
-                "WHERE deleted_at is null;";
+        return "SELECT id, monto, pago_id" +
+                " FROM ticket " +
+                " WHERE deleted_at is null" +
+                " ORDER BY id ASC;";
     }
 
     @Override
     protected int currentColumn() throws Exception {
-        return 6;
+        return 3;
     }
 }

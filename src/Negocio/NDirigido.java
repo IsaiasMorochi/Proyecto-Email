@@ -55,8 +55,8 @@ public class NDirigido {
                 DDirigido oo = new DDirigido();
 
                 oo.setId(Integer.valueOf(obj.get(0).toString()));
-                oo.setDescription(obj.get(1).toString());
-                oo.setOferta_id(Integer.valueOf(obj.get(2).toString()));
+                oo.setOferta_id(Integer.valueOf(obj.get(1).toString()));
+                oo.setDescription(obj.get(2).toString());
 
                 ob.add(oo);
             }
@@ -67,17 +67,31 @@ public class NDirigido {
     }
 
     public String Mostrar() throws Exception {
-        String rx = "DIRIGIDO \n\n";
+        String rx = "";
         try {
             List<DDirigido> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>ID OFERTA</th>\n" +
+                    "                         <th>DESCRIPCION</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DDirigido obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nDescripcion: " + obj.getDescription() +
-                        "\nID Oferta: " + obj.getOferta_id() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getOferta_id() + "</td>\n" +
+                        "   <td>"+ obj.getDescription() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
         } catch (Exception e){
             throw e;
         }

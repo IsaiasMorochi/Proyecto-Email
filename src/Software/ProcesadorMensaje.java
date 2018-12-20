@@ -23,6 +23,7 @@ public class ProcesadorMensaje {
     private MailDirigido mail_dirigido = new MailDirigido();
     private MailObjetivo mail_objetivo = new MailObjetivo();
     private MailMetodologia mail_metodologia = new MailMetodologia();
+    private MailRequisito mail_requisio = new MailRequisito();
     private MailPeriodo mail_periodo = new MailPeriodo();
     private MailHorario mail_horario = new MailHorario();
     private MailHorario_Dia mail_horario_dia = new MailHorario_Dia();
@@ -35,6 +36,9 @@ public class ProcesadorMensaje {
     private MailPostgraduanteOferta mail_posgraduante_oferat = new MailPostgraduanteOferta();
     private MailDocenteOferta mail_docente_oferta = new MailDocenteOferta();
     private MailReporte mail_reporte = new MailReporte();
+    private MailTipo mail_tipo = new MailTipo();
+    private MailReserva mail_reserva = new MailReserva();
+
 
 
     public ProcesadorMensaje() throws Exception {
@@ -304,6 +308,45 @@ public class ProcesadorMensaje {
                 break;
             case Token.LISTARDO:
                 mail_docente_oferta.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+
+            case Token.INSERTARTIPO:
+                mail_tipo.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.MODIFICARTIPO:
+                mail_tipo.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.ELIMINARTIPO:
+                mail_tipo.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.LISTARTIPO:
+                mail_tipo.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+
+            case Token.INSERTARREQUISITO:
+                mail_requisio.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.MODIFICARREQUISITO:
+                mail_requisio.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.ELIMINARREQUISITO:
+                mail_requisio.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.LISTARREQUISITO:
+                mail_requisio.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+
+            case Token.INSERTARRESERVA:
+                mail_reserva.create(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.MODIFICARRESERVA:
+                mail_reserva.edit(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.ELIMINARRESERVA:
+                mail_reserva.remove(anacom, destinatario, Ayuda.HELP_GLOBAL);
+                break;
+            case Token.LISTARRESERVA:
+                mail_reserva.findAll(anacom, destinatario, Ayuda.HELP_GLOBAL);
                 break;
 
             case Token.REPORTE:

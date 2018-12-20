@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Nucleo.procesador;
 
 
@@ -172,14 +167,36 @@ public class Token {
     public static final int ELIMINARPO = 90;
     public static final int LISTARPO = 91;
 
+    /**
+     * TIPO
+     */
+    public static final int INSERTARTIPO = 92;
+    public static final int MODIFICARTIPO = 93;
+    public static final int ELIMINARTIPO = 94;
+    public static final int LISTARTIPO = 95;
+
+    /**
+     * REQUISITO
+     */
+    public static final int INSERTARREQUISITO = 96;
+    public static final int MODIFICARREQUISITO = 97;
+    public static final int ELIMINARREQUISITO = 98;
+    public static final int LISTARREQUISITO = 99;
+
+    /**
+     * RESERVA
+     */
+    public static final int INSERTARRESERVA = 100;
+    public static final int MODIFICARRESERVA = 101;
+    public static final int ELIMINARRESERVA = 102;
+    public static final int LISTARRESERVA = 103;
 
     /**
      * REPORTE
      */
-    public static final int REPORTE = 92;
+    public static final int REPORTE = 104;
     
-  
-  
+
     private int nombre;
     private int atributo;
     private String toStr;

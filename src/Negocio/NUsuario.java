@@ -88,20 +88,40 @@ public class NUsuario {
         String rx = "USUARIOS \n\n";
         try {
             List<DUsuario> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>NOMBRE</th>\n" +
+                    "                         <th>EMAIL</th>\n" +
+                    "                         <th>PASSWORD</th>\n" +
+                    "                         <th>TIPO</th>\n" +
+                    "                         <th>ESPECIALIDAD</th>\n" +
+                    "                         <th>ACERCA DE</th>\n" +
+                    "                         <th>TELEFONO</th>\n" +
+                    "                         <th>ID GRUPO</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DUsuario obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId() +
-                        "\nNombre: " + obj.getName() +
-                        "\nEmail: " + obj.getEmail() +
-                        "\nPassword: " + obj.getPassword() +
-                        "\nTipo: " + obj.getType() +
-                        "\nEspecialidad: " + obj.getSpeciality() +
-                        "\nAcerca de: " + obj.getAbout_me() +
-                        "\nTelefono: " + obj.getPhone() +
-                        "\nGrupo: " + obj.getGrupo_id() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getName() + "</td>\n" +
+                        "   <td>"+ obj.getEmail() + "</td>\n" +
+                        "   <td>"+ obj.getPassword() + "</td>\n" +
+                        "   <td>"+ obj.getType() + "</td>\n" +
+                        "   <td>"+ obj.getSpeciality() + "</td>\n" +
+                        "   <td>"+ obj.getAbout_me() + "</td>\n" +
+                        "   <td>"+ obj.getPhone() + "</td>\n" +
+                        "   <td>"+ obj.getGrupo_id() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
         } catch (Exception e){
             throw e;
         }

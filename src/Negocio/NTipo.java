@@ -66,16 +66,29 @@ public class NTipo {
     }
 
     public String Mostrar() throws Exception {
-        String rx = "TIPO \n\n";
+        String rx = "";
         try {
             List<DTipo> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>DESCRIPCION</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DTipo obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId() +
-                        "\nDescripcion: " + obj.getDescription() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getDescription() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
         } catch (Exception e){
             throw e;
         }

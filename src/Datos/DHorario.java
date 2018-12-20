@@ -95,9 +95,10 @@ public class DHorario extends Template {
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, execution_period_id, description, created_at, updated_at, deleted_at" +
+        return "SELECT id, execution_period_id, description" +
                 " FROM horario " +
-                " WHERE deleted_at is null;";
+                " WHERE deleted_at is null " +
+                " ORDER BY id ASC;";
     }
 
     @Override

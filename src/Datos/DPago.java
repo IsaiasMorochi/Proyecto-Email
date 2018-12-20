@@ -92,13 +92,14 @@ public class DPago extends Template {
 
     @Override
     protected String getAllT() throws Exception {
-        return "SELECT id, monto, created_at, updated_at, deleted_at, type" +
+        return "SELECT id, monto, type" +
                 " FROM pago" +
-                " WHERE deleted_at is null ;";
+                " WHERE deleted_at is null" +
+                " ORDER BY id ASC;";
     }
 
     @Override
     protected int currentColumn() throws Exception {
-        return 6;
+        return 3;
     }
 }

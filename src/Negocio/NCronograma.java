@@ -73,14 +73,28 @@ public class NCronograma {
         String rx = "Cronograma \n\n";
         try {
             List<DCronograma> lObj = this.getAll();
+
+            rx = " <table style=\"width:100%; border-style: outset; text-align: left;\" >" +
+                    "             <thead>\n" +
+                    "                   <tr >\n" +
+                    "                         <th>#</th>\n" +
+                    "                         <th>DESCRIPCION</th>\n" +
+                    "                         <th>PERIODO</th>\n" +
+                    "                   </tr>\n" +
+                    "             </thead>\n" +
+                    "                  <tbody> ";
             for (DCronograma obj : lObj) {
                 rx = rx +
-                        "Codigo: " + obj.getId()+
-                        "\nDescripcion: " + obj.getDescription() +
-                        "\nPeriodo: " + obj.getPeriod() +
-                        "\n\n"
+                        "<tr style=\"\">\n" +
+                        "   <td>"+ obj.getId() + "</td>\n" +
+                        "   <td>"+ obj.getDescription() + "</td>\n" +
+                        "   <td>"+ obj.getPeriod() + "</td>\n" +
+                        "</tr>\n"
                 ;
             }
+            rx  +=   "  </tbody>\n" +
+                    "</table>\n"
+            ;
         } catch (Exception e){
             throw e;
         }

@@ -15,9 +15,9 @@ public class MailRol extends TemplateMail {
     protected boolean insertar(Anacom anacom, String correo) throws Exception {
         try {
             anacom.Avanzar();
-            String description = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
+            String name = Herramientas.quitarComillas(anacom.Preanalisis().getToStr());
 
-            o.add(description);
+            o.add(name);
             return true;
         } catch (Exception e) {
             return false;
