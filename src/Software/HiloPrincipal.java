@@ -65,11 +65,8 @@ public class HiloPrincipal extends javax.swing.JFrame {
 
         @Override
         public void run() {
-//            System.out.println(mensaje[0] + "\n\r" + mensaje[1] + "\n\r" + mensaje[2] + "\n\r" + mensaje[3]);     
-//            mensaje[1]="icode295@gmail.com";
             System.out.println(mensaje[0] + "\n\r" + mensaje[1] + "\n\r");
             try {
-//                new ProcesadorMensaje().processMessage(mensaje[0],mensaje[1],mensaje[2],mensaje[3]);
             	new ProcesadorMensaje().processMessage(mensaje[0],mensaje[1],"","");
             } catch (Exception e) {
                 System.out.println("Ocurrio una excepcion");
